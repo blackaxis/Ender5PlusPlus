@@ -3892,3 +3892,69 @@
 [05/31/24 16:34:34] crowsnest:		max_fps: 15
 [05/31/24 16:34:34] crowsnest: INFO: Detect available Devices
 [05/31/24 16:34:34] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[05/31/24 17:17:09] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[05/31/24 17:17:09] crowsnest: Version: v4.1.9-1-gd75a3ae
+[05/31/24 17:17:09] crowsnest: Prepare Startup ...
+[05/31/24 17:17:09] crowsnest: INFO: Host information:
+[05/31/24 17:17:09] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[05/31/24 17:17:09] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[05/31/24 17:17:09] crowsnest: Host Info: Available CPU Cores: 4
+[05/31/24 17:17:09] crowsnest: Host Info: Available Memory: 1010636 kB
+[05/31/24 17:17:09] crowsnest: Host Info: Diskspace (avail. / total): 54G / 57G
+[05/31/24 17:17:10] crowsnest: INFO: Checking Dependencies
+[05/31/24 17:17:10] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[05/31/24 17:17:10] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[05/31/24 17:17:10] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[05/31/24 17:17:10] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[05/31/24 17:17:10] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[05/31/24 17:17:10] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[05/31/24 17:17:10] crowsnest:		[crowsnest]
+[05/31/24 17:17:10] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[05/31/24 17:17:10] crowsnest:		log_level: verbose
+[05/31/24 17:17:10] crowsnest:		delete_log: false
+[05/31/24 17:17:10] crowsnest:		no_proxy: false
+[05/31/24 17:17:10] crowsnest:		
+[05/31/24 17:17:10] crowsnest:		[cam 1]
+[05/31/24 17:17:10] crowsnest:		mode: ustreamer
+[05/31/24 17:17:10] crowsnest:		
+[05/31/24 17:17:10] crowsnest:		enable_rtsp: false
+[05/31/24 17:17:10] crowsnest:		rtsp_port: 8554
+[05/31/24 17:17:10] crowsnest:		port: 8080
+[05/31/24 17:17:10] crowsnest:		device: /dev/video0
+[05/31/24 17:17:10] crowsnest:		resolution: 640x480
+[05/31/24 17:17:10] crowsnest:		max_fps: 15
+[05/31/24 17:17:10] crowsnest: INFO: Detect available Devices
+[05/31/24 17:17:10] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[05/31/24 17:17:17] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[05/31/24 17:17:17] crowsnest: Version: v4.1.9-1-gd75a3ae
+[05/31/24 17:17:17] crowsnest: Prepare Startup ...
+[05/31/24 17:17:17] crowsnest: INFO: Host information:
+[05/31/24 17:17:17] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[05/31/24 17:17:17] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[05/31/24 17:17:17] crowsnest: Host Info: Available CPU Cores: 4
+[05/31/24 17:17:17] crowsnest: Host Info: Available Memory: 1010636 kB
+[05/31/24 17:17:17] crowsnest: Host Info: Diskspace (avail. / total): 54G / 57G
+[05/31/24 17:17:17] crowsnest: INFO: Checking Dependencies
+[05/31/24 17:17:17] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[05/31/24 17:17:17] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[05/31/24 17:17:17] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[05/31/24 17:17:17] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[05/31/24 17:17:17] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[05/31/24 17:17:17] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[05/31/24 17:17:17] crowsnest:		[crowsnest]
+[05/31/24 17:17:17] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[05/31/24 17:17:17] crowsnest:		log_level: verbose
+[05/31/24 17:17:17] crowsnest:		delete_log: false
+[05/31/24 17:17:17] crowsnest:		no_proxy: false
+[05/31/24 17:17:17] crowsnest:		
+[05/31/24 17:17:17] crowsnest:		[cam 1]
+[05/31/24 17:17:17] crowsnest:		mode: ustreamer
+[05/31/24 17:17:17] crowsnest:		
+[05/31/24 17:17:17] crowsnest:		enable_rtsp: false
+[05/31/24 17:17:17] crowsnest:		rtsp_port: 8554
+[05/31/24 17:17:17] crowsnest:		port: 8080
+[05/31/24 17:17:17] crowsnest:		device: /dev/video0
+[05/31/24 17:17:17] crowsnest:		resolution: 640x480
+[05/31/24 17:17:17] crowsnest:		max_fps: 15
+[05/31/24 17:17:17] crowsnest: INFO: Detect available Devices
+[05/31/24 17:17:17] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
