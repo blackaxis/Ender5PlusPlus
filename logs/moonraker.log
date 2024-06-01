@@ -1980,3 +1980,5 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryAt5ZCL7DNG3Bn0
 2024-06-01 11:32:59,775 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Move out of range: 294.998 306.998 5.000 [0.000]
 2024-06-01 11:33:00,949 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Move out of range: 294.998 306.998 5.000 [0.000]
 2024-06-01 11:33:17,467 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Move out of range: 294.998 300.998 5.000 [0.000]
+2024-06-01 12:34:02,231 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
+2024-06-01 12:34:02,232 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
