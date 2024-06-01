@@ -39487,3 +39487,1743 @@ Last MCU build version: v0.12.0-207-g6cd17420
 Last MCU build tools: gcc: (15:8-2019-q3-1+b1) 8.3.1 20190703 (release) [gcc-8-branch revision 273027] binutils: (2.35.2-2+14+b2) 2.35.2
 Last MCU build config: ADC_MAX=4095 BUS_PINS_i2c1_PA9_PA10=PA9,PA10 BUS_PINS_i2c1_PB6_PB7=PB6,PB7 BUS_PINS_i2c1_PB8_PB9=PB8,PB9 BUS_PINS_i2c2_PB10_PB11=PB10,PB11 BUS_PINS_i2c2_PB13_PB14=PB13,PB14 BUS_PINS_i2c3_PB3_PB4=PB3,PB4 BUS_PINS_i2c3_PC0_PC1=PC0,PC1 BUS_PINS_spi1=PA6,PA7,PA5 BUS_PINS_spi1a=PB4,PB5,PB3 BUS_PINS_spi2=PB14,PB15,PB13 BUS_PINS_spi2_PB2_PB11_PB10=PB2,PB11,PB10 BUS_PINS_spi2a=PC2,PC3,PB10 BUS_PINS_spi3=PB4,PB5,PB3 CANBUS_FREQUENCY=1000000 CLOCK_FREQ=64000000 MCU=stm32g0b1xx PWM_MAX=255 RECEIVE_WINDOW=192 RESERVE_PINS_CAN=PB0,PB1 RESERVE_PINS_crystal=PF0,PF1 STATS_SUMSQ_BASE=256 STEPPER_BOTH_EDGE=1
 Build file /home/biqu/klipper/klippy/../out/klipper.elf(1079284): Fri May 31 20:49:37 2024
+Unable to issue reset command on MCU 'mcu'
+Unable to issue reset command on MCU 'can0'
+Unable to issue reset command on MCU 'CB1'
+webhooks client 281473389160144: Disconnected
+Restarting printer
+Start printer at Sat Jun  1 14:01:43 2024 (1717250503.2 294.4)
+===== Config file =====
+[virtual_sdcard]
+path = ~/printer_data/gcodes
+on_error_gcode = CANCEL_PRINT
+
+[pause_resume]
+
+[display_status]
+
+[respond]
+
+[gcode_macro CANCEL_PRINT]
+description = Cancel the actual running print
+rename_existing = CANCEL_PRINT_BASE
+gcode = 
+	
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set allow_park = client.park_at_cancel|default(false)|lower == 'true' %}
+	{% set retract = client.cancel_retract|default(5.0)|abs %}
+	
+	{% set park_x = "" if (client.park_at_cancel_x|default(none) is none)
+	else "X=" ~ client.park_at_cancel_x %}
+	{% set park_y = "" if (client.park_at_cancel_y|default(none) is none)
+	else "Y=" ~ client.park_at_cancel_y %}
+	{% set custom_park = park_x|length > 0 or park_y|length > 0 %}
+	
+	
+	{% if printer['gcode_macro RESUME'].restore_idle_timeout > 0 %}
+	SET_IDLE_TIMEOUT TIMEOUT={printer['gcode_macro RESUME'].restore_idle_timeout}
+	{% endif %}
+	{% if (custom_park or not printer.pause_resume.is_paused) and allow_park %} _TOOLHEAD_PARK_PAUSE_CANCEL {park_x} {park_y} {% endif %}
+	_CLIENT_RETRACT LENGTH={retract}
+	TURN_OFF_HEATERS
+	M106 S0
+	{client.user_cancel_macro|default("")}
+	SET_GCODE_VARIABLE MACRO=RESUME VARIABLE=idle_state VALUE=False
+	
+	SET_PAUSE_NEXT_LAYER ENABLE=0
+	SET_PAUSE_AT_LAYER ENABLE=0 LAYER=0
+	CANCEL_PRINT_BASE
+
+[gcode_macro PAUSE]
+description = Pause the actual running print
+rename_existing = PAUSE_BASE
+gcode = 
+	
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set idle_timeout = client.idle_timeout|default(0) %}
+	{% set temp = printer[printer.toolhead.extruder].target if printer.toolhead.extruder != '' else 0 %}
+	{% set restore = False if printer.toolhead.extruder == ''
+	else True  if params.RESTORE|default(1)|int == 1 else False %}
+	
+	SET_GCODE_VARIABLE MACRO=RESUME VARIABLE=last_extruder_temp VALUE="{{'restore': restore, 'temp': temp}}"
+	
+	{% if idle_timeout > 0 %}
+	SET_GCODE_VARIABLE MACRO=RESUME VARIABLE=restore_idle_timeout VALUE={printer.configfile.settings.idle_timeout.timeout}
+	SET_IDLE_TIMEOUT TIMEOUT={idle_timeout}
+	{% endif %}
+	PAUSE_BASE
+	{client.user_pause_macro|default("")}
+	_TOOLHEAD_PARK_PAUSE_CANCEL {rawparams}
+
+[gcode_macro RESUME]
+description = Resume the actual running print
+rename_existing = RESUME_BASE
+variable_last_extruder_temp = {'restore': False, 'temp': 0}
+variable_restore_idle_timeout = 0
+variable_idle_state = False
+gcode = 
+	
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set velocity = printer.configfile.settings.pause_resume.recover_velocity %}
+	{% set sp_move = client.speed_move|default(velocity) %}
+	{% set runout_resume = True if client.runout_sensor|default("") == ""
+	else True if not printer[client.runout_sensor].enabled
+	else printer[client.runout_sensor].filament_detected %}
+	{% set can_extrude = True if printer.toolhead.extruder == ''
+	else printer[printer.toolhead.extruder].can_extrude %}
+	{% set do_resume = False %}
+	{% set prompt_txt = [] %}
+	
+	
+	{% if printer.idle_timeout.state|upper == "IDLE" or idle_state %}
+	SET_GCODE_VARIABLE MACRO=RESUME VARIABLE=idle_state VALUE=False
+	{% if last_extruder_temp.restore %}
+	
+	RESPOND TYPE=echo MSG='{"Restoring \"%s\" temperature to %3.1f\u00B0C, this may take some time" % (printer.toolhead.extruder, last_extruder_temp.temp) }'
+	M109 S{last_extruder_temp.temp}
+	{% set do_resume = True %}
+	{% elif can_extrude %}
+	{% set do_resume = True %}
+	{% else %}
+	RESPOND TYPE=error MSG='{"Resume aborted !!! \"%s\" not hot enough, please heat up again and press RESUME" % printer.toolhead.extruder}'
+	{% set _d = prompt_txt.append("\"%s\" not hot enough, please heat up again and press RESUME" % printer.toolhead.extruder) %}
+	{% endif %}
+	
+	{% elif can_extrude %}
+	{% set do_resume = True %}
+	{% else %}
+	RESPOND TYPE=error MSG='{"Resume aborted !!! \"%s\" not hot enough, please heat up again and press RESUME" % printer.toolhead.extruder}'
+	{% set _d = prompt_txt.append("\"%s\" not hot enough, please heat up again and press RESUME" % printer.toolhead.extruder) %}
+	{% endif %}
+	{% if runout_resume %}
+	{% if do_resume %}
+	{% if restore_idle_timeout > 0 %} SET_IDLE_TIMEOUT TIMEOUT={restore_idle_timeout} {% endif %}
+	{client.user_resume_macro|default("")}
+	_CLIENT_EXTRUDE
+	RESUME_BASE VELOCITY={params.VELOCITY|default(sp_move)}
+	{% endif %}
+	{% else %}
+	RESPOND TYPE=error MSG='{"Resume aborted !!! \"%s\" detects no filament, please load filament and press RESUME" % (client.runout_sensor.split(" "))[1]}'
+	{% set _d = prompt_txt.append("\"%s\" detects no filament, please load filament and press RESUME" % (client.runout_sensor.split(" "))[1]) %}
+	{% endif %}
+	
+	{% if not (runout_resume and do_resume) %}
+	RESPOND TYPE=command MSG="action:prompt_begin RESUME aborted !!!"
+	{% for element in prompt_txt %}
+	RESPOND TYPE=command MSG='{"action:prompt_text %s" % element}'
+	{% endfor %}
+	RESPOND TYPE=command MSG="action:prompt_footer_button Ok|RESPOND TYPE=command MSG=action:prompt_end|info"
+	RESPOND TYPE=command MSG="action:prompt_show"
+	{% endif %}
+
+[gcode_macro SET_PAUSE_NEXT_LAYER]
+description = Enable a pause if the next layer is reached
+gcode = 
+	{% set pause_next_layer = printer['gcode_macro SET_PRINT_STATS_INFO'].pause_next_layer %}
+	{% set ENABLE = params.ENABLE|default(1)|int != 0 %}
+	{% set MACRO = params.MACRO|default(pause_next_layer.call, True) %}
+	SET_GCODE_VARIABLE MACRO=SET_PRINT_STATS_INFO VARIABLE=pause_next_layer VALUE="{{ 'enable': ENABLE, 'call': MACRO }}"
+
+[gcode_macro SET_PAUSE_AT_LAYER]
+description = Enable/disable a pause if a given layer number is reached
+gcode = 
+	{% set pause_at_layer = printer['gcode_macro SET_PRINT_STATS_INFO'].pause_at_layer %}
+	{% set ENABLE = params.ENABLE|int != 0 if params.ENABLE is defined
+	else params.LAYER is defined %}
+	{% set LAYER = params.LAYER|default(pause_at_layer.layer)|int %}
+	{% set MACRO = params.MACRO|default(pause_at_layer.call, True) %}
+	SET_GCODE_VARIABLE MACRO=SET_PRINT_STATS_INFO VARIABLE=pause_at_layer VALUE="{{ 'enable': ENABLE, 'layer': LAYER, 'call': MACRO }}"
+
+[gcode_macro SET_PRINT_STATS_INFO]
+rename_existing = SET_PRINT_STATS_INFO_BASE
+description = Overwrite, to get pause_next_layer and pause_at_layer feature
+variable_pause_next_layer = { 'enable': False, 'call': "PAUSE" }
+variable_pause_at_layer = { 'enable': False, 'layer': 0, 'call': "PAUSE" }
+gcode = 
+	{% if pause_next_layer.enable %}
+	RESPOND TYPE=echo MSG='{"%s, forced by pause_next_layer" % pause_next_layer.call}'
+	{pause_next_layer.call}
+	SET_PAUSE_NEXT_LAYER ENABLE=0
+	{% elif pause_at_layer.enable and params.CURRENT_LAYER is defined and params.CURRENT_LAYER|int == pause_at_layer.layer %}
+	RESPOND TYPE=echo MSG='{"%s, forced by pause_at_layer [%d]" % (pause_at_layer.call, pause_at_layer.layer)}'
+	{pause_at_layer.call}
+	SET_PAUSE_AT_LAYER ENABLE=0
+	{% endif %}
+	SET_PRINT_STATS_INFO_BASE {rawparams}
+
+[gcode_macro _TOOLHEAD_PARK_PAUSE_CANCEL]
+description = Helper: park toolhead used in PAUSE and CANCEL_PRINT
+gcode = 
+	
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set velocity = printer.configfile.settings.pause_resume.recover_velocity %}
+	{% set use_custom     = client.use_custom_pos|default(false)|lower == 'true' %}
+	{% set custom_park_x  = client.custom_park_x|default(0.0) %}
+	{% set custom_park_y  = client.custom_park_y|default(0.0) %}
+	{% set park_dz        = client.custom_park_dz|default(2.0)|abs %}
+	{% set sp_hop         = client.speed_hop|default(15) * 60 %}
+	{% set sp_move        = client.speed_move|default(velocity) * 60 %}
+	
+	{% set origin    = printer.gcode_move.homing_origin %}
+	{% set act       = printer.gcode_move.gcode_position %}
+	{% set max       = printer.toolhead.axis_maximum %}
+	{% set cone      = printer.toolhead.cone_start_z|default(max.z) %}
+	{% set round_bed = True if printer.configfile.settings.printer.kinematics is in ['delta','polar','rotary_delta','winch']
+	else False %}
+	
+	{% set z_min = params.Z_MIN|default(0)|float %}
+	{% set z_park = [[(act.z + park_dz), z_min]|max, (max.z - origin.z)]|min %}
+	{% set x_park = params.X       if params.X is defined
+	else custom_park_x  if use_custom
+	else 0.0            if round_bed
+	else (max.x - 5.0) %}
+	{% set y_park = params.Y       if params.Y is defined
+	else custom_park_y  if use_custom
+	else (max.y - 5.0)  if round_bed and z_park < cone
+	else 0.0            if round_bed
+	else (max.y - 5.0) %}
+	
+	_CLIENT_RETRACT
+	{% if "xyz" in printer.toolhead.homed_axes %}
+	G90
+	G1 Z{z_park} F{sp_hop}
+	G1 X{x_park} Y{y_park} F{sp_move}
+	{% if not printer.gcode_move.absolute_coordinates %} G91 {% endif %}
+	{% else %}
+	RESPOND TYPE=echo MSG='Printer not homed'
+	{% endif %}
+
+[gcode_macro _CLIENT_EXTRUDE]
+description = Extrudes, if the extruder is hot enough
+gcode = 
+	
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set use_fw_retract = (client.use_fw_retract|default(false)|lower == 'true') and (printer.firmware_retraction is defined) %}
+	{% set length = params.LENGTH|default(client.unretract)|default(1.0)|float %}
+	{% set speed = params.SPEED|default(client.speed_unretract)|default(35) %}
+	{% set absolute_extrude = printer.gcode_move.absolute_extrude %}
+	
+	{% if printer.toolhead.extruder != '' %}
+	{% if printer[printer.toolhead.extruder].can_extrude %}
+	{% if use_fw_retract %}
+	{% if length < 0 %}
+	G10
+	{% else %}
+	G11
+	{% endif %}
+	{% else %}
+	M83
+	G1 E{length} F{(speed|float|abs) * 60}
+	{% if absolute_extrude %}
+	M82
+	{% endif %}
+	{% endif %}
+	{% else %}
+	RESPOND TYPE=echo MSG='{"\"%s\" not hot enough" % printer.toolhead.extruder}'
+	{% endif %}
+	{% endif %}
+
+[gcode_macro _CLIENT_RETRACT]
+description = Retracts, if the extruder is hot enough
+gcode = 
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set length = params.LENGTH|default(client.retract)|default(1.0)|float %}
+	{% set speed = params.SPEED|default(client.speed_retract)|default(35) %}
+	
+	_CLIENT_EXTRUDE LENGTH=-{length|float|abs} SPEED={speed|float|abs}
+
+[homing_override]
+axes = xyz
+set_position_z = 0
+gcode = 
+	
+	{% set CURRENTLESS = 0 %}
+	{% set PROBE_X = 133 %}
+	{% set PROBE_Y = 110 %}
+	{% set PROBE_XY_SPEED = 60 %}
+	{% set MOVE_TO_PREVIOUS = False %}
+	
+	{% set MOVE_TO_PREV_SPEED = 50 %}
+	{% set HOMING_BOUNCE = 5.0 %}
+	{% set BOUNCE_SPEED = 25 %}
+	{% set Z_HOP = 5 %}
+	{% set Z_HOP_SPEED = 10 %}
+	
+	{% set X_HOMING_CUR = 1.000 %}
+	{% set Y_HOMING_CUR = 1.000 %}
+	{% set HOMING_ACCEL = 700 %}
+	
+	{% set PAUSE = 1000 %}
+	
+	{% set SAFETY_HOP = 5 %}
+	{% set SAFETY_HOP_SPEED = 5 %}
+	
+	
+	
+	{% set cur_accel = printer.toolhead.max_accel %}
+	{% set cur_accel_to_decel = printer.toolhead.max_accel_to_decel %}
+	
+	{% set requested = {'x': False,
+	'y': False,
+	'z': False} %}
+	{% if   not 'X' in params
+	and not 'Y' in params
+	and not 'Z' in params %}
+	{% set X, Y, Z = True, True, True %}
+	{% else %}
+	{% if 'X' in params %}
+	{% set X = True %}
+	{% set null = requested.update({'x': True}) %}
+	{% endif %}
+	{% if 'Y' in params %}
+	{% set Y = True %}
+	{% set null = requested.update({'y': True}) %}
+	{% endif %}
+	{% if 'Z' in params %}
+	{% set Z = True %}
+	{% set null = requested.update({'z': True}) %}
+	{% endif %}
+	{% endif %}
+	
+	
+	
+	
+	{% if not "xyz" in printer.toolhead.homed_axes %}
+	G1 Z{SAFETY_HOP} F{(SAFETY_HOP_SPEED * 60)}
+	{% endif %}
+	
+	
+	{% if MOVE_TO_PREVIOUS %}
+	SAVE_GCODE_STATE NAME=homing
+	{% endif %}
+	
+	
+	{% if CURRENTLESS != 1 %}
+	{% if X and Y %}
+	SENSORLESS_HOME_ALL X_CUR={X_HOMING_CUR} Y_CUR={Y_HOMING_CUR} ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% elif X %}
+	SENSORLESS_HOME_X CURRENT={X_HOMING_CUR} ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% elif Y %}
+	SENSORLESS_HOME_Y CURRENT={Y_HOMING_CUR} ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% endif %}
+	{% else %}
+	{% if X and Y %}
+	SENSOR_HOME_ALL ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% elif X %}
+	SENSOR_HOME_X ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% elif Y %}
+	SENSOR_HOME_Y ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% endif %}
+	{% endif %}
+	
+	
+	{% if Z %}
+	G1 X{PROBE_X} Y{PROBE_Y} F{(PROBE_XY_SPEED * 60)}
+	G28 Z
+	G1 Z{Z_HOP} F{(Z_HOP_SPEED * 60)}
+	{% endif %}
+	
+	
+	{% if MOVE_TO_PREVIOUS %}
+	{% if MOVE_TO_PREV_SPEED == 0 %}
+	RESTORE_GCODE_STATE NAME=homing MOVE=1
+	{% else %}
+	RESTORE_GCODE_STATE NAME=homing MOVE=1 MOVE_SPEED={MOVE_TO_PREV_SPEED}
+	{% endif %}
+	{% endif %}
+	
+	
+	{% if printer.toolhead.max_accel != cur_accel %}
+	SET_VELOCITY_LIMIT ACCEL={cur_accel} ACCEL_TO_DECEL={cur_accel_to_decel}
+	{% endif %}
+
+[gcode_macro SENSORLESS_HOME_ALL]
+description = Home XY with modified current
+gcode = 
+	{% set HOME_CUR_X = params.X_CUR|default(0.250)|float %}
+	{% set HOME_CUR_Y = params.Y_CUR|default(0.250)|float %}
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set driver_config_x = printer.configfile.settings['tmc2209 stepper_x'] %}
+	{% set driver_config_y = printer.configfile.settings['tmc2209 stepper_y'] %}
+	{% set RUN_CUR_X = driver_config_x.run_current %}
+	{% set RUN_CUR_Y = driver_config_y.run_current %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_TMC_CURRENT STEPPER=stepper_x CURRENT={HOME_CUR_X}
+	SET_TMC_CURRENT STEPPER=stepper_y CURRENT={HOME_CUR_Y}
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 X0
+	{% if BOUNCE %}
+	
+	G91
+	G1 X{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	G28 Y0
+	{% if BOUNCE %}
+	
+	G91
+	G1 Y{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	SET_TMC_CURRENT STEPPER=stepper_x CURRENT={RUN_CUR_X}
+	SET_TMC_CURRENT STEPPER=stepper_y CURRENT={RUN_CUR_Y}
+	
+	G4 P{PAUSE}
+
+[gcode_macro SENSORLESS_HOME_X]
+description = Home X with modified current
+gcode = 
+	{% set HOME_CUR = params.CURRENT|default(0.250)|float %}
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set driver_config = printer.configfile.settings['tmc2209 stepper_x'] %}
+	{% set RUN_CUR = driver_config.run_current %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_TMC_CURRENT STEPPER=stepper_x CURRENT={HOME_CUR}
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 X0
+	{% if BOUNCE %}
+	
+	G91
+	G1 X{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	SET_TMC_CURRENT STEPPER=stepper_x CURRENT={RUN_CUR}
+	
+	G4 P{PAUSE}
+
+[gcode_macro SENSORLESS_HOME_Y]
+description = Home Y with modified current
+gcode = 
+	{% set HOME_CUR = params.CURRENT|default(0.250)|float %}
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set driver_config = printer.configfile.settings['tmc2209 stepper_y'] %}
+	{% set RUN_CUR = driver_config.run_current %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_TMC_CURRENT STEPPER=stepper_y CURRENT={HOME_CUR}
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 Y0
+	{% if BOUNCE %}
+	
+	G91
+	G1 Y{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	SET_TMC_CURRENT STEPPER=stepper_y CURRENT={RUN_CUR}
+	
+	G4 P{PAUSE}
+
+[gcode_macro SENSOR_HOME_ALL]
+description = Home XY
+gcode = 
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 X0
+	{% if BOUNCE %}
+	
+	G91
+	G1 X{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	G28 Y0
+	{% if BOUNCE %}
+	
+	G91
+	G1 Y{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	G4 P{PAUSE}
+
+[gcode_macro SENSOR_HOME_X]
+description = Home X
+gcode = 
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 X0
+	{% if BOUNCE %}
+	
+	G91
+	G1 X{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	G4 P{PAUSE}
+
+[gcode_macro SENSOR_HOME_Y]
+description = Home Y
+gcode = 
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 Y0
+	{% if BOUNCE %}
+	
+	G91
+	G1 Y{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	G4 P{PAUSE}
+
+[board_pins EBB36_G0B1_v1.2]
+mcu = can0
+aliases = 
+aliases_step = 
+	EXT_EN=PD2,EXT_STEP=PD0,EXT_DIR=PD1,EXT_UART=PA15
+aliases_limitsw = 
+	LIMIT_1=PB7,LIMIT_2=PB5,LIMIT_3=PB6
+aliases_bltouch = 
+	PROBE_1=PB9,PROBE_2=PB8
+aliases_fans = 
+	FAN0=PA1,FAN1=PA0
+aliases_thermistors = 
+	TH0=PA3,PT100_CS=PA4,PT100_SCLK=PA5,PT100_MISO=PA6,PT100_MOSI=PA7,
+	PT1000_CS=PA4, PT1000_SCLK=PA5, PT1000_MISO=PA6, PT1000_MOSI=PA7
+aliases_heaters = 
+	HE0=PA2
+aliases_rgb = 
+	RGBLED=PD3
+aliases_adxl = 
+	ADXL_CS=PB12,ADXL_SCLK=PB10,ADXL_MISO=PB2,ADXL_MOSI=PB11
+aliases_i2c = 
+	AUX0=PB3,AUX1=PB4
+
+[mcu can0]
+canbus_uuid = 64c272a1325d
+
+[temperature_sensor CANBOARD]
+sensor_type = temperature_mcu
+sensor_mcu = can0
+
+[heater_fan hotend_fan]
+pin = can0:FAN0
+max_power = 1.0
+kick_start_time = 0.5
+heater = extruder
+heater_temp = 50.0
+
+[fan]
+pin = PA0
+kick_start_time = 0.25
+cycle_time = 0.15
+off_below = 0.10
+
+[extruder]
+step_pin = can0:EXT_STEP
+dir_pin = !can0:EXT_DIR
+enable_pin = !can0:EXT_EN
+rotation_distance = 26.72306036
+gear_ratio = 50:8
+microsteps = 16
+full_steps_per_rotation = 200
+max_extrude_only_distance = 1400.0
+max_extrude_only_velocity = 75.0
+max_extrude_only_accel = 1500
+nozzle_diameter = 0.400
+filament_diameter = 1.750
+heater_pin = can0:HE0
+sensor_type = MAX31865
+sensor_pin = can0:PT1000_CS
+spi_bus = spi1
+rtd_nominal_r = 100
+rtd_reference_r = 430
+rtd_num_of_wires = 2
+control = pid
+pid_kp = 22.2
+pid_ki = 1.08
+pid_kd = 114
+min_temp = -250
+max_temp = 350
+
+[tmc2209 extruder]
+uart_pin = can0:EXT_UART
+stealthchop_threshold = 0
+run_current = 0.30
+
+[adxl345]
+cs_pin = can0:ADXL_CS
+spi_software_sclk_pin = can0:ADXL_SCLK
+spi_software_mosi_pin = can0:ADXL_MOSI
+spi_software_miso_pin = can0:ADXL_MISO
+axes_map = x,y,z
+
+[resonance_tester]
+accel_chip = adxl345
+probe_points = 
+	175,175,20
+
+[mcu CB1]
+serial = /tmp/klipper_host_mcu
+
+[mcu]
+canbus_uuid = 589d8c642187
+
+[printer]
+kinematics = corexy
+max_velocity = 300
+max_accel = 200
+max_z_velocity = 25
+max_z_accel = 30
+
+[probe]
+pin = ^can0:LIMIT_1
+x_offset = -29.8
+y_offset = -13.5
+z_offset = 2.202
+speed = 5
+samples = 3
+sample_retract_dist = 2
+lift_speed = 5.0
+samples_result = median
+samples_tolerance = 0.02
+samples_tolerance_retries = 5
+
+[stepper_x]
+step_pin = PE2
+dir_pin = !PC5
+enable_pin = !PF11
+microsteps = 64
+rotation_distance = 32
+full_steps_per_rotation = 200
+endstop_pin = tmc2209_stepper_x:virtual_endstop
+position_endstop = 0
+position_max = 300
+homing_speed = 50
+homing_retract_dist = 0
+
+[stepper_y]
+step_pin = PE3
+dir_pin = !PF13
+enable_pin = !PF14
+microsteps = 64
+rotation_distance = 32
+full_steps_per_rotation = 200
+endstop_pin = tmc2209_stepper_y:virtual_endstop
+position_endstop = 0
+position_max = 300
+homing_speed = 50
+homing_retract_dist = 0
+
+[stepper_z]
+step_pin = Z1_STEP
+dir_pin = !Z1_DIR
+enable_pin = !Z1_EN
+rotation_distance = 4
+microsteps = 64
+endstop_pin = PG10
+position_endstop = 0.5
+position_max = 200
+
+[stepper_z1]
+step_pin = Z2_STEP
+dir_pin = !Z2_DIR
+enable_pin = !Z2_EN
+rotation_distance = 4
+microsteps = 64
+
+[stepper_z2]
+step_pin = Z3_STEP
+dir_pin = !Z3_DIR
+enable_pin = !Z3_EN
+microsteps = 64
+rotation_distance = 4
+
+[heater_bed]
+heater_pin = BED_OUT
+sensor_pin = BED_TEMP
+sensor_type = ATC Semitec 104GT-2
+control = watermark
+min_temp = -250
+max_temp = 200
+
+[heater_fan fan1]
+pin = PA1
+
+[tmc2209 stepper_x]
+uart_pin = PC4
+diag_pin = ^X_STOP
+run_current = 0.800
+stealthchop_threshold = 999999
+driver_sgthrs = 100
+
+[tmc2209 stepper_y]
+uart_pin = PF12
+diag_pin = ^Y_STOP
+run_current = 0.800
+interpolate = false
+stealthchop_threshold = 999999
+driver_sgthrs = 90
+
+[tmc2209 stepper_z]
+uart_pin = PF15
+run_current = 0.800
+interpolate = false
+
+[tmc2209 stepper_z1]
+uart_pin = PE7
+run_current = 0.800
+interpolate = false
+
+[tmc2209 stepper_z2]
+uart_pin = PE10
+run_current = 0.800
+interpolate = false
+
+[board_pins]
+aliases = 
+	
+	
+	X_EN=PF11, X_STEP=PE2, X_DIR=PC5, X_CS=PC4,
+	Y_EN=PF14, Y_STEP=PE3, Y_DIR=PF13, Y_CS=PF12,
+	Z1_EN=PG1, Z1_STEP=PE4, Z1_DIR=PG0, Z1_CS=PF15,
+	Z2_EN=PE9, Z2_STEP=PE14, Z2_DIR=PE8, Z2_CS=PE7,
+	Z3_EN=PF2, Z3_STEP=PE15, Z3_DIR=PE11, Z3_CS=PE10,
+	Z4_EN=PC15, Z4_STEP=PE1, Z4_DIR=PF0, Z4_CS=PF1,
+	Z5_EN=PG4, Z5_STEP=PE0, Z5_DIR=PG3, Z5_CS=PG2,
+	Z6_EN=PG7, Z6_STEP=PE6, Z6_DIR=PG6, Z6_CS=PG5,
+	
+	
+	BED_OUT=PE5, HEAT0=PB0, HEAT1=PB1, HEAT2=PC7, HEAT3=PF7, HEAT4=PF6,
+	
+	BED_TEMP=PC1, HEAT0_TEMP=PF4, HEAT1_TEMP=PF5, HEAT2_TEMP=PF9, HEAT3_TEMP=PF10, HEAT4_TEMP=PC0,
+	
+	FAN0=PA0, FAN1=PA1, FAN2=PA2, FAN3=PA3, FAN4=PA15, FAN5=PB11, FAN6=PB10, FAN7=PD12, FAN8=PD14, FAN9=PD15,
+	
+	X_STOP=PG12, Y_STOP=PG11, Z_STOP=PG9, E_STOP=PG10,
+	
+	SERVO=PC6, PROBE=PC3,
+	
+	EXP1_1=PE12, EXP1_3=PB2, EXP1_5=PC14, EXP1_7=PG14, EXP1_9=<GND>,
+	EXP1_2=PE13, EXP1_4=PG8, EXP1_6=PC13, EXP1_8=PG13, EXP1_10=<5V>,
+	
+	EXP2_1=PA6, EXP2_3=PB7, EXP2_5=PB6, EXP2_7=PG15,  EXP2_9=<GND>,
+	EXP2_2=PA4, EXP2_4=PA4, EXP2_6=PA7, EXP2_8=<RST>, EXP2_10=<5V>
+=======================
+Extruder max_extrude_ratio=0.266081
+mcu 'mcu': Starting CAN connect
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+webhooks client 281473404495136: New connection
+webhooks client 281473404495136: Client info {'program': 'Moonraker', 'version': 'v0.8.0-377-g4fe89d5'}
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+webhooks client 281473404495136: Disconnected
+webhooks client 281473396915552: New connection
+webhooks client 281473396915552: Client info {'program': 'Moonraker', 'version': 'v0.8.0-377-g4fe89d5'}
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+MCU error during connect
+Traceback (most recent call last):
+  File "/home/biqu/klipper/klippy/mcu.py", line 787, in _mcu_identify
+    self._serial.connect_canbus(self._serialport, nodeid,
+  File "/home/biqu/klipper/klippy/serialhdl.py", line 133, in connect_canbus
+    self._error("Unable to connect")
+  File "/home/biqu/klipper/klippy/serialhdl.py", line 61, in _error
+    raise error(self.warn_prefix + (msg % params))
+serialhdl.error: mcu 'mcu': Unable to connect
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/biqu/klipper/klippy/klippy.py", line 176, in _connect
+    self.send_event("klippy:mcu_identify")
+  File "/home/biqu/klipper/klippy/klippy.py", line 263, in send_event
+    return [cb(*params) for cb in self.event_handlers.get(event, [])]
+  File "/home/biqu/klipper/klippy/klippy.py", line 263, in <listcomp>
+    return [cb(*params) for cb in self.event_handlers.get(event, [])]
+  File "/home/biqu/klipper/klippy/mcu.py", line 798, in _mcu_identify
+    raise error(str(e))
+mcu.error: mcu 'mcu': Unable to connect
+Build file /home/biqu/klipper/klippy/../.config(3482): Fri May 31 20:48:46 2024
+========= Last MCU build config =========
+CONFIG_LOW_LEVEL_OPTIONS=y
+# CONFIG_MACH_AVR is not set
+# CONFIG_MACH_ATSAM is not set
+# CONFIG_MACH_ATSAMD is not set
+# CONFIG_MACH_LPC176X is not set
+CONFIG_MACH_STM32=y
+# CONFIG_MACH_HC32F460 is not set
+# CONFIG_MACH_RP2040 is not set
+# CONFIG_MACH_PRU is not set
+# CONFIG_MACH_AR100 is not set
+# CONFIG_MACH_LINUX is not set
+# CONFIG_MACH_SIMU is not set
+CONFIG_BOARD_DIRECTORY="stm32"
+CONFIG_MCU="stm32g0b1xx"
+CONFIG_CLOCK_FREQ=64000000
+CONFIG_FLASH_SIZE=0x20000
+CONFIG_FLASH_BOOT_ADDRESS=0x8000000
+CONFIG_RAM_START=0x20000000
+CONFIG_RAM_SIZE=0x24000
+CONFIG_STACK_SIZE=512
+CONFIG_FLASH_APPLICATION_ADDRESS=0x8002000
+CONFIG_STM32_SELECT=y
+# CONFIG_MACH_STM32F103 is not set
+# CONFIG_MACH_STM32F207 is not set
+# CONFIG_MACH_STM32F401 is not set
+# CONFIG_MACH_STM32F405 is not set
+# CONFIG_MACH_STM32F407 is not set
+# CONFIG_MACH_STM32F429 is not set
+# CONFIG_MACH_STM32F446 is not set
+# CONFIG_MACH_STM32F765 is not set
+# CONFIG_MACH_STM32F031 is not set
+# CONFIG_MACH_STM32F042 is not set
+# CONFIG_MACH_STM32F070 is not set
+# CONFIG_MACH_STM32F072 is not set
+# CONFIG_MACH_STM32G070 is not set
+# CONFIG_MACH_STM32G071 is not set
+# CONFIG_MACH_STM32G0B0 is not set
+CONFIG_MACH_STM32G0B1=y
+# CONFIG_MACH_STM32G431 is not set
+# CONFIG_MACH_STM32G474 is not set
+# CONFIG_MACH_STM32H723 is not set
+# CONFIG_MACH_STM32H743 is not set
+# CONFIG_MACH_STM32H750 is not set
+# CONFIG_MACH_STM32L412 is not set
+# CONFIG_MACH_N32G452 is not set
+# CONFIG_MACH_N32G455 is not set
+CONFIG_MACH_STM32G0=y
+CONFIG_MACH_STM32G0Bx=y
+CONFIG_HAVE_STM32_USBFS=y
+CONFIG_HAVE_STM32_FDCANBUS=y
+CONFIG_HAVE_STM32_USBCANBUS=y
+CONFIG_STM32_DFU_ROM_ADDRESS=0
+CONFIG_STM32_FLASH_START_2000=y
+# CONFIG_STM32_FLASH_START_0000 is not set
+CONFIG_STM32_CLOCK_REF_8M=y
+# CONFIG_STM32_CLOCK_REF_12M is not set
+# CONFIG_STM32_CLOCK_REF_16M is not set
+# CONFIG_STM32_CLOCK_REF_20M is not set
+# CONFIG_STM32_CLOCK_REF_24M is not set
+# CONFIG_STM32_CLOCK_REF_25M is not set
+# CONFIG_STM32_CLOCK_REF_INTERNAL is not set
+CONFIG_CLOCK_REF_FREQ=8000000
+CONFIG_STM32F0_TRIM=16
+# CONFIG_STM32_USB_PA11_PA12 is not set
+# CONFIG_STM32_SERIAL_USART1 is not set
+# CONFIG_STM32_SERIAL_USART1_ALT_PB7_PB6 is not set
+# CONFIG_STM32_SERIAL_USART2 is not set
+# CONFIG_STM32_SERIAL_USART2_ALT_PD6_PD5 is not set
+# CONFIG_STM32_SERIAL_USART3 is not set
+# CONFIG_STM32_SERIAL_USART3_ALT_PD9_PD8 is not set
+# CONFIG_STM32_SERIAL_USART5 is not set
+# CONFIG_STM32_CANBUS_PA11_PA12 is not set
+# CONFIG_STM32_CANBUS_PA11_PB9 is not set
+# CONFIG_STM32_MMENU_CANBUS_PB8_PB9 is not set
+# CONFIG_STM32_MMENU_CANBUS_PB12_PB13 is not set
+# CONFIG_STM32_MMENU_CANBUS_PD0_PD1 is not set
+CONFIG_STM32_MMENU_CANBUS_PB0_PB1=y
+# CONFIG_STM32_MMENU_CANBUS_PD12_PD13 is not set
+# CONFIG_STM32_MMENU_CANBUS_PC2_PC3 is not set
+# CONFIG_STM32_USBCANBUS_PA11_PA12 is not set
+CONFIG_STM32_CANBUS_PB0_PB1=y
+CONFIG_USB_VENDOR_ID=0x1d50
+CONFIG_USB_DEVICE_ID=0x614e
+CONFIG_USB_SERIAL_NUMBER="12345"
+CONFIG_WANT_GPIO_BITBANGING=y
+CONFIG_WANT_DISPLAYS=y
+CONFIG_WANT_SENSORS=y
+CONFIG_WANT_LIS2DW=y
+CONFIG_WANT_LDC1612=y
+CONFIG_WANT_SOFTWARE_I2C=y
+CONFIG_WANT_SOFTWARE_SPI=y
+CONFIG_NEED_SENSOR_BULK=y
+CONFIG_CANSERIAL=y
+CONFIG_CANBUS=y
+CONFIG_CANBUS_FREQUENCY=1000000
+CONFIG_CANBUS_FILTER=y
+CONFIG_INITIAL_PINS=""
+CONFIG_HAVE_GPIO=y
+CONFIG_HAVE_GPIO_ADC=y
+CONFIG_HAVE_GPIO_SPI=y
+CONFIG_HAVE_GPIO_I2C=y
+CONFIG_HAVE_GPIO_HARD_PWM=y
+CONFIG_HAVE_STRICT_TIMING=y
+CONFIG_HAVE_CHIPID=y
+CONFIG_HAVE_STEPPER_BOTH_EDGE=y
+CONFIG_HAVE_BOOTLOADER_REQUEST=y
+CONFIG_INLINE_STEPPER_HACK=y
+=======================
+Build file /home/biqu/klipper/klippy/../out/klipper.dict(8408): Fri May 31 20:49:25 2024
+Last MCU build version: v0.12.0-207-g6cd17420
+Last MCU build tools: gcc: (15:8-2019-q3-1+b1) 8.3.1 20190703 (release) [gcc-8-branch revision 273027] binutils: (2.35.2-2+14+b2) 2.35.2
+Last MCU build config: ADC_MAX=4095 BUS_PINS_i2c1_PA9_PA10=PA9,PA10 BUS_PINS_i2c1_PB6_PB7=PB6,PB7 BUS_PINS_i2c1_PB8_PB9=PB8,PB9 BUS_PINS_i2c2_PB10_PB11=PB10,PB11 BUS_PINS_i2c2_PB13_PB14=PB13,PB14 BUS_PINS_i2c3_PB3_PB4=PB3,PB4 BUS_PINS_i2c3_PC0_PC1=PC0,PC1 BUS_PINS_spi1=PA6,PA7,PA5 BUS_PINS_spi1a=PB4,PB5,PB3 BUS_PINS_spi2=PB14,PB15,PB13 BUS_PINS_spi2_PB2_PB11_PB10=PB2,PB11,PB10 BUS_PINS_spi2a=PC2,PC3,PB10 BUS_PINS_spi3=PB4,PB5,PB3 CANBUS_FREQUENCY=1000000 CLOCK_FREQ=64000000 MCU=stm32g0b1xx PWM_MAX=255 RECEIVE_WINDOW=192 RESERVE_PINS_CAN=PB0,PB1 RESERVE_PINS_crystal=PF0,PF1 STATS_SUMSQ_BASE=256 STEPPER_BOTH_EDGE=1
+Build file /home/biqu/klipper/klippy/../out/klipper.elf(1079284): Fri May 31 20:49:37 2024
+Unable to issue reset command on MCU 'mcu'
+Unable to issue reset command on MCU 'can0'
+Unable to issue reset command on MCU 'CB1'
+webhooks client 281473396915552: Disconnected
+Restarting printer
+Start printer at Sat Jun  1 14:03:20 2024 (1717250600.0 391.1)
+===== Config file =====
+[virtual_sdcard]
+path = ~/printer_data/gcodes
+on_error_gcode = CANCEL_PRINT
+
+[pause_resume]
+
+[display_status]
+
+[respond]
+
+[gcode_macro CANCEL_PRINT]
+description = Cancel the actual running print
+rename_existing = CANCEL_PRINT_BASE
+gcode = 
+	
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set allow_park = client.park_at_cancel|default(false)|lower == 'true' %}
+	{% set retract = client.cancel_retract|default(5.0)|abs %}
+	
+	{% set park_x = "" if (client.park_at_cancel_x|default(none) is none)
+	else "X=" ~ client.park_at_cancel_x %}
+	{% set park_y = "" if (client.park_at_cancel_y|default(none) is none)
+	else "Y=" ~ client.park_at_cancel_y %}
+	{% set custom_park = park_x|length > 0 or park_y|length > 0 %}
+	
+	
+	{% if printer['gcode_macro RESUME'].restore_idle_timeout > 0 %}
+	SET_IDLE_TIMEOUT TIMEOUT={printer['gcode_macro RESUME'].restore_idle_timeout}
+	{% endif %}
+	{% if (custom_park or not printer.pause_resume.is_paused) and allow_park %} _TOOLHEAD_PARK_PAUSE_CANCEL {park_x} {park_y} {% endif %}
+	_CLIENT_RETRACT LENGTH={retract}
+	TURN_OFF_HEATERS
+	M106 S0
+	{client.user_cancel_macro|default("")}
+	SET_GCODE_VARIABLE MACRO=RESUME VARIABLE=idle_state VALUE=False
+	
+	SET_PAUSE_NEXT_LAYER ENABLE=0
+	SET_PAUSE_AT_LAYER ENABLE=0 LAYER=0
+	CANCEL_PRINT_BASE
+
+[gcode_macro PAUSE]
+description = Pause the actual running print
+rename_existing = PAUSE_BASE
+gcode = 
+	
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set idle_timeout = client.idle_timeout|default(0) %}
+	{% set temp = printer[printer.toolhead.extruder].target if printer.toolhead.extruder != '' else 0 %}
+	{% set restore = False if printer.toolhead.extruder == ''
+	else True  if params.RESTORE|default(1)|int == 1 else False %}
+	
+	SET_GCODE_VARIABLE MACRO=RESUME VARIABLE=last_extruder_temp VALUE="{{'restore': restore, 'temp': temp}}"
+	
+	{% if idle_timeout > 0 %}
+	SET_GCODE_VARIABLE MACRO=RESUME VARIABLE=restore_idle_timeout VALUE={printer.configfile.settings.idle_timeout.timeout}
+	SET_IDLE_TIMEOUT TIMEOUT={idle_timeout}
+	{% endif %}
+	PAUSE_BASE
+	{client.user_pause_macro|default("")}
+	_TOOLHEAD_PARK_PAUSE_CANCEL {rawparams}
+
+[gcode_macro RESUME]
+description = Resume the actual running print
+rename_existing = RESUME_BASE
+variable_last_extruder_temp = {'restore': False, 'temp': 0}
+variable_restore_idle_timeout = 0
+variable_idle_state = False
+gcode = 
+	
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set velocity = printer.configfile.settings.pause_resume.recover_velocity %}
+	{% set sp_move = client.speed_move|default(velocity) %}
+	{% set runout_resume = True if client.runout_sensor|default("") == ""
+	else True if not printer[client.runout_sensor].enabled
+	else printer[client.runout_sensor].filament_detected %}
+	{% set can_extrude = True if printer.toolhead.extruder == ''
+	else printer[printer.toolhead.extruder].can_extrude %}
+	{% set do_resume = False %}
+	{% set prompt_txt = [] %}
+	
+	
+	{% if printer.idle_timeout.state|upper == "IDLE" or idle_state %}
+	SET_GCODE_VARIABLE MACRO=RESUME VARIABLE=idle_state VALUE=False
+	{% if last_extruder_temp.restore %}
+	
+	RESPOND TYPE=echo MSG='{"Restoring \"%s\" temperature to %3.1f\u00B0C, this may take some time" % (printer.toolhead.extruder, last_extruder_temp.temp) }'
+	M109 S{last_extruder_temp.temp}
+	{% set do_resume = True %}
+	{% elif can_extrude %}
+	{% set do_resume = True %}
+	{% else %}
+	RESPOND TYPE=error MSG='{"Resume aborted !!! \"%s\" not hot enough, please heat up again and press RESUME" % printer.toolhead.extruder}'
+	{% set _d = prompt_txt.append("\"%s\" not hot enough, please heat up again and press RESUME" % printer.toolhead.extruder) %}
+	{% endif %}
+	
+	{% elif can_extrude %}
+	{% set do_resume = True %}
+	{% else %}
+	RESPOND TYPE=error MSG='{"Resume aborted !!! \"%s\" not hot enough, please heat up again and press RESUME" % printer.toolhead.extruder}'
+	{% set _d = prompt_txt.append("\"%s\" not hot enough, please heat up again and press RESUME" % printer.toolhead.extruder) %}
+	{% endif %}
+	{% if runout_resume %}
+	{% if do_resume %}
+	{% if restore_idle_timeout > 0 %} SET_IDLE_TIMEOUT TIMEOUT={restore_idle_timeout} {% endif %}
+	{client.user_resume_macro|default("")}
+	_CLIENT_EXTRUDE
+	RESUME_BASE VELOCITY={params.VELOCITY|default(sp_move)}
+	{% endif %}
+	{% else %}
+	RESPOND TYPE=error MSG='{"Resume aborted !!! \"%s\" detects no filament, please load filament and press RESUME" % (client.runout_sensor.split(" "))[1]}'
+	{% set _d = prompt_txt.append("\"%s\" detects no filament, please load filament and press RESUME" % (client.runout_sensor.split(" "))[1]) %}
+	{% endif %}
+	
+	{% if not (runout_resume and do_resume) %}
+	RESPOND TYPE=command MSG="action:prompt_begin RESUME aborted !!!"
+	{% for element in prompt_txt %}
+	RESPOND TYPE=command MSG='{"action:prompt_text %s" % element}'
+	{% endfor %}
+	RESPOND TYPE=command MSG="action:prompt_footer_button Ok|RESPOND TYPE=command MSG=action:prompt_end|info"
+	RESPOND TYPE=command MSG="action:prompt_show"
+	{% endif %}
+
+[gcode_macro SET_PAUSE_NEXT_LAYER]
+description = Enable a pause if the next layer is reached
+gcode = 
+	{% set pause_next_layer = printer['gcode_macro SET_PRINT_STATS_INFO'].pause_next_layer %}
+	{% set ENABLE = params.ENABLE|default(1)|int != 0 %}
+	{% set MACRO = params.MACRO|default(pause_next_layer.call, True) %}
+	SET_GCODE_VARIABLE MACRO=SET_PRINT_STATS_INFO VARIABLE=pause_next_layer VALUE="{{ 'enable': ENABLE, 'call': MACRO }}"
+
+[gcode_macro SET_PAUSE_AT_LAYER]
+description = Enable/disable a pause if a given layer number is reached
+gcode = 
+	{% set pause_at_layer = printer['gcode_macro SET_PRINT_STATS_INFO'].pause_at_layer %}
+	{% set ENABLE = params.ENABLE|int != 0 if params.ENABLE is defined
+	else params.LAYER is defined %}
+	{% set LAYER = params.LAYER|default(pause_at_layer.layer)|int %}
+	{% set MACRO = params.MACRO|default(pause_at_layer.call, True) %}
+	SET_GCODE_VARIABLE MACRO=SET_PRINT_STATS_INFO VARIABLE=pause_at_layer VALUE="{{ 'enable': ENABLE, 'layer': LAYER, 'call': MACRO }}"
+
+[gcode_macro SET_PRINT_STATS_INFO]
+rename_existing = SET_PRINT_STATS_INFO_BASE
+description = Overwrite, to get pause_next_layer and pause_at_layer feature
+variable_pause_next_layer = { 'enable': False, 'call': "PAUSE" }
+variable_pause_at_layer = { 'enable': False, 'layer': 0, 'call': "PAUSE" }
+gcode = 
+	{% if pause_next_layer.enable %}
+	RESPOND TYPE=echo MSG='{"%s, forced by pause_next_layer" % pause_next_layer.call}'
+	{pause_next_layer.call}
+	SET_PAUSE_NEXT_LAYER ENABLE=0
+	{% elif pause_at_layer.enable and params.CURRENT_LAYER is defined and params.CURRENT_LAYER|int == pause_at_layer.layer %}
+	RESPOND TYPE=echo MSG='{"%s, forced by pause_at_layer [%d]" % (pause_at_layer.call, pause_at_layer.layer)}'
+	{pause_at_layer.call}
+	SET_PAUSE_AT_LAYER ENABLE=0
+	{% endif %}
+	SET_PRINT_STATS_INFO_BASE {rawparams}
+
+[gcode_macro _TOOLHEAD_PARK_PAUSE_CANCEL]
+description = Helper: park toolhead used in PAUSE and CANCEL_PRINT
+gcode = 
+	
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set velocity = printer.configfile.settings.pause_resume.recover_velocity %}
+	{% set use_custom     = client.use_custom_pos|default(false)|lower == 'true' %}
+	{% set custom_park_x  = client.custom_park_x|default(0.0) %}
+	{% set custom_park_y  = client.custom_park_y|default(0.0) %}
+	{% set park_dz        = client.custom_park_dz|default(2.0)|abs %}
+	{% set sp_hop         = client.speed_hop|default(15) * 60 %}
+	{% set sp_move        = client.speed_move|default(velocity) * 60 %}
+	
+	{% set origin    = printer.gcode_move.homing_origin %}
+	{% set act       = printer.gcode_move.gcode_position %}
+	{% set max       = printer.toolhead.axis_maximum %}
+	{% set cone      = printer.toolhead.cone_start_z|default(max.z) %}
+	{% set round_bed = True if printer.configfile.settings.printer.kinematics is in ['delta','polar','rotary_delta','winch']
+	else False %}
+	
+	{% set z_min = params.Z_MIN|default(0)|float %}
+	{% set z_park = [[(act.z + park_dz), z_min]|max, (max.z - origin.z)]|min %}
+	{% set x_park = params.X       if params.X is defined
+	else custom_park_x  if use_custom
+	else 0.0            if round_bed
+	else (max.x - 5.0) %}
+	{% set y_park = params.Y       if params.Y is defined
+	else custom_park_y  if use_custom
+	else (max.y - 5.0)  if round_bed and z_park < cone
+	else 0.0            if round_bed
+	else (max.y - 5.0) %}
+	
+	_CLIENT_RETRACT
+	{% if "xyz" in printer.toolhead.homed_axes %}
+	G90
+	G1 Z{z_park} F{sp_hop}
+	G1 X{x_park} Y{y_park} F{sp_move}
+	{% if not printer.gcode_move.absolute_coordinates %} G91 {% endif %}
+	{% else %}
+	RESPOND TYPE=echo MSG='Printer not homed'
+	{% endif %}
+
+[gcode_macro _CLIENT_EXTRUDE]
+description = Extrudes, if the extruder is hot enough
+gcode = 
+	
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set use_fw_retract = (client.use_fw_retract|default(false)|lower == 'true') and (printer.firmware_retraction is defined) %}
+	{% set length = params.LENGTH|default(client.unretract)|default(1.0)|float %}
+	{% set speed = params.SPEED|default(client.speed_unretract)|default(35) %}
+	{% set absolute_extrude = printer.gcode_move.absolute_extrude %}
+	
+	{% if printer.toolhead.extruder != '' %}
+	{% if printer[printer.toolhead.extruder].can_extrude %}
+	{% if use_fw_retract %}
+	{% if length < 0 %}
+	G10
+	{% else %}
+	G11
+	{% endif %}
+	{% else %}
+	M83
+	G1 E{length} F{(speed|float|abs) * 60}
+	{% if absolute_extrude %}
+	M82
+	{% endif %}
+	{% endif %}
+	{% else %}
+	RESPOND TYPE=echo MSG='{"\"%s\" not hot enough" % printer.toolhead.extruder}'
+	{% endif %}
+	{% endif %}
+
+[gcode_macro _CLIENT_RETRACT]
+description = Retracts, if the extruder is hot enough
+gcode = 
+	{% set client = printer['gcode_macro _CLIENT_VARIABLE']|default({}) %}
+	{% set length = params.LENGTH|default(client.retract)|default(1.0)|float %}
+	{% set speed = params.SPEED|default(client.speed_retract)|default(35) %}
+	
+	_CLIENT_EXTRUDE LENGTH=-{length|float|abs} SPEED={speed|float|abs}
+
+[homing_override]
+axes = xyz
+set_position_z = 0
+gcode = 
+	
+	{% set CURRENTLESS = 0 %}
+	{% set PROBE_X = 133 %}
+	{% set PROBE_Y = 110 %}
+	{% set PROBE_XY_SPEED = 60 %}
+	{% set MOVE_TO_PREVIOUS = False %}
+	
+	{% set MOVE_TO_PREV_SPEED = 50 %}
+	{% set HOMING_BOUNCE = 5.0 %}
+	{% set BOUNCE_SPEED = 25 %}
+	{% set Z_HOP = 5 %}
+	{% set Z_HOP_SPEED = 10 %}
+	
+	{% set X_HOMING_CUR = 1.000 %}
+	{% set Y_HOMING_CUR = 1.000 %}
+	{% set HOMING_ACCEL = 700 %}
+	
+	{% set PAUSE = 1000 %}
+	
+	{% set SAFETY_HOP = 5 %}
+	{% set SAFETY_HOP_SPEED = 5 %}
+	
+	
+	
+	{% set cur_accel = printer.toolhead.max_accel %}
+	{% set cur_accel_to_decel = printer.toolhead.max_accel_to_decel %}
+	
+	{% set requested = {'x': False,
+	'y': False,
+	'z': False} %}
+	{% if   not 'X' in params
+	and not 'Y' in params
+	and not 'Z' in params %}
+	{% set X, Y, Z = True, True, True %}
+	{% else %}
+	{% if 'X' in params %}
+	{% set X = True %}
+	{% set null = requested.update({'x': True}) %}
+	{% endif %}
+	{% if 'Y' in params %}
+	{% set Y = True %}
+	{% set null = requested.update({'y': True}) %}
+	{% endif %}
+	{% if 'Z' in params %}
+	{% set Z = True %}
+	{% set null = requested.update({'z': True}) %}
+	{% endif %}
+	{% endif %}
+	
+	
+	
+	
+	{% if not "xyz" in printer.toolhead.homed_axes %}
+	G1 Z{SAFETY_HOP} F{(SAFETY_HOP_SPEED * 60)}
+	{% endif %}
+	
+	
+	{% if MOVE_TO_PREVIOUS %}
+	SAVE_GCODE_STATE NAME=homing
+	{% endif %}
+	
+	
+	{% if CURRENTLESS != 1 %}
+	{% if X and Y %}
+	SENSORLESS_HOME_ALL X_CUR={X_HOMING_CUR} Y_CUR={Y_HOMING_CUR} ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% elif X %}
+	SENSORLESS_HOME_X CURRENT={X_HOMING_CUR} ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% elif Y %}
+	SENSORLESS_HOME_Y CURRENT={Y_HOMING_CUR} ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% endif %}
+	{% else %}
+	{% if X and Y %}
+	SENSOR_HOME_ALL ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% elif X %}
+	SENSOR_HOME_X ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% elif Y %}
+	SENSOR_HOME_Y ACCEL={HOMING_ACCEL} BOUNCE={HOMING_BOUNCE} BOUNCE_SPEED={BOUNCE_SPEED} PAUSE={PAUSE}
+	{% endif %}
+	{% endif %}
+	
+	
+	{% if Z %}
+	G1 X{PROBE_X} Y{PROBE_Y} F{(PROBE_XY_SPEED * 60)}
+	G28 Z
+	G1 Z{Z_HOP} F{(Z_HOP_SPEED * 60)}
+	{% endif %}
+	
+	
+	{% if MOVE_TO_PREVIOUS %}
+	{% if MOVE_TO_PREV_SPEED == 0 %}
+	RESTORE_GCODE_STATE NAME=homing MOVE=1
+	{% else %}
+	RESTORE_GCODE_STATE NAME=homing MOVE=1 MOVE_SPEED={MOVE_TO_PREV_SPEED}
+	{% endif %}
+	{% endif %}
+	
+	
+	{% if printer.toolhead.max_accel != cur_accel %}
+	SET_VELOCITY_LIMIT ACCEL={cur_accel} ACCEL_TO_DECEL={cur_accel_to_decel}
+	{% endif %}
+
+[gcode_macro SENSORLESS_HOME_ALL]
+description = Home XY with modified current
+gcode = 
+	{% set HOME_CUR_X = params.X_CUR|default(0.250)|float %}
+	{% set HOME_CUR_Y = params.Y_CUR|default(0.250)|float %}
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set driver_config_x = printer.configfile.settings['tmc2209 stepper_x'] %}
+	{% set driver_config_y = printer.configfile.settings['tmc2209 stepper_y'] %}
+	{% set RUN_CUR_X = driver_config_x.run_current %}
+	{% set RUN_CUR_Y = driver_config_y.run_current %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_TMC_CURRENT STEPPER=stepper_x CURRENT={HOME_CUR_X}
+	SET_TMC_CURRENT STEPPER=stepper_y CURRENT={HOME_CUR_Y}
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 X0
+	{% if BOUNCE %}
+	
+	G91
+	G1 X{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	G28 Y0
+	{% if BOUNCE %}
+	
+	G91
+	G1 Y{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	SET_TMC_CURRENT STEPPER=stepper_x CURRENT={RUN_CUR_X}
+	SET_TMC_CURRENT STEPPER=stepper_y CURRENT={RUN_CUR_Y}
+	
+	G4 P{PAUSE}
+
+[gcode_macro SENSORLESS_HOME_X]
+description = Home X with modified current
+gcode = 
+	{% set HOME_CUR = params.CURRENT|default(0.250)|float %}
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set driver_config = printer.configfile.settings['tmc2209 stepper_x'] %}
+	{% set RUN_CUR = driver_config.run_current %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_TMC_CURRENT STEPPER=stepper_x CURRENT={HOME_CUR}
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 X0
+	{% if BOUNCE %}
+	
+	G91
+	G1 X{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	SET_TMC_CURRENT STEPPER=stepper_x CURRENT={RUN_CUR}
+	
+	G4 P{PAUSE}
+
+[gcode_macro SENSORLESS_HOME_Y]
+description = Home Y with modified current
+gcode = 
+	{% set HOME_CUR = params.CURRENT|default(0.250)|float %}
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set driver_config = printer.configfile.settings['tmc2209 stepper_y'] %}
+	{% set RUN_CUR = driver_config.run_current %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_TMC_CURRENT STEPPER=stepper_y CURRENT={HOME_CUR}
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 Y0
+	{% if BOUNCE %}
+	
+	G91
+	G1 Y{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	SET_TMC_CURRENT STEPPER=stepper_y CURRENT={RUN_CUR}
+	
+	G4 P{PAUSE}
+
+[gcode_macro SENSOR_HOME_ALL]
+description = Home XY
+gcode = 
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 X0
+	{% if BOUNCE %}
+	
+	G91
+	G1 X{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	G28 Y0
+	{% if BOUNCE %}
+	
+	G91
+	G1 Y{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	G4 P{PAUSE}
+
+[gcode_macro SENSOR_HOME_X]
+description = Home X
+gcode = 
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 X0
+	{% if BOUNCE %}
+	
+	G91
+	G1 X{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	G4 P{PAUSE}
+
+[gcode_macro SENSOR_HOME_Y]
+description = Home Y
+gcode = 
+	{% set HOME_ACCEL = params.ACCEL|default(1000)|float %}
+	{% set BOUNCE = params.BOUNCE|default(10)|float %}
+	{% set BOUNCE_SPEED = params.BOUNCE_SPEED|default(20)|float %}
+	{% set PAUSE = params.PAUSE|default(2000)|int %}
+	
+	
+	SET_VELOCITY_LIMIT ACCEL={HOME_ACCEL} ACCEL_TO_DECEL={(HOME_ACCEL * 0.5)}
+	
+	G4 P{PAUSE}
+	
+	G28 Y0
+	{% if BOUNCE %}
+	
+	G91
+	G1 Y{BOUNCE} F{(BOUNCE_SPEED * 60)}
+	G90
+	{% endif %}
+	
+	G4 P{PAUSE}
+
+[board_pins EBB36_G0B1_v1.2]
+mcu = can0
+aliases = 
+aliases_step = 
+	EXT_EN=PD2,EXT_STEP=PD0,EXT_DIR=PD1,EXT_UART=PA15
+aliases_limitsw = 
+	LIMIT_1=PB7,LIMIT_2=PB5,LIMIT_3=PB6
+aliases_bltouch = 
+	PROBE_1=PB9,PROBE_2=PB8
+aliases_fans = 
+	FAN0=PA1,FAN1=PA0
+aliases_thermistors = 
+	TH0=PA3,PT100_CS=PA4,PT100_SCLK=PA5,PT100_MISO=PA6,PT100_MOSI=PA7,
+	PT1000_CS=PA4, PT1000_SCLK=PA5, PT1000_MISO=PA6, PT1000_MOSI=PA7
+aliases_heaters = 
+	HE0=PA2
+aliases_rgb = 
+	RGBLED=PD3
+aliases_adxl = 
+	ADXL_CS=PB12,ADXL_SCLK=PB10,ADXL_MISO=PB2,ADXL_MOSI=PB11
+aliases_i2c = 
+	AUX0=PB3,AUX1=PB4
+
+[mcu can0]
+canbus_uuid = 64c272a1325d
+
+[temperature_sensor CANBOARD]
+sensor_type = temperature_mcu
+sensor_mcu = can0
+
+[heater_fan hotend_fan]
+pin = can0:FAN0
+max_power = 1.0
+kick_start_time = 0.5
+heater = extruder
+heater_temp = 50.0
+
+[fan]
+pin = PA0
+kick_start_time = 0.25
+cycle_time = 0.15
+off_below = 0.10
+
+[extruder]
+step_pin = can0:EXT_STEP
+dir_pin = !can0:EXT_DIR
+enable_pin = !can0:EXT_EN
+rotation_distance = 26.72306036
+gear_ratio = 50:8
+microsteps = 16
+full_steps_per_rotation = 200
+max_extrude_only_distance = 1400.0
+max_extrude_only_velocity = 75.0
+max_extrude_only_accel = 1500
+nozzle_diameter = 0.400
+filament_diameter = 1.750
+heater_pin = can0:HE0
+sensor_type = MAX31865
+sensor_pin = can0:PT1000_CS
+spi_bus = spi1
+rtd_nominal_r = 100
+rtd_reference_r = 430
+rtd_num_of_wires = 2
+control = pid
+pid_kp = 22.2
+pid_ki = 1.08
+pid_kd = 114
+min_temp = -250
+max_temp = 350
+
+[tmc2209 extruder]
+uart_pin = can0:EXT_UART
+stealthchop_threshold = 0
+run_current = 0.30
+
+[adxl345]
+cs_pin = can0:ADXL_CS
+spi_software_sclk_pin = can0:ADXL_SCLK
+spi_software_mosi_pin = can0:ADXL_MOSI
+spi_software_miso_pin = can0:ADXL_MISO
+axes_map = x,y,z
+
+[resonance_tester]
+accel_chip = adxl345
+probe_points = 
+	175,175,20
+
+[mcu CB1]
+serial = /tmp/klipper_host_mcu
+
+[mcu]
+canbus_uuid = 589d8c642187
+
+[printer]
+kinematics = corexy
+max_velocity = 300
+max_accel = 200
+max_z_velocity = 25
+max_z_accel = 30
+
+[probe]
+pin = ^can0:LIMIT_1
+x_offset = -29.8
+y_offset = -13.5
+z_offset = 2.202
+speed = 5
+samples = 3
+sample_retract_dist = 2
+lift_speed = 5.0
+samples_result = median
+samples_tolerance = 0.02
+samples_tolerance_retries = 5
+
+[stepper_x]
+step_pin = PE2
+dir_pin = !PC5
+enable_pin = !PF11
+microsteps = 64
+rotation_distance = 32
+full_steps_per_rotation = 200
+endstop_pin = tmc2209_stepper_x:virtual_endstop
+position_endstop = 0
+position_max = 300
+homing_speed = 50
+homing_retract_dist = 0
+
+[stepper_y]
+step_pin = PE3
+dir_pin = !PF13
+enable_pin = !PF14
+microsteps = 64
+rotation_distance = 32
+full_steps_per_rotation = 200
+endstop_pin = tmc2209_stepper_y:virtual_endstop
+position_endstop = 0
+position_max = 300
+homing_speed = 50
+homing_retract_dist = 0
+
+[stepper_z]
+step_pin = Z1_STEP
+dir_pin = !Z1_DIR
+enable_pin = !Z1_EN
+rotation_distance = 4
+microsteps = 64
+endstop_pin = PG10
+position_endstop = 0.5
+position_max = 200
+
+[stepper_z1]
+step_pin = Z2_STEP
+dir_pin = !Z2_DIR
+enable_pin = !Z2_EN
+rotation_distance = 4
+microsteps = 64
+
+[stepper_z2]
+step_pin = Z3_STEP
+dir_pin = !Z3_DIR
+enable_pin = !Z3_EN
+microsteps = 64
+rotation_distance = 4
+
+[heater_bed]
+heater_pin = BED_OUT
+sensor_pin = BED_TEMP
+sensor_type = ATC Semitec 104GT-2
+control = watermark
+min_temp = -250
+max_temp = 200
+
+[heater_fan fan1]
+pin = PA1
+
+[tmc2209 stepper_x]
+uart_pin = PC4
+diag_pin = ^X_STOP
+run_current = 0.800
+stealthchop_threshold = 999999
+driver_sgthrs = 100
+
+[tmc2209 stepper_y]
+uart_pin = PF12
+diag_pin = ^Y_STOP
+run_current = 0.800
+interpolate = false
+stealthchop_threshold = 999999
+driver_sgthrs = 90
+
+[tmc2209 stepper_z]
+uart_pin = PF15
+run_current = 0.800
+interpolate = false
+
+[tmc2209 stepper_z1]
+uart_pin = PE7
+run_current = 0.800
+interpolate = false
+
+[tmc2209 stepper_z2]
+uart_pin = PE10
+run_current = 0.800
+interpolate = false
+
+[board_pins]
+aliases = 
+	
+	
+	X_EN=PF11, X_STEP=PE2, X_DIR=PC5, X_CS=PC4,
+	Y_EN=PF14, Y_STEP=PE3, Y_DIR=PF13, Y_CS=PF12,
+	Z1_EN=PG1, Z1_STEP=PE4, Z1_DIR=PG0, Z1_CS=PF15,
+	Z2_EN=PE9, Z2_STEP=PE14, Z2_DIR=PE8, Z2_CS=PE7,
+	Z3_EN=PF2, Z3_STEP=PE15, Z3_DIR=PE11, Z3_CS=PE10,
+	Z4_EN=PC15, Z4_STEP=PE1, Z4_DIR=PF0, Z4_CS=PF1,
+	Z5_EN=PG4, Z5_STEP=PE0, Z5_DIR=PG3, Z5_CS=PG2,
+	Z6_EN=PG7, Z6_STEP=PE6, Z6_DIR=PG6, Z6_CS=PG5,
+	
+	
+	BED_OUT=PE5, HEAT0=PB0, HEAT1=PB1, HEAT2=PC7, HEAT3=PF7, HEAT4=PF6,
+	
+	BED_TEMP=PC1, HEAT0_TEMP=PF4, HEAT1_TEMP=PF5, HEAT2_TEMP=PF9, HEAT3_TEMP=PF10, HEAT4_TEMP=PC0,
+	
+	FAN0=PA0, FAN1=PA1, FAN2=PA2, FAN3=PA3, FAN4=PA15, FAN5=PB11, FAN6=PB10, FAN7=PD12, FAN8=PD14, FAN9=PD15,
+	
+	X_STOP=PG12, Y_STOP=PG11, Z_STOP=PG9, E_STOP=PG10,
+	
+	SERVO=PC6, PROBE=PC3,
+	
+	EXP1_1=PE12, EXP1_3=PB2, EXP1_5=PC14, EXP1_7=PG14, EXP1_9=<GND>,
+	EXP1_2=PE13, EXP1_4=PG8, EXP1_6=PC13, EXP1_8=PG13, EXP1_10=<5V>,
+	
+	EXP2_1=PA6, EXP2_3=PB7, EXP2_5=PB6, EXP2_7=PG15,  EXP2_9=<GND>,
+	EXP2_2=PA4, EXP2_4=PA4, EXP2_6=PA7, EXP2_8=<RST>, EXP2_10=<5V>
+=======================
+Extruder max_extrude_ratio=0.266081
+mcu 'mcu': Starting CAN connect
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+webhooks client 281473398970160: New connection
+webhooks client 281473398970160: Client info {'program': 'Moonraker', 'version': 'v0.8.0-377-g4fe89d5'}
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: Failed to transmit: [Errno 105] No buffer space available
+Created a socket
+mcu 'mcu': Unable to open CAN port: [Errno 19] No such device
+Created a socket
+mcu 'mcu': Unable to open CAN port: [Errno 19] No such device
+Starting Klippy...
+Args: ['/home/biqu/klipper/klippy/klippy.py', '/home/biqu/printer_data/config/printer.cfg', '-I', '/home/biqu/printer_data/comms/klippy.serial', '-l', '/home/biqu/printer_data/logs/klippy.log', '-a', '/home/biqu/printer_data/comms/klippy.sock']
+Git version: 'v0.12.0-207-g6cd17420'
+Branch: master
+Remote: origin
+Tracked URL: https://github.com/Klipper3d/klipper
+CPU: 4 core ?
+Python: '3.9.2 (default, Feb 28 2021, 17:03:44) \n[GCC 10.2.1 20210110]'
