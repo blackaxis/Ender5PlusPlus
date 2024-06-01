@@ -4229,3 +4229,180 @@ CPU Temperature: 46.151
 2024-06-01 14:33:07,519 [file_manager.py:get_file_list()] - Updating File List <config>...
 2024-06-01 14:33:38,237 [websockets.py:write_to_socket()] - Websocket closed while writing: 281472832989648
 2024-06-01 14:33:42,507 [websockets.py:on_close()] - Websocket Closed: ID: 281472832989648 Close Code: None, Close Reason: None, Pong Time Elapsed: 35.01
+2024-06-01 15:06:42,541 [application.py:log_request()] - 101 GET /websocket?token=Q2762LULOCJBNZ4CACMG3SABDDUI6EJ4 (192.168.0.181) [_TRUSTED_USER_] 7.00ms
+2024-06-01 15:06:42,543 [websockets.py:open()] - Websocket Opened: ID: 281472834501888, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-01 15:06:42,557 [websockets.py:_handle_identify()] - Websocket 281472834501888 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-01 15:06:42,559 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-01 15:07:13,170 [websockets.py:write_to_socket()] - Websocket closed while writing: 281472834501888
+2024-06-01 15:07:17,548 [websockets.py:on_close()] - Websocket Closed: ID: 281472834501888 Close Code: None, Close Reason: None, Pong Time Elapsed: 35.01
+2024-06-01 15:22:48,693 [application.py:log_request()] - 101 GET /websocket?token=ARD6NZGWMCE5XH6RYSA34CIPUN26VU2O (192.168.0.181) [_TRUSTED_USER_] 6.12ms
+2024-06-01 15:22:48,694 [websockets.py:open()] - Websocket Opened: ID: 281472834501072, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-01 15:22:48,886 [websockets.py:_handle_identify()] - Websocket 281472834501072 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-01 15:22:48,888 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-01 15:23:19,555 [websockets.py:write_to_socket()] - Websocket closed while writing: 281472834501072
+2024-06-01 15:23:23,699 [websockets.py:on_close()] - Websocket Closed: ID: 281472834501072 Close Code: None, Close Reason: None, Pong Time Elapsed: 35.01
+2024-06-01 15:25:41,869 [application.py:log_request()] - 101 GET /websocket?token=QOHF3EEO5WSJYS6EV2GZENGOJ2RCPXHB (192.168.0.181) [_TRUSTED_USER_] 6.13ms
+2024-06-01 15:25:41,871 [websockets.py:open()] - Websocket Opened: ID: 281472834502560, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-01 15:25:41,950 [websockets.py:_handle_identify()] - Websocket 281472834502560 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-01 15:25:41,953 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-01 15:26:43,685 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 15:26:43,730 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 15:26:44,952 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 15:26:48,545 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 15:26:48,548 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 15:26:48,796 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-01 15:26:49,064 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-01 15:26:49,548 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor CANBOARD', 'heater_bed', 'extruder']
+2024-06-01 15:27:10,357 [application.py:log_request()] - 101 GET /websocket?token=6RTF3VQ4VXOXSXV3L3QSPXXRWPEQWR6Q (192.168.0.181) [_TRUSTED_USER_] 5.99ms
+2024-06-01 15:27:10,359 [websockets.py:open()] - Websocket Opened: ID: 281472833287168, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-01 15:27:10,380 [websockets.py:_handle_identify()] - Websocket 281472833287168 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-01 15:27:10,383 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-01 15:27:13,622 [websockets.py:on_close()] - Websocket Closed: ID: 281472833287168 Close Code: None, Close Reason: None, Pong Time Elapsed: 3.27
+2024-06-01 15:31:35,687 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-01 15:31:35,723 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryT8r19Q6wZU8QzU8J
+2024-06-01 15:31:35,764 [application.py:post()] - Processing Uploaded File: klippermacros.cfg
+2024-06-01 15:31:35,790 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 69.76ms
+2024-06-01 15:31:36,924 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 15:31:36,967 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 15:31:38,191 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 15:31:42,444 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 15:31:42,448 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 15:31:42,695 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-01 15:31:42,965 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-01 15:31:43,459 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor CANBOARD', 'heater_bed', 'extruder']
+2024-06-01 15:37:12,018 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-01 15:37:12,136 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryZHQwRsiLwkj1NbhW
+2024-06-01 15:37:12,175 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-01 15:37:12,189 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 55.95ms
+2024-06-01 15:37:13,346 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 15:37:13,376 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 15:37:14,614 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 15:37:18,858 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 15:37:18,862 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 15:37:19,109 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-01 15:37:19,379 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-01 15:37:19,874 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor CANBOARD', 'heater_bed', 'extruder']
+2024-06-01 15:37:29,994 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-01 15:37:30,036 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarypVhoTF7AFpqUXL9j
+2024-06-01 15:37:30,067 [application.py:post()] - Processing Uploaded File: KAMP_Settings.cfg
+2024-06-01 15:37:30,089 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 55.58ms
+2024-06-01 15:37:31,223 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 15:37:31,265 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 15:37:32,494 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 15:37:36,804 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 15:37:36,807 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 15:37:37,055 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-01 15:37:37,325 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-01 15:37:37,822 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor CANBOARD', 'heater_bed', 'extruder']
+2024-06-01 15:41:14,616 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-01 15:41:14,635 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryZRTJEehDjnkyL6o7
+2024-06-01 15:41:14,666 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-01 15:41:14,688 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 55.45ms
+2024-06-01 15:44:51,417 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-01 15:44:51,433 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryFUhd2pZSjOSBxf5T
+2024-06-01 15:44:51,455 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-01 15:44:51,470 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 38.33ms
+2024-06-01 15:44:52,605 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 15:44:52,643 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 15:44:53,873 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 15:44:58,195 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 15:44:58,198 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 15:44:58,446 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-01 15:44:58,716 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-01 15:44:59,198 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor CANBOARD', 'heater_bed', 'extruder']
+2024-06-01 15:48:24,618 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-01 15:48:24,642 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryy4uWOjHgqsm6WzXG
+2024-06-01 15:48:24,678 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-01 15:48:24,703 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 63.91ms
+2024-06-01 15:48:25,925 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 15:48:25,955 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 15:48:27,195 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 15:48:28,636 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 15:48:28,640 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 15:48:28,644 [klippy_connection.py:_check_ready()] - 
+Choice 'PID' for option 'control' in section 'heater_bed' is not a valid choice
+
+Once the underlying issue is corrected, use the "RESTART"
+command to reload the config and restart the host software.
+Printer is halted
+
+2024-06-01 15:50:42,863 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-01 15:50:42,883 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryZgyNy8Cmuncf6BAB
+2024-06-01 15:50:42,913 [application.py:post()] - Processing Uploaded File: EBB36.cfg
+2024-06-01 15:50:42,934 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 54.09ms
+2024-06-01 15:50:43,052 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 15:50:43,175 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 15:50:44,319 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 15:50:45,637 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 15:50:45,640 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 15:50:45,644 [klippy_connection.py:_check_ready()] - 
+Unknown pin chip name 'can0'
+
+Once the underlying issue is corrected, use the "RESTART"
+command to reload the config and restart the host software.
+Printer is halted
+
+2024-06-01 15:50:58,899 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-01 15:50:58,923 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarypcqPILuXs7rGELt7
+2024-06-01 15:50:58,981 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-01 15:50:59,007 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 86.42ms
+2024-06-01 15:50:59,053 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 15:50:59,113 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 15:51:00,356 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 15:51:01,660 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 15:51:01,663 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 15:51:01,667 [klippy_connection.py:_check_ready()] - 
+Choice 'PID' for option 'control' in section 'heater_bed' is not a valid choice
+
+Once the underlying issue is corrected, use the "RESTART"
+command to reload the config and restart the host software.
+Printer is halted
+
+2024-06-01 15:51:21,340 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-01 15:51:21,439 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryE0XJXsAoK96AXARD
+2024-06-01 15:51:21,488 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-01 15:51:21,509 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 72.38ms
+2024-06-01 15:51:21,616 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 15:51:21,646 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 15:51:22,878 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 15:51:24,223 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 15:51:24,227 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 15:51:24,231 [klippy_connection.py:_check_ready()] - 
+Option 'pid_Kp' in section 'heater_bed' must be specified
+
+Once the underlying issue is corrected, use the "RESTART"
+command to reload the config and restart the host software.
+Printer is halted
+
+2024-06-01 15:52:59,244 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-01 15:52:59,259 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryKJVhobKaktgLFuxI
+2024-06-01 15:52:59,281 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-01 15:52:59,295 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 37.81ms
+2024-06-01 15:52:59,340 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 15:52:59,494 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 15:53:00,634 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 15:53:04,834 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 15:53:04,837 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 15:53:05,085 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-01 15:53:05,356 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-01 15:53:05,843 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor CANBOARD', 'heater_bed', 'extruder']
