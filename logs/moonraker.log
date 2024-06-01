@@ -9589,3 +9589,113 @@ Properties:
 **FragmentPath=/etc/systemd/system/klipper.service
 **Description=Klipper 3D Printer Firmware SV1
 **User=biqu
+2024-06-01 19:00:45,868 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-207-g6cd17420
+2024-06-01 19:00:49,838 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 19:00:49,842 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 19:00:50,089 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-01 19:00:50,360 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-01 19:00:50,842 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-01 19:01:06,926 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.100
+2024-06-01 19:01:07,085 [application.py:log_request()] - 101 GET /websocket?token=XVALDYDSNRBCWWDINQ7ZQ6YZEMCOTAUB (192.168.0.100) [_TRUSTED_USER_] 7.90ms
+2024-06-01 19:01:07,087 [websockets.py:open()] - Websocket Opened: ID: 281473050254688, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
+2024-06-01 19:01:07,106 [websockets.py:_handle_identify()] - Websocket 281473050254688 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-01 19:01:07,107 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-01 19:01:24,695 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2024-06-01 19:01:24,703 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1717268455.160996, Usage: 13.46%, Memory: 43260 kB
+System Time: 1717268456.161632, Usage: 1.56%, Memory: 43260 kB
+System Time: 1717268457.161495, Usage: 3.1%, Memory: 43260 kB
+System Time: 1717268458.161757, Usage: 1.36%, Memory: 43264 kB
+System Time: 1717268459.169488, Usage: 1.59%, Memory: 43268 kB
+System Time: 1717268460.171124, Usage: 3.02%, Memory: 43268 kB
+System Time: 1717268461.172556, Usage: 2.28%, Memory: 43268 kB
+System Time: 1717268462.167808, Usage: 16.04%, Memory: 43276 kB
+System Time: 1717268463.167917, Usage: 3.27%, Memory: 43276 kB
+System Time: 1717268464.169544, Usage: 2.69%, Memory: 43276 kB
+System Time: 1717268465.169841, Usage: 1.29%, Memory: 43276 kB
+System Time: 1717268466.177606, Usage: 1.42%, Memory: 43276 kB
+System Time: 1717268467.172288, Usage: 13.37%, Memory: 43424 kB
+System Time: 1717268468.173167, Usage: 12.27%, Memory: 43668 kB
+System Time: 1717268469.177989, Usage: 9.23%, Memory: 43668 kB
+System Time: 1717268470.174905, Usage: 4.7%, Memory: 43668 kB
+System Time: 1717268471.175107, Usage: 2.87%, Memory: 43668 kB
+System Time: 1717268472.175993, Usage: 2.61%, Memory: 43668 kB
+System Time: 1717268473.177148, Usage: 2.76%, Memory: 43668 kB
+System Time: 1717268474.177973, Usage: 3.95%, Memory: 43672 kB
+System Time: 1717268475.179653, Usage: 8.85%, Memory: 43672 kB
+System Time: 1717268476.181591, Usage: 3.41%, Memory: 43672 kB
+System Time: 1717268477.180562, Usage: 4.82%, Memory: 43672 kB
+System Time: 1717268478.187376, Usage: 1.96%, Memory: 43672 kB
+System Time: 1717268479.189217, Usage: 3.72%, Memory: 43672 kB
+System Time: 1717268480.195251, Usage: 3.7%, Memory: 43672 kB
+System Time: 1717268481.197575, Usage: 3.8%, Memory: 43672 kB
+System Time: 1717268482.193478, Usage: 14.47%, Memory: 43672 kB
+System Time: 1717268483.196530, Usage: 2.98%, Memory: 43672 kB
+System Time: 1717268484.193176, Usage: 6.5%, Memory: 43672 kB
+CPU Temperature: 52.064
+2024-06-01 19:02:08,971 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-01 19:03:08,974 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2024-06-01 19:04:08,986 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 180.02 seconds
+2024-06-01 19:05:08,989 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 240.02 seconds
+2024-06-01 19:06:08,992 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 300.02 seconds
+2024-06-01 19:07:08,994 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 360.02 seconds
+2024-06-01 19:08:08,996 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 420.03 seconds
+2024-06-01 19:09:08,998 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 480.03 seconds
+2024-06-01 19:10:09,001 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 540.03 seconds
+2024-06-01 19:11:09,004 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 600.03 seconds
+2024-06-01 19:12:09,008 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 660.04 seconds
+2024-06-01 19:13:09,010 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 720.04 seconds
+2024-06-01 19:14:09,013 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 780.04 seconds
+2024-06-01 19:15:09,017 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 840.05 seconds
+2024-06-01 19:16:09,019 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 900.05 seconds
+2024-06-01 19:17:09,021 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 960.05 seconds
+2024-06-01 19:18:09,024 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1020.05 seconds
+2024-06-01 19:19:09,026 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1080.06 seconds
+2024-06-01 19:20:09,046 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1140.08 seconds
+2024-06-01 19:21:09,048 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1200.08 seconds
+2024-06-01 19:22:09,051 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1260.08 seconds
+2024-06-01 19:23:09,054 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1320.08 seconds
+2024-06-01 19:24:09,056 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1380.09 seconds
+2024-06-01 19:25:09,058 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1440.09 seconds
+2024-06-01 19:26:09,061 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1500.09 seconds
+2024-06-01 19:26:16,814 [websockets.py:on_close()] - Websocket Closed: ID: 281473050254688 Close Code: None, Close Reason: None, Pong Time Elapsed: 9.64
+2024-06-01 19:27:09,064 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1560.09 seconds
+2024-06-01 19:28:09,067 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1620.10 seconds
+2024-06-01 19:29:09,070 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1680.10 seconds
+2024-06-01 19:30:09,073 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1740.10 seconds
+2024-06-01 19:31:09,076 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1800.11 seconds
+2024-06-01 19:32:09,079 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1860.11 seconds
+2024-06-01 19:33:09,082 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1920.11 seconds
+2024-06-01 19:34:09,085 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 1980.12 seconds
+2024-06-01 19:35:09,088 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2040.12 seconds
+2024-06-01 19:36:09,091 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2100.12 seconds
+2024-06-01 19:37:09,094 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2160.12 seconds
+2024-06-01 19:38:09,097 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2220.13 seconds
+2024-06-01 19:39:09,100 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2280.13 seconds
+2024-06-01 19:40:09,103 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2340.13 seconds
+2024-06-01 19:41:09,106 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2400.14 seconds
+2024-06-01 19:42:09,109 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2460.14 seconds
+2024-06-01 19:43:09,112 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2520.14 seconds
+2024-06-01 19:44:09,115 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2580.15 seconds
+2024-06-01 19:45:09,118 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2640.15 seconds
+2024-06-01 19:46:09,120 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2700.15 seconds
+2024-06-01 19:47:09,122 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2760.15 seconds
+2024-06-01 19:48:09,125 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2820.16 seconds
+2024-06-01 19:49:09,127 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2880.16 seconds
+2024-06-01 19:50:09,130 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 2940.16 seconds
+2024-06-01 19:51:09,133 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 3000.16 seconds
+2024-06-01 19:51:11,163 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-01 19:51:11,411 [application.py:log_request()] - 101 GET /websocket?token=FOIAXOMHPIC4BDKQA6PNDGSSOPCLZYOZ (192.168.0.181) [_TRUSTED_USER_] 6.00ms
+2024-06-01 19:51:11,412 [websockets.py:open()] - Websocket Opened: ID: 281473049647712, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-01 19:51:11,435 [websockets.py:_handle_identify()] - Websocket 281473049647712 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-01 19:51:11,437 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-01 19:51:14,799 [websockets.py:on_close()] - Websocket Closed: ID: 281473049647712 Close Code: None, Close Reason: None, Pong Time Elapsed: 3.39
+2024-06-01 19:52:09,136 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 3060.17 seconds
+2024-06-01 19:53:09,140 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 3120.17 seconds
+2024-06-01 19:54:09,143 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 3180.17 seconds
+2024-06-01 19:55:09,147 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 3240.18 seconds
+2024-06-01 19:56:09,149 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 3300.18 seconds
+2024-06-01 19:57:09,152 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 3360.18 seconds
+2024-06-01 19:58:09,155 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 3420.19 seconds
+2024-06-01 19:59:09,159 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 3480.19 seconds
