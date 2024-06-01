@@ -4113,3 +4113,119 @@ Properties:
 **FragmentPath=/etc/systemd/system/klipper.service
 **Description=Klipper 3D Printer Firmware SV1
 **User=biqu
+2024-06-01 14:04:40,063 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-01 14:04:41,005 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-207-g6cd17420
+2024-06-01 14:04:44,015 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 14:04:44,021 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 14:04:44,266 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-01 14:04:44,534 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-01 14:04:45,017 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor CANBOARD', 'heater_bed', 'extruder']
+2024-06-01 14:05:48,981 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2024-06-01 14:05:48,993 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1717250719.597620, Usage: 2.15%, Memory: 43560 kB
+System Time: 1717250720.606137, Usage: 2.33%, Memory: 43560 kB
+System Time: 1717250721.607490, Usage: 3.81%, Memory: 43560 kB
+System Time: 1717250722.610375, Usage: 4.63%, Memory: 43560 kB
+System Time: 1717250723.606146, Usage: 16.26%, Memory: 43560 kB
+System Time: 1717250724.606043, Usage: 4.68%, Memory: 43560 kB
+System Time: 1717250725.607137, Usage: 2.14%, Memory: 43560 kB
+System Time: 1717250726.607845, Usage: 2.17%, Memory: 43560 kB
+System Time: 1717250727.614488, Usage: 3.24%, Memory: 43560 kB
+System Time: 1717250728.618418, Usage: 6.42%, Memory: 43560 kB
+System Time: 1717250729.617975, Usage: 4.05%, Memory: 43560 kB
+System Time: 1717250730.613610, Usage: 13.42%, Memory: 43560 kB
+System Time: 1717250731.613374, Usage: 4.6%, Memory: 43560 kB
+System Time: 1717250732.614546, Usage: 2.1%, Memory: 43560 kB
+System Time: 1717250733.615538, Usage: 2.14%, Memory: 43560 kB
+System Time: 1717250734.622521, Usage: 2.63%, Memory: 43560 kB
+System Time: 1717250735.624037, Usage: 3.77%, Memory: 43560 kB
+System Time: 1717250736.625540, Usage: 14.23%, Memory: 43560 kB
+System Time: 1717250737.619583, Usage: 2.59%, Memory: 43564 kB
+System Time: 1717250738.621244, Usage: 4.26%, Memory: 43564 kB
+System Time: 1717250739.628581, Usage: 3.06%, Memory: 43564 kB
+System Time: 1717250740.629780, Usage: 3.67%, Memory: 43564 kB
+System Time: 1717250741.631546, Usage: 3.9%, Memory: 43564 kB
+System Time: 1717250742.630790, Usage: 3.75%, Memory: 43564 kB
+System Time: 1717250743.633493, Usage: 3.54%, Memory: 43564 kB
+System Time: 1717250744.634484, Usage: 3.8%, Memory: 43564 kB
+System Time: 1717250745.635662, Usage: 3.8%, Memory: 43564 kB
+System Time: 1717250746.636670, Usage: 3.76%, Memory: 43564 kB
+System Time: 1717250747.639380, Usage: 3.7%, Memory: 43564 kB
+System Time: 1717250748.641581, Usage: 6.55%, Memory: 43564 kB
+CPU Temperature: 45.827
+2024-06-01 14:07:32,549 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 14:07:32,595 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 14:07:33,814 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 14:07:36,679 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 14:07:36,682 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 14:07:36,686 [klippy_connection.py:_check_ready()] - 
+Can not update MCU 'mcu' config as it is shutdown
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2024-06-01 14:07:38,698 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-01 14:07:38,744 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-01 14:07:39,964 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-01 14:07:43,579 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-01 14:07:43,583 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-01 14:07:43,830 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-01 14:07:44,098 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-01 14:07:44,582 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor CANBOARD', 'heater_bed', 'extruder']
+2024-06-01 14:08:11,660 [application.py:log_request()] - 101 GET /websocket?token=CE3FKG2IFG6DCH4RMP3YIIFKS2IT6AMA (192.168.0.181) [_TRUSTED_USER_] 6.06ms
+2024-06-01 14:08:11,662 [websockets.py:open()] - Websocket Opened: ID: 281472832988208, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-01 14:08:11,688 [websockets.py:_handle_identify()] - Websocket 281472832988208 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-01 14:08:11,690 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-01 14:08:37,520 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2024-06-01 14:08:37,535 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1717250887.855316, Usage: 3.95%, Memory: 44212 kB
+System Time: 1717250888.855185, Usage: 6.64%, Memory: 44212 kB
+System Time: 1717250889.858515, Usage: 3.72%, Memory: 44212 kB
+System Time: 1717250890.858663, Usage: 3.78%, Memory: 44212 kB
+System Time: 1717250891.874902, Usage: 16.61%, Memory: 44216 kB
+System Time: 1717250892.863905, Usage: 9.77%, Memory: 44236 kB
+System Time: 1717250893.872138, Usage: 2.69%, Memory: 44236 kB
+System Time: 1717250894.874258, Usage: 4.71%, Memory: 44236 kB
+System Time: 1717250895.874498, Usage: 6.2%, Memory: 44236 kB
+System Time: 1717250896.877473, Usage: 4.83%, Memory: 44236 kB
+System Time: 1717250897.874916, Usage: 5.26%, Memory: 44236 kB
+System Time: 1717250898.878366, Usage: 6.95%, Memory: 44236 kB
+System Time: 1717250899.878820, Usage: 5.12%, Memory: 44236 kB
+System Time: 1717250900.880796, Usage: 4.84%, Memory: 44236 kB
+System Time: 1717250901.882054, Usage: 5.4%, Memory: 44236 kB
+System Time: 1717250902.885500, Usage: 4.75%, Memory: 44236 kB
+System Time: 1717250903.886813, Usage: 5.22%, Memory: 44236 kB
+System Time: 1717250904.888346, Usage: 4.91%, Memory: 44236 kB
+System Time: 1717250905.888991, Usage: 5.24%, Memory: 44236 kB
+System Time: 1717250906.888097, Usage: 5.2%, Memory: 44236 kB
+System Time: 1717250907.889305, Usage: 4.87%, Memory: 44236 kB
+System Time: 1717250908.892619, Usage: 7.41%, Memory: 44236 kB
+System Time: 1717250909.892313, Usage: 5.66%, Memory: 44236 kB
+System Time: 1717250910.893038, Usage: 5.07%, Memory: 44236 kB
+System Time: 1717250911.896258, Usage: 5.36%, Memory: 44236 kB
+System Time: 1717250912.898679, Usage: 5.1%, Memory: 44236 kB
+System Time: 1717250913.899711, Usage: 4.97%, Memory: 44236 kB
+System Time: 1717250914.898844, Usage: 5.09%, Memory: 44236 kB
+System Time: 1717250915.900007, Usage: 4.82%, Memory: 44236 kB
+System Time: 1717250916.903098, Usage: 4.72%, Memory: 44236 kB
+CPU Temperature: 46.151
+2024-06-01 14:08:37,658 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: pid_calibrate interrupted
+2024-06-01 14:29:48,636 [websockets.py:write_to_socket()] - Websocket closed while writing: 281472834236176
+2024-06-01 14:29:51,896 [websockets.py:write_to_socket()] - Websocket closed while writing: 281472832988208
+2024-06-01 14:29:53,444 [websockets.py:on_close()] - Websocket Closed: ID: 281472834236176 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.99
+2024-06-01 14:29:56,666 [websockets.py:on_close()] - Websocket Closed: ID: 281472832988208 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.99
+2024-06-01 14:30:38,993 [application.py:log_request()] - 101 GET /websocket?token=LP5EZ3RONPHQGW2Z2SGV67LBQKZYAU6E (192.168.0.181) [_TRUSTED_USER_] 6.11ms
+2024-06-01 14:30:38,994 [websockets.py:open()] - Websocket Opened: ID: 281472832989168, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-01 14:30:39,157 [websockets.py:_handle_identify()] - Websocket 281472832989168 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-01 14:30:39,159 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-01 14:31:09,011 [websockets.py:write_to_socket()] - Websocket closed while writing: 281472832989168
+2024-06-01 14:31:14,001 [websockets.py:on_close()] - Websocket Closed: ID: 281472832989168 Close Code: None, Close Reason: None, Pong Time Elapsed: 35.01
+2024-06-01 14:33:07,500 [application.py:log_request()] - 101 GET /websocket?token=AFULD6XXBRRFOXKPPSY234TQW4JSURMD (192.168.0.181) [_TRUSTED_USER_] 5.11ms
+2024-06-01 14:33:07,501 [websockets.py:open()] - Websocket Opened: ID: 281472832989648, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-01 14:33:07,513 [websockets.py:_handle_identify()] - Websocket 281472832989648 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-01 14:33:07,519 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-01 14:33:38,237 [websockets.py:write_to_socket()] - Websocket closed while writing: 281472832989648
+2024-06-01 14:33:42,507 [websockets.py:on_close()] - Websocket Closed: ID: 281472832989648 Close Code: None, Close Reason: None, Pong Time Elapsed: 35.01
