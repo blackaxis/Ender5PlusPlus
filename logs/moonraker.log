@@ -1732,3 +1732,4 @@ Rollback Repo: fluidd-core/fluidd
 2024-06-01 06:29:04,435 [klippy_connection.py:_check_ready()] - Klippy ready
 2024-06-01 06:29:04,920 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor CANBOARD', 'extruder']
 2024-06-01 07:34:02,141 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-01 09:13:36,225 [websockets.py:on_close()] - Websocket Closed: ID: 281473441496896 Close Code: None, Close Reason: None, Pong Time Elapsed: 2.77
