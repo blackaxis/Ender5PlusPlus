@@ -695,3 +695,4 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7TsKnYL1zVp2Nq
 2024-06-01 00:36:03,210 [job_state.py:_handle_started()] - Job state initialized: standby
 2024-06-01 00:36:03,479 [klippy_connection.py:_check_ready()] - Klippy ready
 2024-06-01 00:36:03,963 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor CANBOARD', 'extruder']
+2024-06-01 01:39:51,416 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
