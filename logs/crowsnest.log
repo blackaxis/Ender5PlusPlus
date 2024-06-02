@@ -16498,3 +16498,333 @@
 [06/02/24 15:17:18] crowsnest:		max_fps: 15
 [06/02/24 15:17:18] crowsnest: INFO: Detect available Devices
 [06/02/24 15:17:18] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[06/02/24 16:04:48] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[06/02/24 16:04:48] crowsnest: Version: v4.1.9-1-gd75a3ae
+[06/02/24 16:04:48] crowsnest: Prepare Startup ...
+[06/02/24 16:04:48] crowsnest: INFO: Host information:
+[06/02/24 16:04:48] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[06/02/24 16:04:48] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[06/02/24 16:04:48] crowsnest: Host Info: Available CPU Cores: 4
+[06/02/24 16:04:48] crowsnest: Host Info: Available Memory: 1010636 kB
+[06/02/24 16:04:48] crowsnest: Host Info: Diskspace (avail. / total): 53G / 57G
+[06/02/24 16:04:48] crowsnest: INFO: Checking Dependencies
+[06/02/24 16:04:48] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[06/02/24 16:04:48] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[06/02/24 16:04:48] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[06/02/24 16:04:48] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[06/02/24 16:04:48] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[06/02/24 16:04:48] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[06/02/24 16:04:48] crowsnest:		[crowsnest]
+[06/02/24 16:04:48] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[06/02/24 16:04:48] crowsnest:		log_level: verbose
+[06/02/24 16:04:48] crowsnest:		delete_log: false
+[06/02/24 16:04:48] crowsnest:		no_proxy: false
+[06/02/24 16:04:48] crowsnest:		
+[06/02/24 16:04:48] crowsnest:		[cam 1]
+[06/02/24 16:04:48] crowsnest:		mode: ustreamer
+[06/02/24 16:04:48] crowsnest:		
+[06/02/24 16:04:48] crowsnest:		enable_rtsp: false
+[06/02/24 16:04:48] crowsnest:		rtsp_port: 8554
+[06/02/24 16:04:48] crowsnest:		port: 8080
+[06/02/24 16:04:48] crowsnest:		device: /dev/video0
+[06/02/24 16:04:48] crowsnest:		resolution: 640x480
+[06/02/24 16:04:48] crowsnest:		max_fps: 15
+[06/02/24 16:04:49] crowsnest: INFO: Detect available Devices
+[06/02/24 16:04:49] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[06/02/24 16:04:55] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[06/02/24 16:04:55] crowsnest: Version: v4.1.9-1-gd75a3ae
+[06/02/24 16:04:55] crowsnest: Prepare Startup ...
+[06/02/24 16:04:55] crowsnest: INFO: Host information:
+[06/02/24 16:04:55] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[06/02/24 16:04:55] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[06/02/24 16:04:55] crowsnest: Host Info: Available CPU Cores: 4
+[06/02/24 16:04:55] crowsnest: Host Info: Available Memory: 1010636 kB
+[06/02/24 16:04:55] crowsnest: Host Info: Diskspace (avail. / total): 53G / 57G
+[06/02/24 16:04:55] crowsnest: INFO: Checking Dependencies
+[06/02/24 16:04:55] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[06/02/24 16:04:55] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[06/02/24 16:04:55] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[06/02/24 16:04:55] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[06/02/24 16:04:55] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[06/02/24 16:04:55] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[06/02/24 16:04:55] crowsnest:		[crowsnest]
+[06/02/24 16:04:55] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[06/02/24 16:04:55] crowsnest:		log_level: verbose
+[06/02/24 16:04:55] crowsnest:		delete_log: false
+[06/02/24 16:04:55] crowsnest:		no_proxy: false
+[06/02/24 16:04:55] crowsnest:		
+[06/02/24 16:04:55] crowsnest:		[cam 1]
+[06/02/24 16:04:55] crowsnest:		mode: ustreamer
+[06/02/24 16:04:55] crowsnest:		
+[06/02/24 16:04:55] crowsnest:		enable_rtsp: false
+[06/02/24 16:04:55] crowsnest:		rtsp_port: 8554
+[06/02/24 16:04:55] crowsnest:		port: 8080
+[06/02/24 16:04:55] crowsnest:		device: /dev/video0
+[06/02/24 16:04:55] crowsnest:		resolution: 640x480
+[06/02/24 16:04:55] crowsnest:		max_fps: 15
+[06/02/24 16:04:55] crowsnest: INFO: Detect available Devices
+[06/02/24 16:04:55] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[06/02/24 16:05:02] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[06/02/24 16:05:02] crowsnest: Version: v4.1.9-1-gd75a3ae
+[06/02/24 16:05:02] crowsnest: Prepare Startup ...
+[06/02/24 16:05:02] crowsnest: INFO: Host information:
+[06/02/24 16:05:02] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[06/02/24 16:05:02] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[06/02/24 16:05:02] crowsnest: Host Info: Available CPU Cores: 4
+[06/02/24 16:05:02] crowsnest: Host Info: Available Memory: 1010636 kB
+[06/02/24 16:05:02] crowsnest: Host Info: Diskspace (avail. / total): 53G / 57G
+[06/02/24 16:05:02] crowsnest: INFO: Checking Dependencies
+[06/02/24 16:05:02] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[06/02/24 16:05:02] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[06/02/24 16:05:02] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[06/02/24 16:05:02] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[06/02/24 16:05:02] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[06/02/24 16:05:02] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[06/02/24 16:05:02] crowsnest:		[crowsnest]
+[06/02/24 16:05:02] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[06/02/24 16:05:02] crowsnest:		log_level: verbose
+[06/02/24 16:05:02] crowsnest:		delete_log: false
+[06/02/24 16:05:02] crowsnest:		no_proxy: false
+[06/02/24 16:05:02] crowsnest:		
+[06/02/24 16:05:02] crowsnest:		[cam 1]
+[06/02/24 16:05:02] crowsnest:		mode: ustreamer
+[06/02/24 16:05:02] crowsnest:		
+[06/02/24 16:05:02] crowsnest:		enable_rtsp: false
+[06/02/24 16:05:02] crowsnest:		rtsp_port: 8554
+[06/02/24 16:05:02] crowsnest:		port: 8080
+[06/02/24 16:05:02] crowsnest:		device: /dev/video0
+[06/02/24 16:05:02] crowsnest:		resolution: 640x480
+[06/02/24 16:05:02] crowsnest:		max_fps: 15
+[06/02/24 16:05:02] crowsnest: INFO: Detect available Devices
+[06/02/24 16:05:02] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[06/02/24 16:05:08] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[06/02/24 16:05:08] crowsnest: Version: v4.1.9-1-gd75a3ae
+[06/02/24 16:05:08] crowsnest: Prepare Startup ...
+[06/02/24 16:05:08] crowsnest: INFO: Host information:
+[06/02/24 16:05:08] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[06/02/24 16:05:08] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[06/02/24 16:05:08] crowsnest: Host Info: Available CPU Cores: 4
+[06/02/24 16:05:08] crowsnest: Host Info: Available Memory: 1010636 kB
+[06/02/24 16:05:08] crowsnest: Host Info: Diskspace (avail. / total): 53G / 57G
+[06/02/24 16:05:08] crowsnest: INFO: Checking Dependencies
+[06/02/24 16:05:08] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[06/02/24 16:05:08] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[06/02/24 16:05:08] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[06/02/24 16:05:08] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[06/02/24 16:05:08] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[06/02/24 16:05:08] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[06/02/24 16:05:08] crowsnest:		[crowsnest]
+[06/02/24 16:05:08] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[06/02/24 16:05:08] crowsnest:		log_level: verbose
+[06/02/24 16:05:08] crowsnest:		delete_log: false
+[06/02/24 16:05:08] crowsnest:		no_proxy: false
+[06/02/24 16:05:08] crowsnest:		
+[06/02/24 16:05:08] crowsnest:		[cam 1]
+[06/02/24 16:05:08] crowsnest:		mode: ustreamer
+[06/02/24 16:05:08] crowsnest:		
+[06/02/24 16:05:08] crowsnest:		enable_rtsp: false
+[06/02/24 16:05:08] crowsnest:		rtsp_port: 8554
+[06/02/24 16:05:08] crowsnest:		port: 8080
+[06/02/24 16:05:08] crowsnest:		device: /dev/video0
+[06/02/24 16:05:08] crowsnest:		resolution: 640x480
+[06/02/24 16:05:08] crowsnest:		max_fps: 15
+[06/02/24 16:05:08] crowsnest: INFO: Detect available Devices
+[06/02/24 16:05:08] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[06/02/24 16:05:15] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[06/02/24 16:05:15] crowsnest: Version: v4.1.9-1-gd75a3ae
+[06/02/24 16:05:15] crowsnest: Prepare Startup ...
+[06/02/24 16:05:15] crowsnest: INFO: Host information:
+[06/02/24 16:05:15] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[06/02/24 16:05:15] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[06/02/24 16:05:15] crowsnest: Host Info: Available CPU Cores: 4
+[06/02/24 16:05:15] crowsnest: Host Info: Available Memory: 1010636 kB
+[06/02/24 16:05:15] crowsnest: Host Info: Diskspace (avail. / total): 53G / 57G
+[06/02/24 16:05:15] crowsnest: INFO: Checking Dependencies
+[06/02/24 16:05:15] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[06/02/24 16:05:15] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[06/02/24 16:05:15] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[06/02/24 16:05:15] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[06/02/24 16:05:15] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[06/02/24 16:05:15] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[06/02/24 16:05:15] crowsnest:		[crowsnest]
+[06/02/24 16:05:15] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[06/02/24 16:05:15] crowsnest:		log_level: verbose
+[06/02/24 16:05:15] crowsnest:		delete_log: false
+[06/02/24 16:05:15] crowsnest:		no_proxy: false
+[06/02/24 16:05:15] crowsnest:		
+[06/02/24 16:05:15] crowsnest:		[cam 1]
+[06/02/24 16:05:15] crowsnest:		mode: ustreamer
+[06/02/24 16:05:15] crowsnest:		
+[06/02/24 16:05:15] crowsnest:		enable_rtsp: false
+[06/02/24 16:05:15] crowsnest:		rtsp_port: 8554
+[06/02/24 16:05:15] crowsnest:		port: 8080
+[06/02/24 16:05:15] crowsnest:		device: /dev/video0
+[06/02/24 16:05:15] crowsnest:		resolution: 640x480
+[06/02/24 16:05:15] crowsnest:		max_fps: 15
+[06/02/24 16:05:15] crowsnest: INFO: Detect available Devices
+[06/02/24 16:05:15] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[06/02/24 16:05:22] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[06/02/24 16:05:22] crowsnest: Version: v4.1.9-1-gd75a3ae
+[06/02/24 16:05:22] crowsnest: Prepare Startup ...
+[06/02/24 16:05:22] crowsnest: INFO: Host information:
+[06/02/24 16:05:22] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[06/02/24 16:05:22] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[06/02/24 16:05:22] crowsnest: Host Info: Available CPU Cores: 4
+[06/02/24 16:05:22] crowsnest: Host Info: Available Memory: 1010636 kB
+[06/02/24 16:05:22] crowsnest: Host Info: Diskspace (avail. / total): 53G / 57G
+[06/02/24 16:05:22] crowsnest: INFO: Checking Dependencies
+[06/02/24 16:05:22] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[06/02/24 16:05:22] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[06/02/24 16:05:22] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[06/02/24 16:05:22] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[06/02/24 16:05:22] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[06/02/24 16:05:22] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[06/02/24 16:05:22] crowsnest:		[crowsnest]
+[06/02/24 16:05:22] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[06/02/24 16:05:22] crowsnest:		log_level: verbose
+[06/02/24 16:05:22] crowsnest:		delete_log: false
+[06/02/24 16:05:22] crowsnest:		no_proxy: false
+[06/02/24 16:05:22] crowsnest:		
+[06/02/24 16:05:22] crowsnest:		[cam 1]
+[06/02/24 16:05:22] crowsnest:		mode: ustreamer
+[06/02/24 16:05:22] crowsnest:		
+[06/02/24 16:05:22] crowsnest:		enable_rtsp: false
+[06/02/24 16:05:22] crowsnest:		rtsp_port: 8554
+[06/02/24 16:05:22] crowsnest:		port: 8080
+[06/02/24 16:05:22] crowsnest:		device: /dev/video0
+[06/02/24 16:05:22] crowsnest:		resolution: 640x480
+[06/02/24 16:05:22] crowsnest:		max_fps: 15
+[06/02/24 16:05:22] crowsnest: INFO: Detect available Devices
+[06/02/24 16:05:22] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[06/02/24 16:05:28] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[06/02/24 16:05:28] crowsnest: Version: v4.1.9-1-gd75a3ae
+[06/02/24 16:05:28] crowsnest: Prepare Startup ...
+[06/02/24 16:05:28] crowsnest: INFO: Host information:
+[06/02/24 16:05:28] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[06/02/24 16:05:28] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[06/02/24 16:05:28] crowsnest: Host Info: Available CPU Cores: 4
+[06/02/24 16:05:28] crowsnest: Host Info: Available Memory: 1010636 kB
+[06/02/24 16:05:28] crowsnest: Host Info: Diskspace (avail. / total): 53G / 57G
+[06/02/24 16:05:28] crowsnest: INFO: Checking Dependencies
+[06/02/24 16:05:29] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[06/02/24 16:05:29] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[06/02/24 16:05:29] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[06/02/24 16:05:29] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[06/02/24 16:05:29] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[06/02/24 16:05:29] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[06/02/24 16:05:29] crowsnest:		[crowsnest]
+[06/02/24 16:05:29] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[06/02/24 16:05:29] crowsnest:		log_level: verbose
+[06/02/24 16:05:29] crowsnest:		delete_log: false
+[06/02/24 16:05:29] crowsnest:		no_proxy: false
+[06/02/24 16:05:29] crowsnest:		
+[06/02/24 16:05:29] crowsnest:		[cam 1]
+[06/02/24 16:05:29] crowsnest:		mode: ustreamer
+[06/02/24 16:05:29] crowsnest:		
+[06/02/24 16:05:29] crowsnest:		enable_rtsp: false
+[06/02/24 16:05:29] crowsnest:		rtsp_port: 8554
+[06/02/24 16:05:29] crowsnest:		port: 8080
+[06/02/24 16:05:29] crowsnest:		device: /dev/video0
+[06/02/24 16:05:29] crowsnest:		resolution: 640x480
+[06/02/24 16:05:29] crowsnest:		max_fps: 15
+[06/02/24 16:05:29] crowsnest: INFO: Detect available Devices
+[06/02/24 16:05:29] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[06/02/24 16:05:35] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[06/02/24 16:05:35] crowsnest: Version: v4.1.9-1-gd75a3ae
+[06/02/24 16:05:35] crowsnest: Prepare Startup ...
+[06/02/24 16:05:35] crowsnest: INFO: Host information:
+[06/02/24 16:05:35] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[06/02/24 16:05:35] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[06/02/24 16:05:35] crowsnest: Host Info: Available CPU Cores: 4
+[06/02/24 16:05:35] crowsnest: Host Info: Available Memory: 1010636 kB
+[06/02/24 16:05:35] crowsnest: Host Info: Diskspace (avail. / total): 53G / 57G
+[06/02/24 16:05:35] crowsnest: INFO: Checking Dependencies
+[06/02/24 16:05:35] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[06/02/24 16:05:35] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[06/02/24 16:05:35] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[06/02/24 16:05:35] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[06/02/24 16:05:35] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[06/02/24 16:05:35] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[06/02/24 16:05:35] crowsnest:		[crowsnest]
+[06/02/24 16:05:35] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[06/02/24 16:05:35] crowsnest:		log_level: verbose
+[06/02/24 16:05:35] crowsnest:		delete_log: false
+[06/02/24 16:05:35] crowsnest:		no_proxy: false
+[06/02/24 16:05:35] crowsnest:		
+[06/02/24 16:05:35] crowsnest:		[cam 1]
+[06/02/24 16:05:35] crowsnest:		mode: ustreamer
+[06/02/24 16:05:35] crowsnest:		
+[06/02/24 16:05:35] crowsnest:		enable_rtsp: false
+[06/02/24 16:05:35] crowsnest:		rtsp_port: 8554
+[06/02/24 16:05:35] crowsnest:		port: 8080
+[06/02/24 16:05:35] crowsnest:		device: /dev/video0
+[06/02/24 16:05:35] crowsnest:		resolution: 640x480
+[06/02/24 16:05:35] crowsnest:		max_fps: 15
+[06/02/24 16:05:35] crowsnest: INFO: Detect available Devices
+[06/02/24 16:05:35] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[06/02/24 15:17:08] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[06/02/24 15:17:09] crowsnest: Version: v4.1.9-1-gd75a3ae
+[06/02/24 15:17:09] crowsnest: Prepare Startup ...
+[06/02/24 15:17:09] crowsnest: INFO: Host information:
+[06/02/24 15:17:09] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[06/02/24 15:17:09] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[06/02/24 15:17:09] crowsnest: Host Info: Available CPU Cores: 4
+[06/02/24 15:17:09] crowsnest: Host Info: Available Memory: 1010636 kB
+[06/02/24 15:17:09] crowsnest: Host Info: Diskspace (avail. / total): 53G / 57G
+[06/02/24 15:17:09] crowsnest: INFO: Checking Dependencies
+[06/02/24 15:17:10] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[06/02/24 15:17:10] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[06/02/24 15:17:10] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[06/02/24 15:17:10] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[06/02/24 15:17:10] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[06/02/24 15:17:10] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[06/02/24 15:17:10] crowsnest:		[crowsnest]
+[06/02/24 15:17:10] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[06/02/24 15:17:10] crowsnest:		log_level: verbose
+[06/02/24 15:17:10] crowsnest:		delete_log: false
+[06/02/24 15:17:10] crowsnest:		no_proxy: false
+[06/02/24 15:17:10] crowsnest:		
+[06/02/24 15:17:10] crowsnest:		[cam 1]
+[06/02/24 15:17:10] crowsnest:		mode: ustreamer
+[06/02/24 15:17:10] crowsnest:		
+[06/02/24 15:17:10] crowsnest:		enable_rtsp: false
+[06/02/24 15:17:10] crowsnest:		rtsp_port: 8554
+[06/02/24 15:17:10] crowsnest:		port: 8080
+[06/02/24 15:17:10] crowsnest:		device: /dev/video0
+[06/02/24 15:17:10] crowsnest:		resolution: 640x480
+[06/02/24 15:17:10] crowsnest:		max_fps: 15
+[06/02/24 15:17:10] crowsnest: INFO: Detect available Devices
+[06/02/24 15:17:10] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
+[06/02/24 15:17:17] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[06/02/24 15:17:17] crowsnest: Version: v4.1.9-1-gd75a3ae
+[06/02/24 15:17:17] crowsnest: Prepare Startup ...
+[06/02/24 15:17:17] crowsnest: INFO: Host information:
+[06/02/24 15:17:17] crowsnest: Host Info: Distribution: BTT-CB1 2.3.4 Bullseye
+[06/02/24 15:17:17] crowsnest: Host Info: Kernel: Linux 5.16.17-sun50iw9 aarch64
+[06/02/24 15:17:17] crowsnest: Host Info: Available CPU Cores: 4
+[06/02/24 15:17:17] crowsnest: Host Info: Available Memory: 1010636 kB
+[06/02/24 15:17:17] crowsnest: Host Info: Diskspace (avail. / total): 53G / 57G
+[06/02/24 15:17:17] crowsnest: INFO: Checking Dependencies
+[06/02/24 15:17:17] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[06/02/24 15:17:17] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[06/02/24 15:17:18] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[06/02/24 15:17:18] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/src/ustreamer.bin.
+[06/02/24 15:17:18] crowsnest: Version Control: ustreamer is up to date. (v6.10)
+[06/02/24 15:17:18] crowsnest: INFO: Print Configfile: '/home/biqu/printer_data/config/crowsnest.conf'
+[06/02/24 15:17:18] crowsnest:		[crowsnest]
+[06/02/24 15:17:18] crowsnest:		log_path: /home/biqu/printer_data/logs/crowsnest.log
+[06/02/24 15:17:18] crowsnest:		log_level: verbose
+[06/02/24 15:17:18] crowsnest:		delete_log: false
+[06/02/24 15:17:18] crowsnest:		no_proxy: false
+[06/02/24 15:17:18] crowsnest:		
+[06/02/24 15:17:18] crowsnest:		[cam 1]
+[06/02/24 15:17:18] crowsnest:		mode: ustreamer
+[06/02/24 15:17:18] crowsnest:		
+[06/02/24 15:17:18] crowsnest:		enable_rtsp: false
+[06/02/24 15:17:18] crowsnest:		rtsp_port: 8554
+[06/02/24 15:17:18] crowsnest:		port: 8080
+[06/02/24 15:17:18] crowsnest:		device: /dev/video0
+[06/02/24 15:17:18] crowsnest:		resolution: 640x480
+[06/02/24 15:17:18] crowsnest:		max_fps: 15
+[06/02/24 15:17:18] crowsnest: INFO: Detect available Devices
+[06/02/24 15:17:18] crowsnest: ERROR: No usable Devices Found. Stopping crowsnest.
