@@ -286,3 +286,742 @@ Content-Type: multipart/form-data; boundary=--dio-boundary-1202538944
 2024-06-02 00:43:35,854 [websockets.py:write_to_socket()] - Websocket closed while writing: 281472833919920
 2024-06-02 00:43:40,750 [websockets.py:on_close()] - Websocket Closed: ID: 281472833919920 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.99
 2024-06-02 00:52:29,580 [websockets.py:on_close()] - Websocket Closed: ID: 281472835584208 Close Code: None, Close Reason: None, Pong Time Elapsed: 4.46
+2024-06-02 01:09:02,864 [application.py:log_request()] - 101 GET /websocket?token=HMETHZKREBEJ7UN7ML3UDRVBOTNRRPTM (192.168.0.181) [_TRUSTED_USER_] 5.96ms
+2024-06-02 01:09:02,865 [websockets.py:open()] - Websocket Opened: ID: 281472833864608, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-02 01:09:02,880 [websockets.py:_handle_identify()] - Websocket 281472833864608 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-02 01:09:02,882 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-02 01:11:14,569 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Requested temperature (245.0) out of range (-250.0:200.0)
+2024-06-02 01:12:23,360 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-02 01:13:23,364 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.01 seconds
+2024-06-02 01:13:25,459 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2024-06-02 01:13:25,479 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1717290775.783764, Usage: 6.41%, Memory: 46408 kB
+System Time: 1717290776.784524, Usage: 6.59%, Memory: 46408 kB
+System Time: 1717290777.785765, Usage: 6.69%, Memory: 46408 kB
+System Time: 1717290778.780233, Usage: 7.67%, Memory: 46408 kB
+System Time: 1717290779.781190, Usage: 3.71%, Memory: 46408 kB
+System Time: 1717290780.788941, Usage: 5.14%, Memory: 46408 kB
+System Time: 1717290781.790241, Usage: 6.42%, Memory: 46408 kB
+System Time: 1717290782.789589, Usage: 6.48%, Memory: 46408 kB
+System Time: 1717290783.791377, Usage: 6.44%, Memory: 46408 kB
+System Time: 1717290784.794126, Usage: 5.92%, Memory: 46408 kB
+System Time: 1717290785.795212, Usage: 6.41%, Memory: 46408 kB
+System Time: 1717290786.794789, Usage: 7.31%, Memory: 46408 kB
+System Time: 1717290787.795816, Usage: 5.94%, Memory: 46408 kB
+System Time: 1717290788.799454, Usage: 8.28%, Memory: 46408 kB
+System Time: 1717290789.800323, Usage: 6.26%, Memory: 46408 kB
+System Time: 1717290790.799465, Usage: 6.6%, Memory: 46408 kB
+System Time: 1717290791.800489, Usage: 6.2%, Memory: 46408 kB
+System Time: 1717290792.802769, Usage: 6.15%, Memory: 46408 kB
+System Time: 1717290793.803092, Usage: 6.65%, Memory: 46408 kB
+System Time: 1717290794.800007, Usage: 4.82%, Memory: 46408 kB
+System Time: 1717290795.801838, Usage: 3.98%, Memory: 46408 kB
+System Time: 1717290796.807755, Usage: 5.5%, Memory: 46408 kB
+System Time: 1717290797.810089, Usage: 6.11%, Memory: 46408 kB
+System Time: 1717290798.811823, Usage: 8.93%, Memory: 46408 kB
+System Time: 1717290799.812824, Usage: 6.32%, Memory: 46408 kB
+System Time: 1717290800.811783, Usage: 6.39%, Memory: 46408 kB
+System Time: 1717290801.815037, Usage: 5.76%, Memory: 46408 kB
+System Time: 1717290802.817187, Usage: 6.31%, Memory: 46408 kB
+System Time: 1717290803.818865, Usage: 6.79%, Memory: 46408 kB
+System Time: 1717290804.819822, Usage: 6.69%, Memory: 46408 kB
+CPU Temperature: 47.852
+2024-06-02 01:13:25,507 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: pid_calibrate interrupted
+2024-06-02 01:13:34,731 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-02 01:13:34,843 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryFDCAYIOYiHEVl5A1
+2024-06-02 01:13:34,877 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-02 01:13:34,894 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 53.40ms
+2024-06-02 01:13:35,051 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 01:13:35,175 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:13:35,210 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:13:35,449 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:13:36,358 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 01:13:37,713 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 01:13:37,716 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 01:13:37,720 [klippy_connection.py:_check_ready()] - 
+Option 'z_positions' in section 'z_tilt' must be specified
+
+Once the underlying issue is corrected, use the "RESTART"
+command to reload the config and restart the host software.
+Printer is halted
+
+2024-06-02 01:16:56,922 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-02 01:16:57,029 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary3JdNB6zs4UWgprXU
+2024-06-02 01:16:57,065 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-02 01:16:57,090 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 63.14ms
+2024-06-02 01:16:57,214 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 01:16:57,309 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:16:57,358 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:16:57,488 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:16:58,535 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 01:17:03,514 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 01:17:03,527 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 01:17:03,756 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 01:17:04,036 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 01:17:04,506 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 01:28:11,530 [websockets.py:on_close()] - Websocket Closed: ID: 281472833864608 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 8.63
+2024-06-02 01:28:12,540 [application.py:log_request()] - 101 GET /websocket?token=MZOT5X3Y4FEYUJ6WDR6IG2YVWAMACIS2 (192.168.0.181) [_TRUSTED_USER_] 5.93ms
+2024-06-02 01:28:12,541 [websockets.py:open()] - Websocket Opened: ID: 281472833873568, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-02 01:28:12,557 [websockets.py:_handle_identify()] - Websocket 281472833873568 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-02 01:28:12,559 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-02 01:40:51,420 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 01:40:51,457 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:40:51,666 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:40:51,758 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:40:52,702 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 01:40:57,718 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 01:40:57,732 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 01:40:57,969 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 01:40:58,238 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 01:40:58,721 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 01:42:11,999 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: BLTouch failed to deploy
+2024-06-02 01:45:15,656 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-02 01:45:15,675 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryzTcpWD3o6XJeoDjg
+2024-06-02 01:45:15,695 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-02 01:45:15,706 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 32.51ms
+2024-06-02 01:45:16,979 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 01:45:17,056 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:45:17,156 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:45:17,236 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:45:18,261 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 01:45:19,689 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 01:45:19,692 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 01:45:19,696 [klippy_connection.py:_check_ready()] - 
+Unable to parse option 'y_offset' in section 'bltouch'
+
+Once the underlying issue is corrected, use the "RESTART"
+command to reload the config and restart the host software.
+Printer is halted
+
+2024-06-02 01:45:35,430 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-02 01:45:35,454 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary3Wh2QmZiBAxoK3Pu
+2024-06-02 01:45:35,502 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-02 01:45:35,527 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 75.76ms
+2024-06-02 01:45:35,688 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 01:45:35,773 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:45:35,808 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:45:35,828 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:45:35,899 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:45:35,957 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:45:36,952 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 01:45:41,972 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 01:45:41,975 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 01:45:42,222 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 01:45:42,492 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 01:45:42,974 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 01:46:14,601 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: pid_calibrate interrupted
+2024-06-02 01:46:28,096 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.210
+2024-06-02 01:47:05,472 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2024-06-02 01:47:05,489 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1717292795.741905, Usage: 6.49%, Memory: 46416 kB
+System Time: 1717292796.738285, Usage: 6.74%, Memory: 46416 kB
+System Time: 1717292797.739691, Usage: 6.35%, Memory: 46416 kB
+System Time: 1717292798.739721, Usage: 6.28%, Memory: 46416 kB
+System Time: 1717292799.743599, Usage: 5.87%, Memory: 46416 kB
+System Time: 1717292800.744454, Usage: 6.71%, Memory: 46416 kB
+System Time: 1717292801.745753, Usage: 6.48%, Memory: 46416 kB
+System Time: 1717292802.740488, Usage: 6.93%, Memory: 46416 kB
+System Time: 1717292803.742494, Usage: 3.75%, Memory: 46416 kB
+System Time: 1717292804.749308, Usage: 5.61%, Memory: 46416 kB
+System Time: 1717292805.750553, Usage: 6.58%, Memory: 46416 kB
+System Time: 1717292806.754953, Usage: 7.14%, Memory: 46416 kB
+System Time: 1717292807.746312, Usage: 5.05%, Memory: 46416 kB
+System Time: 1717292808.746766, Usage: 3.75%, Memory: 46416 kB
+System Time: 1717292809.754688, Usage: 5.43%, Memory: 46416 kB
+System Time: 1717292810.754515, Usage: 5.95%, Memory: 46416 kB
+System Time: 1717292811.756233, Usage: 5.97%, Memory: 46416 kB
+System Time: 1717292812.760035, Usage: 9.1%, Memory: 46416 kB
+System Time: 1717292813.760626, Usage: 6.37%, Memory: 46416 kB
+System Time: 1717292814.761844, Usage: 6.27%, Memory: 46416 kB
+System Time: 1717292815.760895, Usage: 6.19%, Memory: 46416 kB
+System Time: 1717292816.762617, Usage: 6.38%, Memory: 46416 kB
+System Time: 1717292817.758504, Usage: 4.8%, Memory: 46416 kB
+System Time: 1717292818.759694, Usage: 3.6%, Memory: 46416 kB
+System Time: 1717292819.767544, Usage: 4.9%, Memory: 46416 kB
+System Time: 1717292820.766664, Usage: 6.27%, Memory: 46416 kB
+System Time: 1717292821.769202, Usage: 5.9%, Memory: 46416 kB
+System Time: 1717292822.771203, Usage: 9.17%, Memory: 46416 kB
+System Time: 1717292823.772672, Usage: 6.28%, Memory: 46416 kB
+System Time: 1717292824.773769, Usage: 6.67%, Memory: 46416 kB
+CPU Temperature: 48.095
+2024-06-02 01:47:05,745 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: pid_calibrate interrupted
+2024-06-02 01:47:09,493 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 01:47:09,617 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:47:09,645 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:47:09,882 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:47:10,762 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 01:47:15,823 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 01:47:15,828 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 01:47:16,073 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 01:47:16,363 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 01:47:16,824 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 01:47:47,418 [application.py:log_request()] - 101 GET /websocket?token=3L5WE3NR5K45XINZEYOU47G33CVC73HM (192.168.0.181) [_TRUSTED_USER_] 4.12ms
+2024-06-02 01:47:47,419 [websockets.py:open()] - Websocket Opened: ID: 281472833057408, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-02 01:47:47,433 [websockets.py:_handle_identify()] - Websocket 281472833057408 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-02 01:47:47,435 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-02 01:47:57,819 [websockets.py:on_close()] - Websocket Closed: ID: 281472833873568 Close Code: None, Close Reason: None, Pong Time Elapsed: 5.24
+2024-06-02 01:50:12,581 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-02 01:50:12,607 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryiWl7riQLzwNbk3mF
+2024-06-02 01:50:12,637 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-02 01:50:12,659 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 53.89ms
+2024-06-02 01:50:13,890 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 01:50:13,962 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:50:14,023 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:50:14,113 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:50:15,160 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 01:50:20,234 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 01:50:20,237 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 01:50:20,485 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 01:50:20,756 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 01:50:21,237 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 01:51:34,703 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-02 01:51:34,735 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryeAybMQ73eilvcHOu
+2024-06-02 01:51:34,779 [application.py:post()] - Processing Uploaded File: klippermacros.cfg
+2024-06-02 01:51:34,806 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 74.09ms
+2024-06-02 01:51:36,020 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 01:51:36,052 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:51:36,362 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:51:37,290 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 01:51:42,395 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 01:51:42,399 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 01:51:42,646 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 01:51:42,928 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 01:51:43,398 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 01:52:47,832 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2024-06-02 01:52:47,843 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1717293138.295779, Usage: 6.34%, Memory: 46496 kB
+System Time: 1717293139.295054, Usage: 5.96%, Memory: 46496 kB
+System Time: 1717293140.298278, Usage: 5.76%, Memory: 46496 kB
+System Time: 1717293141.300301, Usage: 7.41%, Memory: 46496 kB
+System Time: 1717293142.295027, Usage: 4.41%, Memory: 46496 kB
+System Time: 1717293143.296749, Usage: 4.67%, Memory: 46496 kB
+System Time: 1717293144.304303, Usage: 4.9%, Memory: 46496 kB
+System Time: 1717293145.303557, Usage: 5.57%, Memory: 46496 kB
+System Time: 1717293146.306755, Usage: 6.08%, Memory: 46496 kB
+System Time: 1717293147.311628, Usage: 7.16%, Memory: 46496 kB
+System Time: 1717293148.308795, Usage: 6.21%, Memory: 46496 kB
+System Time: 1717293149.303074, Usage: 4.9%, Memory: 46496 kB
+System Time: 1717293150.303932, Usage: 3.42%, Memory: 46496 kB
+System Time: 1717293151.306233, Usage: 5.81%, Memory: 46496 kB
+System Time: 1717293152.306176, Usage: 3.72%, Memory: 46496 kB
+System Time: 1717293153.313225, Usage: 5.31%, Memory: 46496 kB
+System Time: 1717293154.317667, Usage: 5.6%, Memory: 46496 kB
+System Time: 1717293155.326985, Usage: 5.48%, Memory: 46496 kB
+System Time: 1717293156.322961, Usage: 7.6%, Memory: 46496 kB
+System Time: 1717293157.321852, Usage: 3.63%, Memory: 46496 kB
+System Time: 1717293158.327087, Usage: 3.91%, Memory: 46496 kB
+System Time: 1717293159.334493, Usage: 5.32%, Memory: 46496 kB
+System Time: 1717293160.337721, Usage: 5.55%, Memory: 46496 kB
+System Time: 1717293161.340188, Usage: 5.68%, Memory: 46496 kB
+System Time: 1717293162.341091, Usage: 5.66%, Memory: 46496 kB
+System Time: 1717293163.338012, Usage: 7.22%, Memory: 46496 kB
+System Time: 1717293164.338860, Usage: 3.65%, Memory: 46496 kB
+System Time: 1717293165.350142, Usage: 4.81%, Memory: 46496 kB
+System Time: 1717293166.345714, Usage: 4.4%, Memory: 46496 kB
+System Time: 1717293167.347607, Usage: 3.88%, Memory: 46496 kB
+CPU Temperature: 49.877
+2024-06-02 01:53:28,368 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+-------------------- Log Start | Sun Jun  2 01:17:10 2024 --------------------
+platform: Linux-5.16.17-sun50iw9-aarch64-with-glibc2.31
+data_path: /home/biqu/printer_data
+is_default_data_path: False
+config_file: /home/biqu/printer_data/config/moonraker.conf
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: b14b6a6422c74db3a14a0ca10562d196
+unix_socket_path: /home/biqu/printer_data/comms/moonraker.sock
+software_version: v0.8.0-377-g4fe89d5
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker.git
+modified_files: []
+unofficial_components: []
+log_file: /home/biqu/printer_data/logs/moonraker.log
+python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+launch_args: /home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/moonraker.py -d /home/biqu/printer_data
+msgspec_enabled: False
+uvloop_enabled: False
+2024-06-02 01:17:10,658 [confighelper.py:read_file()] - Configuration File '/home/biqu/printer_data/config/moonraker.conf' parsed, total size: 2146 B
+2024-06-02 01:17:10,659 [server.py:add_log_rollover_item()] - 
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/biqu/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+
+[octoprint_compat]
+
+[history]
+
+[update_manager]
+channel = dev
+refresh_interval = 168
+
+[update_manager crowsnest]
+type = git_repo
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+install_script = tools/pkglist.sh
+
+[update_manager timelapse]
+type = git_repo
+primary_branch = main
+path = ~/moonraker-timelapse
+origin = https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services = klipper moonraker
+
+[update_manager print_area_bed_mesh]
+type = git_repo
+path = ~/print_area_bed_mesh
+origin = https://github.com/Turge08/print_area_bed_mesh.git
+is_system_service = False
+
+[update_manager fluidd-config]
+type = git_repo
+primary_branch = master
+path = ~/fluidd-config
+origin = https://github.com/fluidd-core/fluidd-config.git
+managed_services = klipper
+
+[update_manager fluidd]
+type = web
+channel = stable
+repo = fluidd-core/fluidd
+path = ~/fluidd
+
+#################################################################
+All Configuration Files:
+/home/biqu/printer_data/config/moonraker.conf
+#################################################################
+2024-06-02 01:17:11,118 [server.py:load_component()] - Component (secrets) loaded
+2024-06-02 01:17:11,155 [server.py:load_component()] - Component (template) loaded
+2024-06-02 01:17:11,187 [server.py:load_component()] - Component (klippy_connection) loaded
+2024-06-02 01:17:13,387 [server.py:load_component()] - Component (application) loaded
+2024-06-02 01:17:13,506 [server.py:load_component()] - Component (websockets) loaded
+2024-06-02 01:17:13,982 [server.py:load_component()] - Component (dbus_manager) loaded
+2024-06-02 01:17:14,318 [server.py:add_log_rollover_item()] - Loading Sqlite database provider. Sqlite Version: 3.34.1
+2024-06-02 01:17:14,427 [server.py:add_log_rollover_item()] - Unsafe Shutdown Count: 30
+2024-06-02 01:17:14,436 [server.py:load_component()] - Component (database) loaded
+2024-06-02 01:17:14,519 [file_manager.py:__init__()] - Using File System Observer: inotify
+2024-06-02 01:17:14,607 [server.py:load_component()] - Component (file_manager) loaded
+2024-06-02 01:17:14,670 [database.py:register_table()] - Found registered table authorized_users
+2024-06-02 01:17:14,675 [authorization.py:__init__()] - Authorization Configuration Loaded
+Trusted Clients:
+10.0.0.0/8
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.168.0.0/16
+fe80::/10
+::1/128
+CORS Domains:
+.*\.lan
+.*\.local
+.*://localhost
+.*://localhost:.*
+.*://my\.mainsail\.xyz
+.*://app\.fluidd\.xyz
+2024-06-02 01:17:14,692 [server.py:load_component()] - Component (authorization) loaded
+2024-06-02 01:17:14,709 [server.py:load_component()] - Component (klippy_apis) loaded
+2024-06-02 01:17:15,404 [server.py:add_log_rollover_item()] - 
+System Info:
+
+***python***
+  version: (3, 9, 2, 'final', 0)
+  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 64bit
+  processor: aarch64
+  cpu_desc: 
+  serial_number: 
+  hardware_desc: 
+  model: 
+  total_memory: 1010636
+  memory_units: kB
+
+***sd_info***
+
+***distribution***
+  name: BTT-CB1 2.3.4 Bullseye
+  id: debian
+  version: 11
+  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bullseye
+  release_info: {}
+  kernel_version: 5.16.17-sun50iw9
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+2024-06-02 01:17:15,452 [server.py:load_component()] - Component (shell_command) loaded
+2024-06-02 01:17:15,452 [machine.py:__init__()] - Using System Provider: systemd_dbus
+2024-06-02 01:17:15,476 [server.py:add_log_rollover_item()] - Module libcamera unavailble, import failed
+2024-06-02 01:17:15,476 [server.py:load_component()] - Component (machine) loaded
+2024-06-02 01:17:15,488 [server.py:load_component()] - Component (data_store) loaded
+2024-06-02 01:17:15,495 [proc_stats.py:__init__()] - Unable to find 'vcgencmd', throttle checking disabled
+2024-06-02 01:17:15,497 [server.py:load_component()] - Component (proc_stats) loaded
+2024-06-02 01:17:15,509 [server.py:load_component()] - Component (job_state) loaded
+2024-06-02 01:17:15,532 [server.py:load_component()] - Component (job_queue) loaded
+2024-06-02 01:17:15,546 [database.py:register_table()] - Found registered table job_history
+2024-06-02 01:17:15,560 [database.py:register_table()] - Found registered table job_totals
+2024-06-02 01:17:15,573 [server.py:load_component()] - Component (history) loaded
+2024-06-02 01:17:15,629 [server.py:load_component()] - Component (http_client) loaded
+2024-06-02 01:17:15,657 [server.py:load_component()] - Component (announcements) loaded
+2024-06-02 01:17:15,693 [server.py:load_component()] - Component (webcam) loaded
+2024-06-02 01:17:15,732 [server.py:load_component()] - Component (extensions) loaded
+2024-06-02 01:17:15,765 [server.py:load_component()] - Component (octoprint_compat) loaded
+2024-06-02 01:17:16,045 [base_deploy.py:log_info()] - Git Repo moonraker: Detected virtualenv: /home/biqu/moonraker-env
+2024-06-02 01:17:16,064 [base_deploy.py:log_info()] - Git Repo klipper: Detected virtualenv: /home/biqu/klippy-env
+2024-06-02 01:17:16,123 [server.py:load_component()] - Component (update_manager) loaded
+2024-06-02 01:17:16,131 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
+2024-06-02 01:17:16,341 [server.py:_initialize_component()] - Performing Component Post Init: [database]
+2024-06-02 01:17:16,367 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
+2024-06-02 01:17:16,374 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
+2024-06-02 01:17:16,379 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
+2024-06-02 01:17:16,384 [machine.py:validation_init()] - Installation version in database up to date
+2024-06-02 01:17:17,101 [machine.py:check_virt_status()] - No Virtualization Detected
+2024-06-02 01:17:17,131 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.0.200
+2024-06-02 01:17:17,138 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.0.200
+2024-06-02 01:17:17,277 [server.py:add_log_rollover_item()] - 
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', '-.mount', 'network-online.target', 'system.slice']
+**After=['systemd-journald.socket', 'system.slice', 'network-online.target', '-.mount', 'basic.target', 'sysinit.target']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/biqu/printer_data/systemd/moonraker.env
+**ExecStart=/home/biqu/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/biqu/moonraker
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=biqu
+2024-06-02 01:17:17,278 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
+2024-06-02 01:17:17,279 [server.py:_initialize_component()] - Performing Component Post Init: [history]
+2024-06-02 01:17:17,330 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
+2024-06-02 01:17:17,345 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
+2024-06-02 01:17:17,346 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.0.200
+2024-06-02 01:17:17,358 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
+2024-06-02 01:17:17,359 [server.py:_initialize_component()] - Performing Component Post Init: [update_manager]
+2024-06-02 01:17:17,366 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['-.mount', 'sysinit.target', 'system.slice']
+**After=['-.mount', 'sysinit.target', 'systemd-journald.socket', 'network-online.target', 'klipper-mcu.service', 'basic.target', 'system.slice']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/biqu/printer_data/systemd/klipper.env
+**ExecStart=/home/biqu/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/biqu/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=biqu
+2024-06-02 01:17:18,108 [base_deploy.py:log_info()] - PackageDeploy: PackageKit Provider Configured
+2024-06-02 01:17:18,113 [git_deploy.py:log_repo_info()] - Git Repo moonraker Detected:
+Owner: Arksine
+Repository Name: moonraker
+Path: /home/biqu/moonraker
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Arksine/moonraker.git
+Recovery URL: https://github.com/Arksine/moonraker.git
+Current Commit SHA: 4fe89d5571e644c8222c15859f3b14d0e118fbd8
+Upstream Commit SHA: 4fe89d5571e644c8222c15859f3b14d0e118fbd8
+Current Version: v0.8.0-377-g4fe89d55
+Upstream Version: v0.8.0-377-g4fe89d55
+Rollback Commit: a3e4dac5fb20f8dfc0857a252eef5219d5e0ec4c
+Rollback Branch: master
+Rollback Version: v0.8.0-324-ga3e4dac5
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2024-06-02 01:17:18,118 [git_deploy.py:log_repo_info()] - Git Repo klipper Detected:
+Owner: Klipper3d
+Repository Name: klipper
+Path: /home/biqu/klipper
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Klipper3d/klipper
+Recovery URL: https://github.com/Klipper3d/klipper
+Current Commit SHA: 6cd174208bd9bbd51dc0d519a26661fb926d038a
+Upstream Commit SHA: 6cd174208bd9bbd51dc0d519a26661fb926d038a
+Current Version: v0.12.0-207-g6cd17420
+Upstream Version: v0.12.0-207-g6cd17420
+Rollback Commit: 6cd174208bd9bbd51dc0d519a26661fb926d038a
+Rollback Branch: master
+Rollback Version: v0.12.0-207-g6cd17420
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2024-06-02 01:17:18,123 [git_deploy.py:log_repo_info()] - Git Repo crowsnest Detected:
+Owner: mainsail-crew
+Repository Name: crowsnest
+Path: /home/biqu/crowsnest
+Remote: origin
+Branch: master
+Remote URL: https://github.com/mainsail-crew/crowsnest.git
+Recovery URL: https://github.com/mainsail-crew/crowsnest.git
+Current Commit SHA: d75a3aeb018384e59d03518754f6148c98894ed9
+Upstream Commit SHA: d75a3aeb018384e59d03518754f6148c98894ed9
+Current Version: v4.1.9-1-gd75a3aeb
+Upstream Version: v4.1.9-1-gd75a3aeb
+Rollback Commit: d75a3aeb018384e59d03518754f6148c98894ed9
+Rollback Branch: master
+Rollback Version: v4.1.9-1-gd75a3aeb
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2024-06-02 01:17:18,128 [git_deploy.py:log_repo_info()] - Git Repo timelapse Detected:
+Owner: mainsail-crew
+Repository Name: moonraker-timelapse
+Path: /home/biqu/moonraker-timelapse
+Remote: origin
+Branch: main
+Remote URL: https://github.com/mainsail-crew/moonraker-timelapse.git
+Recovery URL: https://github.com/mainsail-crew/moonraker-timelapse.git
+Current Commit SHA: c7fff11e542b95e0e15b8bb1443cea8159ac0274
+Upstream Commit SHA: c7fff11e542b95e0e15b8bb1443cea8159ac0274
+Current Version: v0.0.1-143-gc7fff11e
+Upstream Version: v0.0.1-143-gc7fff11e
+Rollback Commit: c7fff11e542b95e0e15b8bb1443cea8159ac0274
+Rollback Branch: main
+Rollback Version: v0.0.1-143-gc7fff11e
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2024-06-02 01:17:18,133 [git_deploy.py:log_repo_info()] - Git Repo print_area_bed_mesh Detected:
+Owner: Turge08
+Repository Name: print_area_bed_mesh
+Path: /home/biqu/print_area_bed_mesh
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Turge08/print_area_bed_mesh.git
+Recovery URL: https://github.com/Turge08/print_area_bed_mesh.git
+Current Commit SHA: 53451c9dedd331c2ead0fbd0f55ee15c37d41b1f
+Upstream Commit SHA: 53451c9dedd331c2ead0fbd0f55ee15c37d41b1f
+Current Version: v1.2.1-21-g53451c9d
+Upstream Version: v1.2.1-21-g53451c9d
+Rollback Commit: 53451c9dedd331c2ead0fbd0f55ee15c37d41b1f
+Rollback Branch: master
+Rollback Version: v1.2.1-21-g53451c9d
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2024-06-02 01:17:18,138 [git_deploy.py:log_repo_info()] - Git Repo fluidd-config Detected:
+Owner: fluidd-core
+Repository Name: fluidd-config
+Path: /home/biqu/fluidd-config
+Remote: origin
+Branch: master
+Remote URL: https://github.com/fluidd-core/fluidd-config.git
+Recovery URL: https://github.com/fluidd-core/fluidd-config.git
+Current Commit SHA: ce48c5854e9ca3ca72b63d0327069fac20e94c7c
+Upstream Commit SHA: ce48c5854e9ca3ca72b63d0327069fac20e94c7c
+Current Version: v1.2.0-0-gce48c585
+Upstream Version: v1.2.0-0-gce48c585
+Rollback Commit: ce48c5854e9ca3ca72b63d0327069fac20e94c7c
+Rollback Branch: master
+Rollback Version: v1.2.0-0-gce48c585
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2024-06-02 01:17:18,154 [base_deploy.py:log_info()] - Web Client fluidd: Detected
+Repo: fluidd-core/fluidd
+Channel: stable
+Path: /home/biqu/fluidd
+Local Version: v1.30.0
+Remote Version: v1.30.0
+Valid: True
+Fallback Detected: False
+Pre-release: False
+Download Url: https://github.com/fluidd-core/fluidd/releases/download/v1.30.0/fluidd.zip
+Download Size: 3715088
+Content Type: application/zip
+Rollback Version: v1.30.0
+Rollback Repo: fluidd-core/fluidd
+2024-06-02 01:17:18,155 [base_deploy.py:log_info()] - PackageKit: Next refresh in: 4 Days, 1 Hour, 54 Minutes, 21 Seconds
+2024-06-02 01:17:18,155 [base_deploy.py:log_info()] - Git Repo moonraker: Next refresh in: 5 Days, 5 Hours, 56 Seconds
+2024-06-02 01:17:18,155 [base_deploy.py:log_info()] - Git Repo klipper: Next refresh in: 5 Days, 5 Hours, 42 Seconds
+2024-06-02 01:17:18,155 [base_deploy.py:log_info()] - Git Repo crowsnest: Next refresh in: 4 Days, 5 Hours, 7 Minutes, 42 Seconds
+2024-06-02 01:17:18,156 [base_deploy.py:log_info()] - Git Repo timelapse: Next refresh in: 4 Days, 1 Hour, 56 Minutes, 13 Seconds
+2024-06-02 01:17:18,156 [base_deploy.py:log_info()] - Git Repo print_area_bed_mesh: Next refresh in: 4 Days, 1 Hour, 56 Minutes, 13 Seconds
+2024-06-02 01:17:18,156 [base_deploy.py:log_info()] - Git Repo fluidd-config: Next refresh in: 4 Days, 3 Hours, 25 Minutes, 26 Seconds
+2024-06-02 01:17:18,156 [base_deploy.py:log_info()] - Web Client fluidd: Next refresh in: 4 Days, 3 Hours, 25 Minutes, 26 Seconds
+2024-06-02 01:17:18,166 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/biqu/printer_data/comms/moonraker.sock'
+2024-06-02 01:17:18,168 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: ender5plusplus
+2024-06-02 01:17:18,171 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
+2024-06-02 01:54:04,283 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.100
+2024-06-02 01:54:04,411 [application.py:log_request()] - 101 GET /websocket?token=6FBPBX6SDJOTO3PII7HGHV5U3Q5IIE4G (192.168.0.100) [_TRUSTED_USER_] 4.86ms
+2024-06-02 01:54:04,413 [websockets.py:open()] - Websocket Opened: ID: 281472775782560, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
+2024-06-02 01:54:04,425 [websockets.py:_handle_identify()] - Websocket 281472775782560 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-02 01:54:04,427 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-02 01:54:04,710 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:04,809 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-02 01:54:04,913 [application.py:log_request()] - 101 GET /websocket?token=MLIDJ4CHJ2RFXMUSQPVBWMJ6HZIZJHAW (192.168.0.181) [_TRUSTED_USER_] 3.83ms
+2024-06-02 01:54:04,914 [websockets.py:open()] - Websocket Opened: ID: 281472765914752, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-02 01:54:04,935 [websockets.py:_handle_identify()] - Websocket 281472765914752 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-02 01:54:04,937 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-02 01:54:05,143 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:06,220 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:06,741 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:07,731 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:08,304 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:09,251 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:09,882 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:10,329 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 01:54:10,455 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', '-.mount']
+**After=['-.mount', 'sysinit.target', 'system.slice', 'network-online.target', 'klipper-mcu.service', 'basic.target', 'systemd-journald.socket']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/biqu/printer_data/systemd/klipper.env
+**ExecStart=/home/biqu/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/biqu/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=biqu
+2024-06-02 01:54:10,758 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:11,447 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:12,269 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: -32601, Message: Method not found
+2024-06-02 01:54:12,936 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-207-g6cd17420
+2024-06-02 01:54:14,226 [klippy_connection.py:close()] - Error closing Klippy Unix Socket
+Traceback (most recent call last):
+  File "/home/biqu/moonraker/moonraker/components/klippy_connection.py", line 769, in close
+    await self.writer.wait_closed()
+  File "/usr/lib/python3.9/asyncio/streams.py", line 359, in wait_closed
+    await self._protocol._get_close_waiter(self)
+  File "/usr/lib/python3.9/asyncio/selector_events.py", line 918, in write
+    n = self._sock.send(data)
+BrokenPipeError: [Errno 32] Broken pipe
+2024-06-02 01:54:14,227 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 01:54:14,228 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:54:14,244 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Write Request Error
+2024-06-02 01:54:14,331 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:54:14,385 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 01:54:15,528 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 01:54:20,913 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 01:54:20,916 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 01:54:21,163 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 01:54:21,435 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 01:54:21,916 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 01:55:33,829 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: BLTouch failed to deploy
+2024-06-02 01:57:31,037 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-02 01:57:44,501 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2024-06-02 01:57:44,510 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1717293434.526484, Usage: 4.79%, Memory: 44332 kB
+System Time: 1717293435.527700, Usage: 3.84%, Memory: 44332 kB
+System Time: 1717293436.527801, Usage: 3.14%, Memory: 44332 kB
+System Time: 1717293437.535732, Usage: 3.31%, Memory: 44332 kB
+System Time: 1717293438.536964, Usage: 4.61%, Memory: 44332 kB
+System Time: 1717293439.535785, Usage: 4.61%, Memory: 44332 kB
+System Time: 1717293440.535578, Usage: 4.81%, Memory: 44332 kB
+System Time: 1717293441.538136, Usage: 4.29%, Memory: 44332 kB
+System Time: 1717293442.535586, Usage: 3.87%, Memory: 44332 kB
+System Time: 1717293443.536485, Usage: 3.22%, Memory: 44332 kB
+System Time: 1717293444.542745, Usage: 5.51%, Memory: 44332 kB
+System Time: 1717293445.545255, Usage: 5.14%, Memory: 44332 kB
+System Time: 1717293446.547769, Usage: 4.8%, Memory: 44332 kB
+System Time: 1717293447.547207, Usage: 5.04%, Memory: 44332 kB
+System Time: 1717293448.549031, Usage: 4.85%, Memory: 44332 kB
+System Time: 1717293449.546312, Usage: 4.17%, Memory: 44332 kB
+System Time: 1717293450.546462, Usage: 3.35%, Memory: 44332 kB
+System Time: 1717293451.548668, Usage: 5.2%, Memory: 44332 kB
+System Time: 1717293452.550283, Usage: 2.76%, Memory: 44332 kB
+System Time: 1717293453.557229, Usage: 3.61%, Memory: 44332 kB
+System Time: 1717293454.552058, Usage: 7.03%, Memory: 44332 kB
+System Time: 1717293455.553730, Usage: 3.29%, Memory: 44332 kB
+System Time: 1717293456.559684, Usage: 3.36%, Memory: 44332 kB
+System Time: 1717293457.559093, Usage: 5.02%, Memory: 44332 kB
+System Time: 1717293458.561057, Usage: 5.43%, Memory: 44332 kB
+System Time: 1717293459.564189, Usage: 4.7%, Memory: 44332 kB
+System Time: 1717293460.558389, Usage: 4.13%, Memory: 44332 kB
+System Time: 1717293461.559114, Usage: 3.17%, Memory: 44332 kB
+System Time: 1717293462.566749, Usage: 3.61%, Memory: 44332 kB
+System Time: 1717293463.568084, Usage: 4.77%, Memory: 44332 kB
+CPU Temperature: 48.338
+2024-06-02 01:58:31,040 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2024-06-02 01:59:10,515 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-02 01:59:31,042 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 180.01 seconds
