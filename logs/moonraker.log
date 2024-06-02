@@ -16033,3 +16033,167 @@ Inotify path: /home/biqu/printer_data/gcodes/Shape-Box_29m_0.20mm_245C_ASA_.gcod
 Is move/copy: False
 2024-06-02 20:55:54,947 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 836.45ms
 2024-06-02 20:55:55,130 [job_state.py:_status_update()] - Job Started: Shape-Box_29m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:00:19,944 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Shape-Box_29m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:00:20,176 [job_state.py:_status_update()] - Job Started: Shape-Box_29m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:04:30,554 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarylhkRdpPQcGcDwMYd
+2024-06-02 21:04:30,587 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-02 21:04:30,609 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 57.68ms
+2024-06-02 21:04:31,836 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 21:04:31,965 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 21:04:33,101 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 21:04:38,135 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 21:04:38,138 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 21:04:38,386 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 21:04:38,657 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 21:04:39,138 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 21:09:01,784 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------tL6bCoeECok3GwREgbBXAg
+2024-06-02 21:09:01,844 [application.py:post()] - Processing Uploaded File: Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:09:02,295 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-02 21:09:02,415 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Shape-Box_8m_0.20mm_245C_ASA_.gcode") successfully finished
+2024-06-02 21:09:02,417 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:09:02,437 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 655.63ms
+2024-06-02 21:09:02,442 [job_state.py:_status_update()] - Job Started: Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:09:57,528 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryGvdSI5fCcu3EI5XM
+2024-06-02 21:09:57,568 [application.py:post()] - Processing Uploaded File: klippermacros.cfg
+2024-06-02 21:09:57,591 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 66.27ms
+2024-06-02 21:14:21,899 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryKNqk289SWBMVS56d
+2024-06-02 21:14:21,920 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-02 21:14:21,932 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 34.24ms
+2024-06-02 21:14:23,086 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 21:14:23,179 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 21:14:24,354 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 21:14:27,599 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------OGWp7b9ZIjf6eLF0XoLwKL
+2024-06-02 21:14:27,675 [application.py:post()] - Processing Uploaded File: Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:14:28,155 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-02 21:14:28,274 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Shape-Box_8m_0.20mm_245C_ASA_.gcode") successfully finished
+2024-06-02 21:14:28,276 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:14:28,277 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/biqu/printer_data/gcodes/Shape-Box_8m_0.20mm_245C_ASA_.gcode
+Inotify path: /home/biqu/printer_data/gcodes/Shape-Box_8m_0.20mm_245C_ASA_.gcode
+Is move/copy: False
+2024-06-02 21:14:28,293 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 695.60ms
+2024-06-02 21:14:29,430 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 21:14:29,443 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 21:14:29,680 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 21:14:29,950 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 21:14:30,433 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 21:14:39,973 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------HkBFY5n3vFov9DEGnsGEvP
+2024-06-02 21:14:40,121 [application.py:post()] - Processing Uploaded File: Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:14:40,584 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-02 21:14:40,759 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Shape-Box_8m_0.20mm_245C_ASA_.gcode") successfully finished
+2024-06-02 21:14:40,761 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:14:40,762 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/biqu/printer_data/gcodes/Shape-Box_8m_0.20mm_245C_ASA_.gcode
+Inotify path: /home/biqu/printer_data/gcodes/Shape-Box_8m_0.20mm_245C_ASA_.gcode
+Is move/copy: False
+2024-06-02 21:14:40,782 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 811.49ms
+2024-06-02 21:14:40,968 [job_state.py:_status_update()] - Job Started: Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:18:06,074 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.100
+2024-06-02 21:18:06,196 [application.py:log_request()] - 101 GET /websocket?token=GIKDF5NQYXYFHKCAJEULAQQIPJZV2QA4 (192.168.0.100) [_TRUSTED_USER_] 7.00ms
+2024-06-02 21:18:06,197 [websockets.py:open()] - Websocket Opened: ID: 281472969545472, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
+2024-06-02 21:18:06,215 [websockets.py:_handle_identify()] - Websocket 281472969545472 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-02 21:18:06,217 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-02 21:19:50,533 [websockets.py:on_close()] - Websocket Closed: ID: 281472970849536 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 1.60
+2024-06-02 21:19:51,242 [application.py:log_request()] - 101 GET /websocket?token=HWPOUWKGR5AHPR66LKPLM3K5X4GMNTJV (192.168.0.181) [_TRUSTED_USER_] 5.96ms
+2024-06-02 21:19:51,243 [websockets.py:open()] - Websocket Opened: ID: 281472969577424, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-02 21:19:51,331 [websockets.py:_handle_identify()] - Websocket 281472969577424 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-02 21:19:51,334 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-02 21:21:30,092 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarygBBuFn8z42AXtkhd
+2024-06-02 21:21:30,153 [application.py:post()] - Processing Uploaded File: klippermacros.cfg
+2024-06-02 21:21:30,176 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 88.36ms
+2024-06-02 21:21:31,316 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 21:21:31,369 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 21:21:31,461 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 21:21:32,589 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 21:21:37,632 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 21:21:37,637 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 21:21:37,883 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 21:21:38,153 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 21:21:38,637 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 21:21:58,979 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:21:59,203 [job_state.py:_status_update()] - Job Started: Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:22:45,570 [klippy_apis.py:pause_print()] - Requesting job pause...
+2024-06-02 21:23:45,572 [klippy_connection.py:wait()] - Request 'pause_resume/pause' pending: 60.00 seconds
+2024-06-02 21:24:45,574 [klippy_connection.py:wait()] - Request 'pause_resume/pause' pending: 120.00 seconds
+2024-06-02 21:25:45,577 [klippy_connection.py:wait()] - Request 'pause_resume/pause' pending: 180.01 seconds
+2024-06-02 21:27:10,547 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryfzcJWwwJXeXj9Wlp
+2024-06-02 21:27:10,600 [application.py:post()] - Processing Uploaded File: klippermacros.cfg
+2024-06-02 21:27:10,630 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 87.13ms
+2024-06-02 21:27:12,276 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 21:27:12,308 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 21:27:12,461 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 21:27:13,545 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 21:27:18,589 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 21:27:18,592 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 21:27:18,840 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 21:27:19,111 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 21:27:19,593 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 21:37:07,315 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------t2M65pedmAylAykSRDJLik
+2024-06-02 21:37:10,584 [application.py:post()] - Processing Uploaded File: RTT9 ambi mag release lever 4.17.23.step_4h39m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:37:11,114 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-02 21:37:11,298 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "RTT9 ambi mag release lever 4.17.23.step_4h39m_0.20mm_245C_ASA_.gcode") successfully finished
+2024-06-02 21:37:11,300 [klippy_apis.py:start_print()] - Requesting Job Start, filename = RTT9 ambi mag release lever 4.17.23.step_4h39m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:37:11,322 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 4011.86ms
+2024-06-02 21:37:11,388 [job_state.py:_status_update()] - Job Started: RTT9 ambi mag release lever 4.17.23.step_4h39m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:46:54,703 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryhA4E500j2mpTSQJ5
+2024-06-02 21:46:54,735 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-02 21:46:54,756 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 55.63ms
+2024-06-02 21:46:56,023 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-02 21:46:56,054 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 21:46:56,174 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-02 21:46:57,290 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-02 21:47:02,401 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-02 21:47:02,404 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-02 21:47:02,657 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-02 21:47:02,922 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-02 21:47:03,405 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-02 21:50:17,097 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------KvF4flSIsSBq35nSaLMS1r
+2024-06-02 21:50:17,157 [application.py:post()] - Processing Uploaded File: Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:50:17,628 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-02 21:50:17,750 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Shape-Box_8m_0.20mm_245C_ASA_.gcode") successfully finished
+2024-06-02 21:50:17,751 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:50:17,753 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/biqu/printer_data/gcodes/Shape-Box_8m_0.20mm_245C_ASA_.gcode
+Inotify path: /home/biqu/printer_data/gcodes/Shape-Box_8m_0.20mm_245C_ASA_.gcode
+Is move/copy: False
+2024-06-02 21:50:17,775 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 683.89ms
+2024-06-02 21:50:17,987 [job_state.py:_status_update()] - Job Started: Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:54:01,463 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:54:01,695 [job_state.py:_status_update()] - Job Started: Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:57:58,898 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------SefpjngHmpfMxBHTvsgSg9
+2024-06-02 21:57:58,962 [application.py:post()] - Processing Uploaded File: Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:57:59,457 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-02 21:57:59,582 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Shape-Box_8m_0.20mm_245C_ASA_.gcode") successfully finished
+2024-06-02 21:57:59,583 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Shape-Box_8m_0.20mm_245C_ASA_.gcode
+2024-06-02 21:57:59,584 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/biqu/printer_data/gcodes/Shape-Box_8m_0.20mm_245C_ASA_.gcode
+Inotify path: /home/biqu/printer_data/gcodes/Shape-Box_8m_0.20mm_245C_ASA_.gcode
+Is move/copy: False
+2024-06-02 21:57:59,608 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 712.93ms
+2024-06-02 21:57:59,790 [job_state.py:_status_update()] - Job Started: Shape-Box_8m_0.20mm_245C_ASA_.gcode
