@@ -748,3 +748,19 @@ Content-Type: multipart/form-data; boundary=------------------------Md5UsfIsDTp7
 2024-06-03 16:58:57,063 [websockets.py:on_close()] - Websocket Closed: ID: 281472970846320 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.99
 2024-06-03 17:00:55,428 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
 2024-06-03 17:19:29,959 [websockets.py:on_close()] - Websocket Closed: ID: 281472967636832 Close Code: None, Close Reason: None, Pong Time Elapsed: 6.92
+2024-06-03 18:00:55,443 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.210
+2024-06-03 18:22:49,155 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.210
+2024-06-03 18:22:49,159 [application.py:log_request()] - 101 GET /websocket (192.168.0.210) [_TRUSTED_USER_] 8.51ms
+2024-06-03 18:22:49,161 [websockets.py:open()] - Websocket Opened: ID: 281472970849440, Proxied: True, User Agent: Dart/3.3 (dart:io), Host Name: ender5plusplus.local
+2024-06-03 18:22:49,175 [websockets.py:_handle_identify()] - Websocket 281472970849440 Client Identified - Name: Mobileraker-ios, Version: 2.6.19-468, Type: mobile
+2024-06-03 18:23:39,189 [websockets.py:write_to_socket()] - Websocket closed while writing: 281472970849440
+2024-06-03 18:23:44,166 [websockets.py:on_close()] - Websocket Closed: ID: 281472970849440 Close Code: None, Close Reason: None, Pong Time Elapsed: 45.00
+2024-06-03 18:57:40,885 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-03 18:57:41,149 [application.py:log_request()] - 101 GET /websocket?token=J4SZ46MC3JROGIWAJBXN26F2IDRNY4MY (192.168.0.181) [_TRUSTED_USER_] 3.95ms
+2024-06-03 18:57:41,150 [websockets.py:open()] - Websocket Opened: ID: 281472970847712, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-03 18:57:41,169 [websockets.py:_handle_identify()] - Websocket 281472970847712 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-03 18:57:41,170 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-03 18:57:41,530 [application.py:log_request()] - 101 GET /websocket?token=DWHRQMARKRDSYLRRVTQI475TGWOIDKG3 (192.168.0.181) [_TRUSTED_USER_] 25.14ms
+2024-06-03 18:57:41,532 [websockets.py:open()] - Websocket Opened: ID: 281472970848912, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-03 18:57:41,548 [websockets.py:_handle_identify()] - Websocket 281472970848912 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-03 18:57:41,550 [file_manager.py:get_file_list()] - Updating File List <config>...
