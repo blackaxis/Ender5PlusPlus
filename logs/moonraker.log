@@ -739,3 +739,10 @@ Content-Type: multipart/form-data; boundary=------------------------Md5UsfIsDTp7
 2024-06-03 15:55:55,897 [websockets.py:_handle_identify()] - Websocket 281472970848288 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
 2024-06-03 15:55:55,899 [file_manager.py:get_file_list()] - Updating File List <config>...
 2024-06-03 15:55:56,070 [websockets.py:on_close()] - Websocket Closed: ID: 281472970848288 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 0.19
+2024-06-03 16:00:55,414 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.210
+2024-06-03 16:58:02,055 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.210
+2024-06-03 16:58:02,057 [application.py:log_request()] - 101 GET /websocket (192.168.0.210) [_TRUSTED_USER_] 5.01ms
+2024-06-03 16:58:02,058 [websockets.py:open()] - Websocket Opened: ID: 281472970846320, Proxied: True, User Agent: Dart/3.3 (dart:io), Host Name: ender5plusplus.local
+2024-06-03 16:58:02,067 [websockets.py:_handle_identify()] - Websocket 281472970846320 Client Identified - Name: Mobileraker-ios, Version: 2.6.19-468, Type: mobile
+2024-06-03 16:58:52,333 [websockets.py:write_to_socket()] - Websocket closed while writing: 281472970846320
+2024-06-03 16:58:57,063 [websockets.py:on_close()] - Websocket Closed: ID: 281472970846320 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.99
