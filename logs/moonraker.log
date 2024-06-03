@@ -600,3 +600,130 @@ Content-Type: multipart/form-data; boundary=------------------------7TEhyfje1sZS
 2024-06-03 13:59:17,707 [websockets.py:_handle_identify()] - Websocket 281472967650944 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
 2024-06-03 13:59:17,709 [file_manager.py:get_file_list()] - Updating File List <config>...
 2024-06-03 13:59:22,849 [klippy_apis.py:pause_print()] - Requesting job pause...
+2024-06-03 14:00:31,663 [klippy_apis.py:cancel_print()] - Requesting job cancel...
+2024-06-03 14:01:45,550 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-03 14:01:45,577 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7CORihEPBu0GybzC
+2024-06-03 14:01:45,615 [application.py:post()] - Processing Uploaded File: EBB36.cfg
+2024-06-03 14:01:45,647 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 72.30ms
+2024-06-03 14:01:46,853 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-03 14:01:46,877 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 14:01:46,986 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 14:01:48,123 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-03 14:01:53,597 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-03 14:01:53,600 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-03 14:01:53,848 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-03 14:01:54,136 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-03 14:01:54,615 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-03 14:03:04,227 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-03 14:03:06,594 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-03 14:03:06,596 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-03 14:08:45,072 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-03 14:08:45,090 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryq5mIPE9ln9cwM780
+2024-06-03 14:08:45,215 [application.py:post()] - Processing Uploaded File: pa_pattern-2.gcode
+2024-06-03 14:08:45,666 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-03 14:08:45,779 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "pa_pattern-2.gcode") successfully finished
+2024-06-03 14:08:45,780 [klippy_apis.py:start_print()] - Requesting Job Start, filename = pa_pattern-2.gcode
+2024-06-03 14:08:45,802 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 714.19ms
+2024-06-03 14:08:45,849 [job_state.py:_status_update()] - Job Started: pa_pattern-2.gcode
+2024-06-03 14:10:53,312 [application.py:prepare()] - Upload Request Received from 192.168.0.100
+Content-Type: 
+2024-06-03 14:10:53,329 [application.py:prepare()] - Upload Request Received from 192.168.0.100
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary4Xiex53H7wkI3yKB
+2024-06-03 14:10:53,361 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-03 14:10:53,383 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.100) [_TRUSTED_USER_] 55.68ms
+2024-06-03 14:10:54,648 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-03 14:10:54,679 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 14:10:54,882 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 14:10:55,918 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-03 14:11:01,406 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-03 14:11:01,409 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-03 14:11:01,657 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-03 14:11:01,929 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-03 14:11:02,416 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-03 14:11:05,609 [klippy_apis.py:start_print()] - Requesting Job Start, filename = pa_pattern-2.gcode
+2024-06-03 14:11:05,703 [job_state.py:_status_update()] - Job Started: pa_pattern-2.gcode
+2024-06-03 14:14:57,505 [websockets.py:on_close()] - Websocket Closed: ID: 281472967650944 Close Code: None, Close Reason: None, Pong Time Elapsed: 9.79
+2024-06-03 14:15:24,566 [application.py:log_request()] - 101 GET /websocket?token=OH3OIPZAMRZKKUUW26GWQ3HSSCQBKMQQ (192.168.0.100) [_TRUSTED_USER_] 6.26ms
+2024-06-03 14:15:24,568 [websockets.py:open()] - Websocket Opened: ID: 281472967650992, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
+2024-06-03 14:15:24,585 [websockets.py:_handle_identify()] - Websocket 281472967650992 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-03 14:15:24,587 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-03 14:15:40,525 [klippy_apis.py:start_print()] - Requesting Job Start, filename = pa_pattern-2.gcode
+2024-06-03 14:15:40,602 [job_state.py:_status_update()] - Job Started: pa_pattern-2.gcode
+2024-06-03 14:26:23,832 [klippy_apis.py:pause_print()] - Requesting job pause...
+2024-06-03 14:26:38,134 [klippy_apis.py:resume_print()] - Requesting job resume...
+2024-06-03 14:27:23,383 [klippy_apis.py:pause_print()] - Requesting job pause...
+2024-06-03 14:27:58,527 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2024-06-03 14:27:58,539 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1717424849.294465, Usage: 4.45%, Memory: 48940 kB
+System Time: 1717424850.296288, Usage: 6.67%, Memory: 48940 kB
+System Time: 1717424851.294340, Usage: 4.17%, Memory: 48940 kB
+System Time: 1717424852.295094, Usage: 2.84%, Memory: 48940 kB
+System Time: 1717424853.303006, Usage: 3.63%, Memory: 48940 kB
+System Time: 1717424854.301548, Usage: 4.83%, Memory: 48940 kB
+System Time: 1717424855.303233, Usage: 4.87%, Memory: 48940 kB
+System Time: 1717424856.304896, Usage: 4.51%, Memory: 48940 kB
+System Time: 1717424857.305551, Usage: 4.82%, Memory: 48940 kB
+System Time: 1717424858.306769, Usage: 4.6%, Memory: 48940 kB
+System Time: 1717424859.309287, Usage: 4.5%, Memory: 48944 kB
+System Time: 1717424860.308168, Usage: 6.46%, Memory: 48944 kB
+System Time: 1717424861.310566, Usage: 4.37%, Memory: 48944 kB
+System Time: 1717424862.307515, Usage: 4.35%, Memory: 48944 kB
+System Time: 1717424863.308003, Usage: 3.1%, Memory: 48944 kB
+System Time: 1717424864.316951, Usage: 3.33%, Memory: 48944 kB
+System Time: 1717424865.311380, Usage: 4.63%, Memory: 48944 kB
+System Time: 1717424866.311995, Usage: 2.89%, Memory: 48944 kB
+System Time: 1717424867.312387, Usage: 3.22%, Memory: 48944 kB
+System Time: 1717424868.313153, Usage: 2.85%, Memory: 48944 kB
+System Time: 1717424869.319434, Usage: 2.97%, Memory: 48944 kB
+System Time: 1717424870.321334, Usage: 7.0%, Memory: 48944 kB
+System Time: 1717424871.321694, Usage: 4.93%, Memory: 48944 kB
+System Time: 1717424872.318241, Usage: 3.46%, Memory: 48944 kB
+System Time: 1717424873.318478, Usage: 3.17%, Memory: 48944 kB
+System Time: 1717424874.322618, Usage: 3.88%, Memory: 48944 kB
+System Time: 1717424875.325722, Usage: 4.7%, Memory: 48944 kB
+System Time: 1717424876.329508, Usage: 4.57%, Memory: 48944 kB
+System Time: 1717424877.324402, Usage: 4.54%, Memory: 48944 kB
+System Time: 1717424878.325783, Usage: 2.86%, Memory: 48944 kB
+CPU Temperature: 49.148
+2024-06-03 14:29:55,413 [application.py:prepare()] - Upload Request Received from 192.168.0.100
+Content-Type: 
+2024-06-03 14:29:55,457 [application.py:prepare()] - Upload Request Received from 192.168.0.100
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryY7ToM3Uy6UOjAZfm
+2024-06-03 14:29:55,525 [application.py:post()] - Processing Uploaded File: klippermacros.cfg
+2024-06-03 14:29:55,557 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.100) [_TRUSTED_USER_] 102.33ms
+2024-06-03 14:29:55,713 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-03 14:29:55,740 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 14:29:55,861 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 14:29:56,981 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-03 14:30:02,436 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-03 14:30:02,439 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-03 14:30:02,687 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-03 14:30:02,959 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-03 14:30:03,443 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-03 14:34:14,491 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------II9ggx3AHoSsVhSonyljEs
+2024-06-03 14:34:14,954 [application.py:post()] - Processing Uploaded File: Retraction calibration_16m_0.20mm_240C_ASA_.gcode
+2024-06-03 14:34:15,420 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-03 14:34:15,607 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Retraction calibration_16m_0.20mm_240C_ASA_.gcode") successfully finished
+2024-06-03 14:34:15,608 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Retraction calibration_16m_0.20mm_240C_ASA_.gcode
+2024-06-03 14:34:15,633 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 1146.90ms
+2024-06-03 14:34:15,697 [job_state.py:_status_update()] - Job Started: Retraction calibration_16m_0.20mm_240C_ASA_.gcode
+2024-06-03 14:47:09,439 [klippy_apis.py:pause_print()] - Requesting job pause...
+2024-06-03 14:47:34,092 [klippy_apis.py:cancel_print()] - Requesting job cancel...
+2024-06-03 14:55:24,885 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-03 14:56:08,296 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------Md5UsfIsDTp7URUyBZ7Uyv
+2024-06-03 14:56:13,265 [application.py:post()] - Processing Uploaded File: Retraction calibration_5h5m_0.20mm_240C_ASA_.gcode
+2024-06-03 14:56:13,843 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-03 14:56:14,026 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Retraction calibration_5h5m_0.20mm_240C_ASA_.gcode") successfully finished
+2024-06-03 14:56:14,028 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Retraction calibration_5h5m_0.20mm_240C_ASA_.gcode
+2024-06-03 14:56:14,051 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 5759.38ms
+2024-06-03 14:56:14,257 [job_state.py:_status_update()] - Job Started: Retraction calibration_5h5m_0.20mm_240C_ASA_.gcode
