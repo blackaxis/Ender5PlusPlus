@@ -494,3 +494,109 @@ Inotify path: /home/biqu/printer_data/gcodes/Flow calibration_11m_0.20mm_240C_AS
 Is move/copy: False
 2024-06-03 12:47:00,860 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 772.87ms
 2024-06-03 12:47:01,091 [job_state.py:_status_update()] - Job Started: Flow calibration_11m_0.20mm_240C_ASA_.gcode
+2024-06-03 13:08:10,151 [application.py:log_request()] - 101 GET /websocket?token=2RN3IR3TXI6GG57SXRDTBYHB74T3JQMR (192.168.0.181) [_TRUSTED_USER_] 6.72ms
+2024-06-03 13:08:10,152 [websockets.py:open()] - Websocket Opened: ID: 281472967969904, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-03 13:08:10,248 [websockets.py:_handle_identify()] - Websocket 281472967969904 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-03 13:08:10,250 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-03 13:08:10,347 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.connection.identify, Code: 400, Message: Connection already identified: {'name': 'fluidd', 'version': '1.30.0-f3e4ac3', 'type': 'web', 'url': 'https://github.com/fluidd-core/fluidd'}
+2024-06-03 13:08:10,349 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-03 13:08:38,030 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryBThNpE95AAQy4FZ7
+2024-06-03 13:08:38,056 [application.py:post()] - Processing Uploaded File: KAMP_Settings.cfg
+2024-06-03 13:08:38,073 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 46.00ms
+2024-06-03 13:08:39,270 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-03 13:08:39,308 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 13:08:39,397 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 13:08:40,542 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-03 13:08:45,959 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-03 13:08:45,962 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-03 13:08:46,210 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-03 13:08:46,482 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-03 13:08:46,964 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-03 13:09:36,369 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------dAJXybXfj31GJukfrnRwwt
+2024-06-03 13:09:36,667 [application.py:post()] - Processing Uploaded File: Temperature calibration_26m_0.20mm_240C_ASA_.gcode
+2024-06-03 13:09:37,138 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-03 13:09:37,326 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Temperature calibration_26m_0.20mm_240C_ASA_.gcode") successfully finished
+2024-06-03 13:09:37,328 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Temperature calibration_26m_0.20mm_240C_ASA_.gcode
+2024-06-03 13:09:54,613 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-03 13:09:57,044 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 20679.51ms
+2024-06-03 13:09:57,163 [job_state.py:_status_update()] - Job Started: Temperature calibration_26m_0.20mm_240C_ASA_.gcode
+2024-06-03 13:21:10,110 [websockets.py:on_close()] - Websocket Closed: ID: 281472970867904 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 2.51
+2024-06-03 13:21:11,070 [application.py:log_request()] - 101 GET /websocket?token=GD3QY2KU2YV2Y4TYLR4WCDFT2HFIXPY5 (192.168.0.100) [_TRUSTED_USER_] 3.80ms
+2024-06-03 13:21:11,071 [websockets.py:open()] - Websocket Opened: ID: 281472970866944, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
+2024-06-03 13:21:11,080 [websockets.py:_handle_identify()] - Websocket 281472970866944 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-03 13:21:11,081 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-03 13:24:08,392 [websockets.py:on_close()] - Websocket Closed: ID: 281472967969904 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 8.23
+2024-06-03 13:40:03,033 [application.py:log_request()] - 101 GET /websocket?token=VMJIIT2APDXJRDTPSU25GFG25MQO4YLU (192.168.0.181) [_TRUSTED_USER_] 6.01ms
+2024-06-03 13:40:03,035 [websockets.py:open()] - Websocket Opened: ID: 281472967636832, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-03 13:40:03,045 [websockets.py:_handle_identify()] - Websocket 281472967636832 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-03 13:40:03,052 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-03 13:40:54,665 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-03 13:40:54,688 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7Zt4EILGLSBbm9xL
+2024-06-03 13:40:54,705 [application.py:post()] - Processing Uploaded File: KAMP_Settings.cfg
+2024-06-03 13:40:54,716 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 30.02ms
+2024-06-03 13:40:55,858 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-03 13:40:55,931 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 13:40:56,040 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 13:40:57,128 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-03 13:41:02,645 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-03 13:41:02,648 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-03 13:41:02,896 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-03 13:41:03,168 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-03 13:41:03,650 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-03 13:42:05,903 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-03 13:42:09,010 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-03 13:42:09,010 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-03 13:43:50,527 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-03 13:43:50,545 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryayRXzcggnjp7i2Ba
+2024-06-03 13:43:50,578 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-03 13:43:50,598 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 55.34ms
+2024-06-03 13:43:51,745 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-03 13:43:51,813 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 13:43:51,892 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 13:43:53,015 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-03 13:43:54,885 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-03 13:43:54,889 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-03 13:43:54,893 [klippy_connection.py:_check_ready()] - 
+Option 'min_cruise_ratio' is not valid in section 'printer'
+
+Once the underlying issue is corrected, use the "RESTART"
+command to reload the config and restart the host software.
+Printer is halted
+
+2024-06-03 13:45:05,580 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-03 13:45:05,599 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryb8rQ13YFk22xRgZi
+2024-06-03 13:45:05,637 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-03 13:45:05,662 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 65.07ms
+2024-06-03 13:45:05,710 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-03 13:45:05,837 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 13:45:05,857 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-03 13:45:06,974 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-03 13:45:12,377 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-03 13:45:12,380 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-03 13:45:12,628 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-03 13:45:12,899 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-03 13:45:13,380 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-03 13:46:15,597 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------7TEhyfje1sZSE5ceRsEQQV
+2024-06-03 13:46:15,987 [application.py:post()] - Processing Uploaded File: Temperature calibration_25m_0.20mm_240C_ASA_.gcode
+2024-06-03 13:46:16,460 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-03 13:46:16,644 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Temperature calibration_25m_0.20mm_240C_ASA_.gcode") successfully finished
+2024-06-03 13:46:16,646 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Temperature calibration_25m_0.20mm_240C_ASA_.gcode
+2024-06-03 13:46:16,670 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 1077.46ms
+2024-06-03 13:46:16,823 [job_state.py:_status_update()] - Job Started: Temperature calibration_25m_0.20mm_240C_ASA_.gcode
+2024-06-03 13:57:44,889 [websockets.py:on_close()] - Websocket Closed: ID: 281472970866944 Close Code: None, Close Reason: None, Pong Time Elapsed: 3.79
+2024-06-03 13:59:17,688 [application.py:log_request()] - 101 GET /websocket?token=ODH2ZRRNBX2R7FGS4FQSMCQGLJZMOHBC (192.168.0.100) [_TRUSTED_USER_] 5.98ms
+2024-06-03 13:59:17,690 [websockets.py:open()] - Websocket Opened: ID: 281472967650944, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
+2024-06-03 13:59:17,707 [websockets.py:_handle_identify()] - Websocket 281472967650944 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-03 13:59:17,709 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-03 13:59:22,849 [klippy_apis.py:pause_print()] - Requesting job pause...
