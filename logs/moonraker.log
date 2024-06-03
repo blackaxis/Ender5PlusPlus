@@ -303,3 +303,34 @@ Content-Type: multipart/form-data; boundary=------------------------hSNF5mmVLfYd
 2024-06-03 02:45:46,193 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Flow calibration_11m_0.20mm_245C_ASA_.gcode
 2024-06-03 02:45:46,218 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 745.29ms
 2024-06-03 02:45:46,270 [job_state.py:_status_update()] - Job Started: Flow calibration_11m_0.20mm_245C_ASA_.gcode
+2024-06-03 03:00:55,187 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
+2024-06-03 03:21:07,862 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------rop4yB0ehfIOSBisIxkqBk
+2024-06-03 03:21:08,062 [application.py:post()] - Processing Uploaded File: Flow calibration_11m_0.20mm_245C_ASA_.gcode
+2024-06-03 03:21:08,524 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-03 03:21:08,668 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Flow calibration_11m_0.20mm_245C_ASA_.gcode") successfully finished
+2024-06-03 03:21:08,670 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Flow calibration_11m_0.20mm_245C_ASA_.gcode
+2024-06-03 03:21:08,671 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/biqu/printer_data/gcodes/Flow calibration_11m_0.20mm_245C_ASA_.gcode
+Inotify path: /home/biqu/printer_data/gcodes/Flow calibration_11m_0.20mm_245C_ASA_.gcode
+Is move/copy: False
+2024-06-03 03:21:08,695 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 838.66ms
+2024-06-03 03:21:08,827 [job_state.py:_status_update()] - Job Started: Flow calibration_11m_0.20mm_245C_ASA_.gcode
+2024-06-03 03:47:20,024 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------HtI22YJ7T2Xp6wnU8GhyKd
+2024-06-03 03:47:20,154 [application.py:post()] - Processing Uploaded File: Flow calibration_11m_0.20mm_245C_ASA_.gcode
+2024-06-03 03:47:20,612 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-03 03:47:20,750 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Flow calibration_11m_0.20mm_245C_ASA_.gcode") successfully finished
+2024-06-03 03:47:20,752 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Flow calibration_11m_0.20mm_245C_ASA_.gcode
+2024-06-03 03:47:20,753 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/biqu/printer_data/gcodes/Flow calibration_11m_0.20mm_245C_ASA_.gcode
+Inotify path: /home/biqu/printer_data/gcodes/Flow calibration_11m_0.20mm_245C_ASA_.gcode
+Is move/copy: False
+2024-06-03 03:47:20,782 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 761.61ms
+2024-06-03 03:47:21,020 [job_state.py:_status_update()] - Job Started: Flow calibration_11m_0.20mm_245C_ASA_.gcode
