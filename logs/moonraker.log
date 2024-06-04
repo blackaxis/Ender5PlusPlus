@@ -2292,3 +2292,5 @@ Content-Type:
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryAPRNAxwQO4AgZiDy
 2024-06-04 02:20:30,538 [application.py:post()] - Processing Uploaded File: KAMP_Settings.cfg
 2024-06-04 02:20:30,550 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.100) [_TRUSTED_USER_] 34.50ms
+2024-06-04 03:15:03,514 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-04 03:25:03,516 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
