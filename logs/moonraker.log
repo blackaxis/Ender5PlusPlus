@@ -2364,3 +2364,4 @@ Content-Type: multipart/form-data; boundary=------------------------VNjfsXyGQPSA
 2024-06-04 10:11:18,938 [klippy_apis.py:start_print()] - Requesting Job Start, filename = RTT9 barrel retainer 4.17.23.step_5h17m_0.20mm_240C_ASA_.gcode
 2024-06-04 10:11:18,961 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 6097.00ms
 2024-06-04 10:11:19,030 [job_state.py:_status_update()] - Job Started: RTT9 barrel retainer 4.17.23.step_5h17m_0.20mm_240C_ASA_.gcode
+2024-06-04 11:15:03,651 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
