@@ -2391,3 +2391,9 @@ Content-Type: multipart/form-data; boundary=------------------------0wf5sGsHd3NT
 2024-06-04 21:56:21,687 [websockets.py:open()] - Websocket Opened: ID: 281473437111536, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
 2024-06-04 21:56:21,701 [websockets.py:_handle_identify()] - Websocket 281473437111536 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
 2024-06-04 21:56:21,703 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-04 22:24:33,656 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-04 22:24:33,894 [application.py:log_request()] - 101 GET /websocket?token=R34GCAGH7JZTGDQKTHWKGUZ7XXRELNH4 (192.168.0.181) [_TRUSTED_USER_] 7.34ms
+2024-06-04 22:24:33,896 [websockets.py:open()] - Websocket Opened: ID: 281473446957360, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-04 22:24:33,909 [websockets.py:_handle_identify()] - Websocket 281473446957360 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-04 22:24:33,912 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-04 23:00:03,837 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
