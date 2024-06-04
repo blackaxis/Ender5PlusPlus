@@ -2382,3 +2382,4 @@ Content-Type: multipart/form-data; boundary=------------------------0wf5sGsHd3NT
 2024-06-04 15:33:27,176 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 14301.15ms
 2024-06-04 15:33:27,368 [job_state.py:_status_update()] - Job Started: RTT9 - Derwood Unseenkiller - Upper - 4-24-2023_14h23m_0.20mm_240C_ASA_.gcode
 2024-06-04 16:35:03,728 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-04 17:39:28,501 [websockets.py:on_close()] - Websocket Closed: ID: 281473437122720 Close Code: None, Close Reason: None, Pong Time Elapsed: 0.62
