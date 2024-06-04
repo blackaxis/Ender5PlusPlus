@@ -2383,3 +2383,11 @@ Content-Type: multipart/form-data; boundary=------------------------0wf5sGsHd3NT
 2024-06-04 15:33:27,368 [job_state.py:_status_update()] - Job Started: RTT9 - Derwood Unseenkiller - Upper - 4-24-2023_14h23m_0.20mm_240C_ASA_.gcode
 2024-06-04 16:35:03,728 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
 2024-06-04 17:39:28,501 [websockets.py:on_close()] - Websocket Closed: ID: 281473437122720 Close Code: None, Close Reason: None, Pong Time Elapsed: 0.62
+2024-06-04 21:20:41,818 [websockets.py:on_close()] - Websocket Closed: ID: 281473437112496 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 4.20
+2024-06-04 21:41:42,165 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473437111728
+2024-06-04 21:41:46,878 [websockets.py:on_close()] - Websocket Closed: ID: 281473437111728 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.92
+2024-06-04 21:56:21,530 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.100
+2024-06-04 21:56:21,686 [application.py:log_request()] - 101 GET /websocket?token=OYIAD6FPNU7N6MCP5XWMYM4CFX2YGT6M (192.168.0.100) [_TRUSTED_USER_] 4.92ms
+2024-06-04 21:56:21,687 [websockets.py:open()] - Websocket Opened: ID: 281473437111536, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
+2024-06-04 21:56:21,701 [websockets.py:_handle_identify()] - Websocket 281473437111536 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-04 21:56:21,703 [file_manager.py:get_file_list()] - Updating File List <config>...
