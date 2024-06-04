@@ -2352,3 +2352,5 @@ Is move/copy: False
 2024-06-04 05:42:37,611 [websockets.py:open()] - Websocket Opened: ID: 281473437112496, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
 2024-06-04 05:42:37,619 [websockets.py:_handle_identify()] - Websocket 281473437112496 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
 2024-06-04 05:42:37,621 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-04 06:40:03,566 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
+2024-06-04 06:45:03,567 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
