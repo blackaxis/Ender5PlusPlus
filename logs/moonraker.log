@@ -220,3 +220,37 @@ Klipper Version: v0.12.0-207-g6cd17420-dirty
 2024-06-05 01:31:44,132 [file_manager.py:get_file_list()] - Updating File List <config>...
 2024-06-05 01:37:01,318 [websockets.py:on_close()] - Websocket Closed: ID: 281473437101456 Close Code: None, Close Reason: None, Pong Time Elapsed: 7.15
 2024-06-05 02:35:03,895 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-05 05:11:21,309 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-05 05:11:21,591 [application.py:log_request()] - 101 GET /websocket?token=DS3YXXBFK6HRN36I3SCQDFYERMBLFY7B (192.168.0.181) [_TRUSTED_USER_] 6.01ms
+2024-06-05 05:11:21,593 [websockets.py:open()] - Websocket Opened: ID: 281473437112784, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-05 05:11:21,603 [websockets.py:_handle_identify()] - Websocket 281473437112784 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-05 05:11:21,605 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-05 05:11:22,984 [application.py:log_request()] - 101 GET /websocket?token=6XEELQYEPLCTDYHON2WNEO7SNFT2ZCTE (192.168.0.181) [_TRUSTED_USER_] 4.40ms
+2024-06-05 05:11:22,985 [websockets.py:open()] - Websocket Opened: ID: 281473436760816, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-05 05:11:23,032 [websockets.py:_handle_identify()] - Websocket 281473436760816 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-05 05:11:23,034 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-05 05:11:28,863 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 175.000 175.000 20.000 [199538.094]
+2024-06-05 05:11:53,184 [websockets.py:on_close()] - Websocket Closed: ID: 281473436760816 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 0.18
+2024-06-05 05:11:53,191 [websockets.py:on_close()] - Websocket Closed: ID: 281473437112784 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 1.56
+2024-06-05 05:11:53,458 [application.py:log_request()] - 101 GET /websocket?token=6XEELQYEPLCTDYHON2WNEO7SNFT2ZCTE (192.168.0.181) [_TRUSTED_USER_] 7.36ms
+2024-06-05 05:11:53,460 [websockets.py:open()] - Websocket Opened: ID: 281473447411184, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-05 05:11:53,475 [websockets.py:_handle_identify()] - Websocket 281473447411184 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-05 05:11:53,477 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-05 05:12:59,190 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-05 05:26:33,016 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-05 05:26:35,759 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-05 05:27:33,018 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2024-06-05 05:27:35,761 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2024-06-05 05:28:33,020 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 180.01 seconds
+2024-06-05 05:28:35,764 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 180.01 seconds
+2024-06-05 05:29:33,023 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 240.01 seconds
+2024-06-05 05:29:35,767 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 240.01 seconds
+2024-06-05 05:30:07,454 [file_manager.py:complete_file_write()] - Invalid file write event: belts_20240605_053006_A.csv
+2024-06-05 05:30:09,567 [file_manager.py:complete_file_write()] - Invalid file write event: belts_20240605_053006_B.csv
+2024-06-05 05:30:35,770 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 300.01 seconds
+2024-06-05 05:31:35,772 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 360.01 seconds
+2024-06-05 05:32:35,773 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 420.02 seconds
+2024-06-05 05:33:35,776 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 480.02 seconds
+2024-06-05 05:34:35,779 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 540.02 seconds
+2024-06-05 05:34:50,924 [file_manager.py:complete_file_write()] - Invalid file write event: belts_20240605_053449_A.csv
+2024-06-05 05:34:53,149 [file_manager.py:complete_file_write()] - Invalid file write event: belts_20240605_053449_B.csv
