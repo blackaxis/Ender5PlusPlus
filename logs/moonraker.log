@@ -1483,3 +1483,9 @@ Content-Type: multipart/form-data; boundary=------------------------0GqbKkFKBCXM
 2024-06-05 17:56:19,442 [klippy_apis.py:start_print()] - Requesting Job Start, filename = RTT9 barrel retainer 4.17.23.step_4h55m_0.20mm_240C_ASA_.gcode
 2024-06-05 17:56:19,472 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 6023.61ms
 2024-06-05 17:56:19,586 [job_state.py:_status_update()] - Job Started: RTT9 barrel retainer 4.17.23.step_4h55m_0.20mm_240C_ASA_.gcode
+2024-06-05 18:42:20,982 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473435549552
+2024-06-05 18:42:25,847 [websockets.py:on_close()] - Websocket Closed: ID: 281473435549552 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.92
+2024-06-05 18:42:28,641 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473433429808
+2024-06-05 18:42:33,432 [websockets.py:on_close()] - Websocket Closed: ID: 281473433429808 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.93
+2024-06-05 18:47:37,692 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
+2024-06-05 18:57:37,694 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
