@@ -202,3 +202,20 @@ Klipper Version: v0.12.0-207-g6cd17420-dirty
 2024-06-05 00:35:43,257 [websockets.py:on_close()] - Websocket Closed: ID: 281473437111536 Close Code: None, Close Reason: None, Pong Time Elapsed: 1.56
 2024-06-05 00:55:37,723 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473447507568
 2024-06-05 00:55:42,593 [websockets.py:on_close()] - Websocket Closed: ID: 281473447507568 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.99
+2024-06-05 01:10:49,992 [application.py:log_request()] - 101 GET /websocket?token=WQOAOSWFZAP6HABJC6EOPWTWPB5LRJTB (192.168.0.181) [_TRUSTED_USER_] 4.25ms
+2024-06-05 01:10:49,994 [websockets.py:open()] - Websocket Opened: ID: 281473437114224, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-05 01:10:50,002 [websockets.py:_handle_identify()] - Websocket 281473437114224 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-05 01:10:50,007 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-05 01:11:20,199 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473437114224
+2024-06-05 01:11:24,997 [websockets.py:on_close()] - Websocket Closed: ID: 281473437114224 Close Code: None, Close Reason: None, Pong Time Elapsed: 35.01
+2024-06-05 01:25:58,002 [application.py:log_request()] - 101 GET /websocket?token=FXWRSPQEX73I672NCJJDCOXYQLRHEW62 (192.168.0.181) [_TRUSTED_USER_] 3.85ms
+2024-06-05 01:25:58,002 [websockets.py:open()] - Websocket Opened: ID: 281473437114176, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-05 01:25:58,013 [websockets.py:_handle_identify()] - Websocket 281473437114176 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-05 01:25:58,014 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-05 01:26:28,321 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473437114176
+2024-06-05 01:26:33,006 [websockets.py:on_close()] - Websocket Closed: ID: 281473437114176 Close Code: None, Close Reason: None, Pong Time Elapsed: 35.01
+2024-06-05 01:31:44,112 [application.py:log_request()] - 101 GET /websocket?token=O25RW23SUQS6MPUNSYR4HPFBPXW5MHZV (192.168.0.181) [_TRUSTED_USER_] 6.72ms
+2024-06-05 01:31:44,114 [websockets.py:open()] - Websocket Opened: ID: 281473437101456, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-05 01:31:44,130 [websockets.py:_handle_identify()] - Websocket 281473437101456 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-05 01:31:44,132 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-05 01:37:01,318 [websockets.py:on_close()] - Websocket Closed: ID: 281473437101456 Close Code: None, Close Reason: None, Pong Time Elapsed: 7.15
