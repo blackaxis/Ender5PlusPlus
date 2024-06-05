@@ -1068,3 +1068,12 @@ Content-Type: multipart/form-data; boundary=------------------------sBY2IzhPZPO9
 2024-06-05 13:10:02,512 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 9622.47ms
 2024-06-05 13:10:02,566 [job_state.py:_status_update()] - Job Started: RTT9 barrel retainer 4.17.23.step_9h35m_0.20mm_240C_ASA_.gcode
 2024-06-05 13:19:16,595 [websockets.py:on_close()] - Websocket Closed: ID: 281473433966096 Close Code: None, Close Reason: None, Pong Time Elapsed: 7.25
+2024-06-05 14:12:37,603 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-05 14:25:18,573 [websockets.py:on_close()] - Websocket Closed: ID: 281473435657936 Close Code: None, Close Reason: None, Pong Time Elapsed: 9.86
+2024-06-05 14:29:56,687 [websockets.py:on_close()] - Websocket Closed: ID: 281473434239232 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 1.13
+2024-06-05 14:29:57,438 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.100
+2024-06-05 14:29:57,651 [application.py:log_request()] - 101 GET /websocket?token=BCWJQSDKMDSDGRFHE3YZZ3GESAYEJ5WG (192.168.0.100) [_TRUSTED_USER_] 5.97ms
+2024-06-05 14:29:57,652 [websockets.py:open()] - Websocket Opened: ID: 281473434455200, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
+2024-06-05 14:29:57,665 [websockets.py:_handle_identify()] - Websocket 281473434455200 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-05 14:29:57,667 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-05 14:33:45,402 [websockets.py:on_close()] - Websocket Closed: ID: 281473434455200 Close Code: None, Close Reason: None, Pong Time Elapsed: 7.71
