@@ -1057,3 +1057,14 @@ Is move/copy: False
 2024-06-05 12:47:37,580 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
 2024-06-05 12:47:37,581 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
 2024-06-05 12:58:51,853 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-05 13:09:52,861 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-05 13:09:52,895 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------sBY2IzhPZPO9tj6b3Norj2
+2024-06-05 13:10:01,620 [application.py:post()] - Processing Uploaded File: RTT9 barrel retainer 4.17.23.step_9h35m_0.20mm_240C_ASA_.gcode
+2024-06-05 13:10:02,299 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-05 13:10:02,484 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "RTT9 barrel retainer 4.17.23.step_9h35m_0.20mm_240C_ASA_.gcode") successfully finished
+2024-06-05 13:10:02,486 [klippy_apis.py:start_print()] - Requesting Job Start, filename = RTT9 barrel retainer 4.17.23.step_9h35m_0.20mm_240C_ASA_.gcode
+2024-06-05 13:10:02,512 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 9622.47ms
+2024-06-05 13:10:02,566 [job_state.py:_status_update()] - Job Started: RTT9 barrel retainer 4.17.23.step_9h35m_0.20mm_240C_ASA_.gcode
+2024-06-05 13:19:16,595 [websockets.py:on_close()] - Websocket Closed: ID: 281473433966096 Close Code: None, Close Reason: None, Pong Time Elapsed: 7.25
