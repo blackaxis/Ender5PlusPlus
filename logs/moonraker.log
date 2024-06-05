@@ -254,3 +254,4 @@ Klipper Version: v0.12.0-207-g6cd17420-dirty
 2024-06-05 05:34:35,779 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 540.02 seconds
 2024-06-05 05:34:50,924 [file_manager.py:complete_file_write()] - Invalid file write event: belts_20240605_053449_A.csv
 2024-06-05 05:34:53,149 [file_manager.py:complete_file_write()] - Invalid file write event: belts_20240605_053449_B.csv
+2024-06-05 06:35:03,960 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
