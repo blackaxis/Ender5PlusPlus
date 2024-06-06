@@ -544,3 +544,32 @@ ConnectionResetError: [Errno 104] Connection reset by peer
 2024-06-06 05:04:23,271 [job_state.py:_status_update()] - Job Started: Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
 2024-06-06 05:08:07,673 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473435533024
 2024-06-06 05:08:12,426 [websockets.py:on_close()] - Websocket Closed: ID: 281473435533024 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.99
+2024-06-06 06:02:37,877 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-06 06:02:37,877 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
+2024-06-06 06:02:37,877 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.210
+2024-06-06 06:08:31,429 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-06 06:08:31,462 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------RQjl4R4OQ7NDbVg2E0Ynp2
+2024-06-06 06:08:32,026 [application.py:post()] - Processing Uploaded File: Califlower v29_1h2m_0.20mm_240C_ASA_.gcode
+2024-06-06 06:08:32,496 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-06 06:08:32,679 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Califlower v29_1h2m_0.20mm_240C_ASA_.gcode") successfully finished
+2024-06-06 06:08:32,680 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Califlower v29_1h2m_0.20mm_240C_ASA_.gcode
+2024-06-06 06:08:32,709 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 1249.84ms
+2024-06-06 06:08:32,942 [job_state.py:_status_update()] - Job Started: Califlower v29_1h2m_0.20mm_240C_ASA_.gcode
+2024-06-06 06:11:14,853 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473205936672
+2024-06-06 06:11:14,854 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473433670944
+2024-06-06 06:11:19,709 [websockets.py:on_close()] - Websocket Closed: ID: 281473205936672 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.99
+2024-06-06 06:11:19,829 [websockets.py:on_close()] - Websocket Closed: ID: 281473433670944 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.99
+2024-06-06 06:11:40,792 [application.py:log_request()] - 101 GET /websocket?token=IDAVHENZXA5LXFZNRVEQWS2RXBM6GXEM (192.168.0.181) [_TRUSTED_USER_] 6.00ms
+2024-06-06 06:11:40,794 [websockets.py:open()] - Websocket Opened: ID: 281473433946144, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-06 06:11:40,814 [websockets.py:_handle_identify()] - Websocket 281473433946144 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-06 06:11:40,816 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-06 06:11:43,961 [application.py:log_request()] - 101 GET /websocket?token=T7SLLDSSOVE3VK5MGO24XDUACAWPP2N3 (192.168.0.181) [_TRUSTED_USER_] 6.46ms
+2024-06-06 06:11:43,962 [websockets.py:open()] - Websocket Opened: ID: 281473435548784, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-06 06:11:43,982 [websockets.py:_handle_identify()] - Websocket 281473435548784 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-06 06:11:43,984 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-06 06:12:30,911 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473433946144
+2024-06-06 06:12:34,177 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473435548784
+2024-06-06 06:12:35,798 [websockets.py:on_close()] - Websocket Closed: ID: 281473433946144 Close Code: None, Close Reason: None, Pong Time Elapsed: 44.99
+2024-06-06 06:12:38,966 [websockets.py:on_close()] - Websocket Closed: ID: 281473435548784 Close Code: None, Close Reason: None, Pong Time Elapsed: 45.00
