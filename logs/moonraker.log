@@ -658,3 +658,4 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryfs7KyGMGExwttl
 2024-06-06 15:29:15,467 [websockets.py:open()] - Websocket Opened: ID: 281473435687664, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
 2024-06-06 15:29:15,474 [websockets.py:_handle_identify()] - Websocket 281473435687664 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
 2024-06-06 15:29:15,476 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-06 16:32:38,051 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
