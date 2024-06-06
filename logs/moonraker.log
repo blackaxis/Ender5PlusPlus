@@ -410,3 +410,77 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundarylKDoKPCwTFCCog
 2024-06-06 03:39:31,253 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 360.01 seconds
 2024-06-06 03:40:31,256 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 420.02 seconds
 2024-06-06 03:41:28,200 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Too many retries
+2024-06-06 04:03:32,805 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7bBCOiWhKSnhQY4L
+2024-06-06 04:03:32,823 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-06 04:03:32,836 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 32.27ms
+2024-06-06 04:03:34,123 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-06 04:03:34,212 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 04:03:34,241 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 04:03:34,728 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 04:03:35,397 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-06 04:03:42,865 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-06 04:03:42,869 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-06 04:03:43,116 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-06 04:03:43,397 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-06 04:03:43,870 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-06 04:13:26,774 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------Q2qEOjaWJJneXYPuyvYt5u
+2024-06-06 04:13:27,286 [application.py:post()] - Processing Uploaded File: Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+2024-06-06 04:13:27,826 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-06 04:13:28,010 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Califlower v29_1h3m_0.20mm_240C_ASA_.gcode") successfully finished
+2024-06-06 04:13:28,012 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+2024-06-06 04:13:28,013 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/biqu/printer_data/gcodes/Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+Inotify path: /home/biqu/printer_data/gcodes/Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+Is move/copy: False
+2024-06-06 04:13:28,040 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 1270.49ms
+2024-06-06 04:13:28,177 [job_state.py:_status_update()] - Job Started: Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+2024-06-06 04:19:17,891 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-06 04:19:17,916 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryZv0PjnIHUPHBJxDE
+2024-06-06 04:19:17,960 [application.py:post()] - Processing Uploaded File: klippermacros.cfg
+2024-06-06 04:19:17,987 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 73.71ms
+2024-06-06 04:19:19,294 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-06 04:19:19,344 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 04:19:19,394 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 04:19:19,594 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 04:19:20,562 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-06 04:19:28,014 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-06 04:19:28,020 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-06 04:19:28,265 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-06 04:19:28,581 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-06 04:19:29,020 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-06 04:19:30,708 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+2024-06-06 04:19:30,795 [job_state.py:_status_update()] - Job Started: Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+2024-06-06 04:21:29,581 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-06 04:21:29,601 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary6IKfhmI3CDQwUV5A
+2024-06-06 04:21:29,651 [application.py:post()] - Processing Uploaded File: klippermacros.cfg
+2024-06-06 04:21:29,675 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 77.10ms
+2024-06-06 04:21:30,998 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-06 04:21:31,068 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 04:21:31,099 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 04:21:31,112 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 04:21:32,284 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-06 04:21:39,747 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-06 04:21:39,752 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-06 04:21:39,998 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-06 04:21:40,312 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-06 04:21:40,752 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-06 04:22:02,642 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+2024-06-06 04:22:02,836 [job_state.py:_status_update()] - Job Started: Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+2024-06-06 04:57:47,416 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.210
+2024-06-06 04:57:47,421 [application.py:log_request()] - 101 GET /websocket (192.168.0.210) [_TRUSTED_USER_] 9.32ms
+2024-06-06 04:57:47,423 [websockets.py:open()] - Websocket Opened: ID: 281473435533024, Proxied: True, User Agent: Dart/3.3 (dart:io), Host Name: ender5plusplus.local
+2024-06-06 04:57:47,435 [websockets.py:_handle_identify()] - Websocket 281473435533024 Client Identified - Name: Mobileraker-ios, Version: 2.6.19-468, Type: mobile
+2024-06-06 04:59:01,287 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 0.637 19.997 10.000 [0.000]
+2024-06-06 04:59:05,176 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 0.637 19.997 10.000 [0.000]
+2024-06-06 04:59:09,090 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 0.637 19.997 10.000 [0.000]
+2024-06-06 04:59:23,681 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 20.000 -0.003 10.000 [0.000]
+2024-06-06 04:59:42,105 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 20.000 -0.003 10.000 [0.000]
