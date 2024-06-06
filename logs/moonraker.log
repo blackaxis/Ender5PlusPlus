@@ -281,3 +281,33 @@ Content-Type: multipart/form-data; boundary=------------------------Qjy6dxjioP6l
 2024-06-06 00:15:54,382 [job_state.py:_status_update()] - Job Started: Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
 2024-06-06 01:12:37,793 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
 2024-06-06 01:17:37,794 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-06 02:47:56,700 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-06 02:49:34,208 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-06 02:49:34,293 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 02:49:34,310 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 02:49:34,437 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.100
+2024-06-06 02:49:34,549 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 02:49:35,476 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-06 02:49:42,971 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-06 02:49:42,975 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-06 02:49:43,224 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-06 02:49:43,519 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-06 02:49:43,979 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-06 02:51:01,496 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: 
+2024-06-06 02:51:01,519 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryuENx0Ajy7BKhOtVV
+2024-06-06 02:51:01,553 [application.py:post()] - Processing Uploaded File: klippermacros.cfg
+2024-06-06 02:51:01,576 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 59.87ms
+2024-06-06 02:51:02,873 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-06 02:51:02,900 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 02:51:02,955 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 02:51:03,021 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 02:51:04,142 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-06 02:51:11,611 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-06 02:51:11,616 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-06 02:51:11,863 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-06 02:51:12,201 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-06 02:51:12,637 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-06 02:57:10,854 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+2024-06-06 02:57:10,951 [job_state.py:_status_update()] - Job Started: Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
