@@ -311,3 +311,102 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryuENx0Ajy7BKhOt
 2024-06-06 02:51:12,637 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
 2024-06-06 02:57:10,854 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
 2024-06-06 02:57:10,951 [job_state.py:_status_update()] - Job Started: Califlower v29_1h3m_0.20mm_240C_ASA_.gcode
+2024-06-06 03:15:40,653 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 0.637 19.997 10.000 [0.000]
+2024-06-06 03:15:55,996 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 0.637 19.997 10.000 [0.000]
+2024-06-06 03:16:10,884 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2024-06-06 03:16:10,904 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1717643741.047872, Usage: 5.36%, Memory: 48656 kB
+System Time: 1717643742.055469, Usage: 4.55%, Memory: 48656 kB
+System Time: 1717643743.056335, Usage: 5.88%, Memory: 48656 kB
+System Time: 1717643744.055609, Usage: 5.77%, Memory: 48656 kB
+System Time: 1717643745.052104, Usage: 4.99%, Memory: 48656 kB
+System Time: 1717643746.052583, Usage: 3.43%, Memory: 48656 kB
+System Time: 1717643747.062945, Usage: 6.45%, Memory: 48656 kB
+System Time: 1717643748.063228, Usage: 5.84%, Memory: 48656 kB
+System Time: 1717643749.064235, Usage: 5.71%, Memory: 48656 kB
+System Time: 1717643750.065550, Usage: 6.01%, Memory: 48656 kB
+System Time: 1717643751.064388, Usage: 5.47%, Memory: 48656 kB
+System Time: 1717643752.067688, Usage: 5.46%, Memory: 48656 kB
+System Time: 1717643753.062277, Usage: 4.93%, Memory: 48656 kB
+System Time: 1717643754.062911, Usage: 3.51%, Memory: 48656 kB
+System Time: 1717643755.066247, Usage: 5.78%, Memory: 48656 kB
+System Time: 1717643756.064913, Usage: 5.86%, Memory: 48656 kB
+System Time: 1717643757.073148, Usage: 5.65%, Memory: 48656 kB
+System Time: 1717643758.073283, Usage: 5.95%, Memory: 48656 kB
+System Time: 1717643759.068099, Usage: 5.22%, Memory: 48656 kB
+System Time: 1717643760.068774, Usage: 4.08%, Memory: 48656 kB
+System Time: 1717643761.077236, Usage: 4.01%, Memory: 48656 kB
+System Time: 1717643762.076604, Usage: 5.83%, Memory: 48656 kB
+System Time: 1717643763.081467, Usage: 5.44%, Memory: 48656 kB
+System Time: 1717643764.089389, Usage: 6.08%, Memory: 48656 kB
+System Time: 1717643765.081614, Usage: 6.04%, Memory: 48656 kB
+System Time: 1717643766.082567, Usage: 3.46%, Memory: 48656 kB
+System Time: 1717643767.089354, Usage: 5.58%, Memory: 48656 kB
+System Time: 1717643768.095927, Usage: 5.6%, Memory: 48656 kB
+System Time: 1717643769.089469, Usage: 5.45%, Memory: 48656 kB
+System Time: 1717643770.089759, Usage: 3.81%, Memory: 48656 kB
+CPU Temperature: 57.734
+2024-06-06 03:16:22,003 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-06 03:16:22,087 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 03:16:22,140 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 03:16:22,327 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 03:16:23,284 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-06 03:16:30,741 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-06 03:16:30,745 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-06 03:16:30,993 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-06 03:16:31,309 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-06 03:16:31,765 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-06 03:17:41,012 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-06 03:19:28,943 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryHVZJTgH2dfRRAngx
+2024-06-06 03:19:28,975 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-06 03:19:28,999 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 58.63ms
+2024-06-06 03:19:30,396 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-06 03:19:30,433 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 03:19:30,539 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 03:19:30,571 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 03:19:31,670 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-06 03:19:39,108 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-06 03:19:39,112 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-06 03:19:39,360 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-06 03:19:39,652 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-06 03:19:40,114 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-06 03:20:54,035 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-06 03:21:54,038 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.01 seconds
+2024-06-06 03:22:54,040 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 180.01 seconds
+2024-06-06 03:23:54,043 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 240.01 seconds
+2024-06-06 03:24:54,044 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 300.01 seconds
+2024-06-06 03:25:54,047 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 360.02 seconds
+2024-06-06 03:26:23,668 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Too many retries
+2024-06-06 03:27:34,106 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-06 03:28:34,108 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2024-06-06 03:29:34,111 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 180.01 seconds
+2024-06-06 03:30:34,113 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 240.01 seconds
+2024-06-06 03:30:35,133 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Retries aborting: Probed points range is increasing. 
+2024-06-06 03:32:40,659 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryNFC7xzRQgp6coTZv
+2024-06-06 03:32:40,687 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-06 03:32:40,699 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 43.87ms
+2024-06-06 03:33:09,222 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarylKDoKPCwTFCCogVd
+2024-06-06 03:33:09,241 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-06 03:33:09,253 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 32.85ms
+2024-06-06 03:33:10,503 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-06 03:33:10,549 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 03:33:10,707 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 03:33:10,824 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 03:33:11,777 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-06 03:33:19,275 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-06 03:33:19,279 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-06 03:33:19,526 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-06 03:33:19,833 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-06 03:33:20,300 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-06 03:34:31,242 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-06 03:35:31,243 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2024-06-06 03:36:31,245 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 180.01 seconds
+2024-06-06 03:37:31,248 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 240.01 seconds
+2024-06-06 03:38:31,251 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 300.01 seconds
+2024-06-06 03:39:31,253 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 360.01 seconds
+2024-06-06 03:40:31,256 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 420.02 seconds
+2024-06-06 03:41:28,200 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Too many retries
