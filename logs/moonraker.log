@@ -672,3 +672,4 @@ Content-Type: multipart/form-data; boundary=------------------------LnZkCQ8dPdjX
 2024-06-06 17:20:27,428 [job_state.py:_status_update()] - Job Started: AR-15_A2_Grips_M3_&_M5_screw.stp_(Unsaved)__Main_2024-06-06 13-10-49_6h38m_0.20mm_240C_ASA_.gcode
 2024-06-06 18:14:34,386 [websockets.py:on_close()] - Websocket Closed: ID: 281473435687664 Close Code: None, Close Reason: None, Pong Time Elapsed: 8.90
 2024-06-06 18:22:38,077 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-06 22:26:31,527 [websockets.py:on_close()] - Websocket Closed: ID: 281473433734928 Close Code: None, Close Reason: None, Pong Time Elapsed: 2.03
