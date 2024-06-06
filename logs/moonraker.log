@@ -644,3 +644,5 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundarybJQwC7RxbQ6I7z
 2024-06-06 13:44:36,889 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
 2024-06-06 13:45:22,886 [klippy_apis.py:start_print()] - Requesting Job Start, filename = MOD9V2_Lower_Receiver-AR-15_FCG_Final_4h32m_0.20mm_240C_ASA_.gcode
 2024-06-06 13:45:23,050 [job_state.py:_status_update()] - Job Started: MOD9V2_Lower_Receiver-AR-15_FCG_Final_4h32m_0.20mm_240C_ASA_.gcode
+2024-06-06 14:47:38,026 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-06 14:47:38,026 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
