@@ -586,3 +586,61 @@ Content-Type: multipart/form-data; boundary=------------------------RQjl4R4OQ7ND
 2024-06-06 11:33:57,430 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473435678704
 2024-06-06 11:34:02,195 [websockets.py:on_close()] - Websocket Closed: ID: 281473435678704 Close Code: None, Close Reason: None, Pong Time Elapsed: 35.02
 2024-06-06 12:37:37,993 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.210
+2024-06-06 13:05:38,709 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-06 13:05:38,806 [application.py:log_request()] - 101 GET /websocket?token=2H3YLUHLV5AC2VYGGHB7YKZFLAMQQ5IC (192.168.0.181) [_TRUSTED_USER_] 6.06ms
+2024-06-06 13:05:38,808 [websockets.py:open()] - Websocket Opened: ID: 281473435687040, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-06 13:05:38,821 [websockets.py:_handle_identify()] - Websocket 281473435687040 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-06 13:05:38,823 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-06 13:06:53,370 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 10.636 19.997 9.908 [6956.670]
+2024-06-06 13:07:04,687 [websockets.py:on_close()] - Websocket Closed: ID: 281473435687040 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 5.87
+2024-06-06 13:11:34,232 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------zrnyttwItTj51SjhprSxqS
+2024-06-06 13:11:37,406 [application.py:post()] - Processing Uploaded File: MOD9V2_Lower_Receiver-AR-15_FCG_Final_4h32m_0.20mm_240C_ASA_.gcode
+2024-06-06 13:11:37,941 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-06 13:11:38,126 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "MOD9V2_Lower_Receiver-AR-15_FCG_Final_4h32m_0.20mm_240C_ASA_.gcode") successfully finished
+2024-06-06 13:11:38,127 [klippy_apis.py:start_print()] - Requesting Job Start, filename = MOD9V2_Lower_Receiver-AR-15_FCG_Final_4h32m_0.20mm_240C_ASA_.gcode
+2024-06-06 13:11:38,150 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 3920.73ms
+2024-06-06 13:11:38,171 [job_state.py:_status_update()] - Job Started: MOD9V2_Lower_Receiver-AR-15_FCG_Final_4h32m_0.20mm_240C_ASA_.gcode
+2024-06-06 13:15:31,076 [application.py:log_request()] - 101 GET /websocket?token=OCBGTAR6JCBELZHPTRENO4K62REIUJKT (192.168.0.181) [_TRUSTED_USER_] 5.06ms
+2024-06-06 13:15:31,077 [websockets.py:open()] - Websocket Opened: ID: 281473435678704, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-06 13:15:31,086 [websockets.py:_handle_identify()] - Websocket 281473435678704 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-06 13:15:31,088 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-06 13:15:33,782 [websockets.py:on_close()] - Websocket Closed: ID: 281473435678704 Close Code: None, Close Reason: None, Pong Time Elapsed: 2.71
+2024-06-06 13:34:22,341 [application.py:log_request()] - 101 GET /websocket?token=NH26PJUD2BWWIARO2ENJ7RWSZSGCIYF5 (192.168.0.181) [_TRUSTED_USER_] 5.17ms
+2024-06-06 13:34:22,342 [websockets.py:open()] - Websocket Opened: ID: 281473435688240, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-06 13:34:22,351 [websockets.py:_handle_identify()] - Websocket 281473435688240 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-06 13:34:22,353 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-06 13:34:23,887 [application.py:log_request()] - 101 GET /websocket?token=HWWZUCM7N3AZWTSDGRHPCU3GNLCXWMYU (192.168.0.181) [_TRUSTED_USER_] 4.98ms
+2024-06-06 13:34:23,888 [websockets.py:open()] - Websocket Opened: ID: 281473206668640, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-06 13:34:23,906 [websockets.py:_handle_identify()] - Websocket 281473206668640 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-06 13:34:23,907 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-06 13:34:55,259 [klippy_apis.py:start_print()] - Requesting Job Start, filename = MOD9V2_Lower_Receiver-AR-15_FCG_Final_4h32m_0.20mm_240C_ASA_.gcode
+2024-06-06 13:34:55,419 [job_state.py:_status_update()] - Job Started: MOD9V2_Lower_Receiver-AR-15_FCG_Final_4h32m_0.20mm_240C_ASA_.gcode
+2024-06-06 13:35:00,123 [websockets.py:on_close()] - Websocket Closed: ID: 281473206668640 Close Code: None, Close Reason: None, Pong Time Elapsed: 6.22
+2024-06-06 13:44:00,023 [application.py:log_request()] - 101 GET /websocket?token=6KHSOWJFQGEOCGYJ47RYFJMHHEGR64CP (192.168.0.181) [_TRUSTED_USER_] 6.53ms
+2024-06-06 13:44:00,024 [websockets.py:open()] - Websocket Opened: ID: 281473436132256, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-06 13:44:00,036 [websockets.py:_handle_identify()] - Websocket 281473436132256 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-06 13:44:00,039 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-06 13:44:01,575 [application.py:log_request()] - 101 GET /websocket?token=EVBMVOM7SPF7KAKQY5ND355DG3UXUHBG (192.168.0.181) [_TRUSTED_USER_] 3.67ms
+2024-06-06 13:44:01,576 [websockets.py:open()] - Websocket Opened: ID: 281473435364992, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-06 13:44:01,583 [websockets.py:_handle_identify()] - Websocket 281473435364992 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-06 13:44:01,585 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-06 13:44:25,746 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarybJQwC7RxbQ6I7zBm
+2024-06-06 13:44:25,786 [application.py:post()] - Processing Uploaded File: printer.cfg
+2024-06-06 13:44:25,814 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 71.81ms
+2024-06-06 13:44:27,196 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2024-06-06 13:44:27,227 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 13:44:27,275 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 13:44:27,285 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 13:44:27,376 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2024-06-06 13:44:27,498 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.100
+2024-06-06 13:44:28,465 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2024-06-06 13:44:35,884 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2024-06-06 13:44:35,891 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2024-06-06 13:44:36,136 [job_state.py:_handle_started()] - Job state initialized: standby
+2024-06-06 13:44:36,434 [klippy_connection.py:_check_ready()] - Klippy ready
+2024-06-06 13:44:36,889 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor EBB36', 'temperature_sensor CB1', 'heater_bed', 'extruder']
+2024-06-06 13:45:22,886 [klippy_apis.py:start_print()] - Requesting Job Start, filename = MOD9V2_Lower_Receiver-AR-15_FCG_Final_4h32m_0.20mm_240C_ASA_.gcode
+2024-06-06 13:45:23,050 [job_state.py:_status_update()] - Job Started: MOD9V2_Lower_Receiver-AR-15_FCG_Final_4h32m_0.20mm_240C_ASA_.gcode
