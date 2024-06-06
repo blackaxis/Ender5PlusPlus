@@ -659,3 +659,14 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryfs7KyGMGExwttl
 2024-06-06 15:29:15,474 [websockets.py:_handle_identify()] - Websocket 281473435687664 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
 2024-06-06 15:29:15,476 [file_manager.py:get_file_list()] - Updating File List <config>...
 2024-06-06 16:32:38,051 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-06 17:15:22,781 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2024-06-06 17:20:21,711 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-06 17:20:22,038 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------LnZkCQ8dPdjXbkG6aEJYqt
+2024-06-06 17:20:26,612 [application.py:post()] - Processing Uploaded File: AR-15_A2_Grips_M3_&_M5_screw.stp_(Unsaved)__Main_2024-06-06 13-10-49_6h38m_0.20mm_240C_ASA_.gcode
+2024-06-06 17:20:27,198 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-06 17:20:27,384 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "AR-15_A2_Grips_M3_&_M5_screw.stp_(Unsaved)__Main_2024-06-06 13-10-49_6h38m_0.20mm_240C_ASA_.gcode") successfully finished
+2024-06-06 17:20:27,386 [klippy_apis.py:start_print()] - Requesting Job Start, filename = AR-15_A2_Grips_M3_&_M5_screw.stp_(Unsaved)__Main_2024-06-06 13-10-49_6h38m_0.20mm_240C_ASA_.gcode
+2024-06-06 17:20:27,411 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 5375.09ms
+2024-06-06 17:20:27,428 [job_state.py:_status_update()] - Job Started: AR-15_A2_Grips_M3_&_M5_screw.stp_(Unsaved)__Main_2024-06-06 13-10-49_6h38m_0.20mm_240C_ASA_.gcode
