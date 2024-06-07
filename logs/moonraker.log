@@ -277,3 +277,23 @@ Content-Type: multipart/form-data; boundary=------------------------sG4jOY1Ops5P
 2024-06-07 13:44:07,909 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Califlower v29_1h37m_0.20mm_240C_ASA_.gcode
 2024-06-07 13:44:07,932 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 1620.95ms
 2024-06-07 13:44:08,037 [job_state.py:_status_update()] - Job Started: Califlower v29_1h37m_0.20mm_240C_ASA_.gcode
+2024-06-07 14:02:17,058 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 330.637 19.997 10.000 [163683.572]
+2024-06-07 14:02:28,918 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: BLTouch failed to deploy
+2024-06-07 14:03:27,520 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Califlower v29_1h37m_0.20mm_240C_ASA_.gcode
+2024-06-07 14:03:27,715 [job_state.py:_status_update()] - Job Started: Califlower v29_1h37m_0.20mm_240C_ASA_.gcode
+2024-06-07 14:07:44,981 [application.py:log_request()] - 101 GET /websocket?token=BDRQPF3QT6MLVUBBXOXFQJPCJLJODIHT (192.168.0.181) [_TRUSTED_USER_] 3.83ms
+2024-06-07 14:07:44,982 [websockets.py:open()] - Websocket Opened: ID: 281473433431440, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-07 14:07:44,991 [websockets.py:_handle_identify()] - Websocket 281473433431440 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-07 14:07:44,992 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-07 14:07:46,306 [application.py:log_request()] - 101 GET /websocket?token=77TWZUI6RNPZTCQTSJ6G3TA42GEADRMM (192.168.0.181) [_TRUSTED_USER_] 3.58ms
+2024-06-07 14:07:46,306 [websockets.py:open()] - Websocket Opened: ID: 281473206668832, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-07 14:07:46,315 [websockets.py:_handle_identify()] - Websocket 281473206668832 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-07 14:07:46,316 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-07 14:10:19,384 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryTymRzU0KaXjcrfKs
+2024-06-07 14:10:19,423 [application.py:post()] - Processing Uploaded File: EBB36.cfg
+2024-06-07 14:10:19,450 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 70.25ms
+2024-06-07 14:10:23,242 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryMfHcAjAkml88EbeO
+2024-06-07 14:10:23,273 [application.py:post()] - Processing Uploaded File: EBB36.cfg
+2024-06-07 14:10:23,296 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 56.80ms
