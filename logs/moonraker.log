@@ -248,3 +248,5 @@ Content-Type: multipart/form-data; boundary=------------------------DWRjFVSgUb1g
 2024-06-07 05:39:37,588 [klippy_apis.py:start_print()] - Requesting Job Start, filename = MOD9V2_G17_Feed_Ramp_Final_8h43m_0.20mm_240C_ASA_.gcode
 2024-06-07 05:39:37,660 [job_state.py:_status_update()] - Job Started: MOD9V2_G17_Feed_Ramp_Final_8h43m_0.20mm_240C_ASA_.gcode
 2024-06-07 06:42:38,269 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-07 07:04:50,515 [websockets.py:on_close()] - Websocket Closed: ID: 281473434573984 Close Code: None, Close Reason: None, Pong Time Elapsed: 0.65
+2024-06-07 07:12:07,271 [websockets.py:on_close()] - Websocket Closed: ID: 281473434571152 Close Code: None, Close Reason: None, Pong Time Elapsed: 4.24
