@@ -266,3 +266,4 @@ Content-Type: multipart/form-data; boundary=------------------------KTXaxhklGfvm
 2024-06-07 11:54:43,869 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Califlower v29_1h36m_0.20mm_240C_ASA_.gcode
 2024-06-07 11:54:43,893 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 2116.77ms
 2024-06-07 11:54:44,003 [job_state.py:_status_update()] - Job Started: Califlower v29_1h36m_0.20mm_240C_ASA_.gcode
+2024-06-07 12:57:38,360 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
