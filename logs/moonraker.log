@@ -297,3 +297,4 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryTymRzU0KaXjcrf
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryMfHcAjAkml88EbeO
 2024-06-07 14:10:23,273 [application.py:post()] - Processing Uploaded File: EBB36.cfg
 2024-06-07 14:10:23,296 [application.py:log_request()] - 201 POST /server/files/upload (192.168.0.181) [_TRUSTED_USER_] 56.80ms
+2024-06-07 15:12:38,397 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
