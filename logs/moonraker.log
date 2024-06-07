@@ -224,3 +224,5 @@ Content-Type: multipart/form-data; boundary=------------------------DWRjFVSgUb1g
 2024-06-07 01:45:34,277 [websockets.py:on_close()] - Websocket Closed: ID: 281473435807456 Close Code: None, Close Reason: None, Pong Time Elapsed: 6.82
 2024-06-07 02:07:38,200 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
 2024-06-07 02:12:38,202 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
+2024-06-07 03:39:22,879 [klippy_apis.py:pause_print()] - Requesting job pause...
+2024-06-07 03:39:23,416 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.print.pause, Code: 400, Message: Move out of range: 355.982 345.000 35.653 [89735.957]
