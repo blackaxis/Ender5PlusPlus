@@ -475,3 +475,5 @@ Content-Type: multipart/form-data; boundary=------------------------bzlJiaKEa0k6
 2024-06-07 17:28:05,458 [klippy_apis.py:start_print()] - Requesting Job Start, filename = MOD9V2_G17_Upper_Receiver_Final.stp_Solid__Main_2024-06-07 12-56-44_14h21m_0.20mm_240C_ASA_.gcode
 2024-06-07 17:28:14,405 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 26885.33ms
 2024-06-07 17:28:14,536 [job_state.py:_status_update()] - Job Started: MOD9V2_G17_Upper_Receiver_Final.stp_Solid__Main_2024-06-07 12-56-44_14h21m_0.20mm_240C_ASA_.gcode
+2024-06-07 18:27:38,455 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.100
+2024-06-07 18:32:38,456 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
