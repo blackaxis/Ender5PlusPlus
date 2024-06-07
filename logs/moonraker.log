@@ -267,3 +267,13 @@ Content-Type: multipart/form-data; boundary=------------------------KTXaxhklGfvm
 2024-06-07 11:54:43,893 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 2116.77ms
 2024-06-07 11:54:44,003 [job_state.py:_status_update()] - Job Started: Califlower v29_1h36m_0.20mm_240C_ASA_.gcode
 2024-06-07 12:57:38,360 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-07 13:44:06,083 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-07 13:44:06,314 [application.py:prepare()] - Upload Request Received from 192.168.0.181
+Content-Type: multipart/form-data; boundary=------------------------sG4jOY1Ops5PfzCyFJnTaH
+2024-06-07 13:44:07,244 [application.py:post()] - Processing Uploaded File: Califlower v29_1h37m_0.20mm_240C_ASA_.gcode
+2024-06-07 13:44:07,726 [shell_command.py:pipe_data_received()] - INFO:metadata:Object Processing is disabled
+
+2024-06-07 13:44:07,908 [shell_command.py:_check_proc_success()] - Command (/home/biqu/moonraker-env/bin/python /home/biqu/moonraker/moonraker/components/file_manager/metadata.py -p /home/biqu/printer_data/gcodes -f "Califlower v29_1h37m_0.20mm_240C_ASA_.gcode") successfully finished
+2024-06-07 13:44:07,909 [klippy_apis.py:start_print()] - Requesting Job Start, filename = Califlower v29_1h37m_0.20mm_240C_ASA_.gcode
+2024-06-07 13:44:07,932 [application.py:log_request()] - 201 POST /api/files/local (192.168.0.181) [_TRUSTED_USER_] 1620.95ms
+2024-06-07 13:44:08,037 [job_state.py:_status_update()] - Job Started: Califlower v29_1h37m_0.20mm_240C_ASA_.gcode
