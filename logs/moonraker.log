@@ -231,3 +231,19 @@ Content-Type: multipart/form-data; boundary=------------------------DWRjFVSgUb1g
 2024-06-07 04:10:09,640 [websockets.py:open()] - Websocket Opened: ID: 281473434757632, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
 2024-06-07 04:10:09,758 [websockets.py:_handle_identify()] - Websocket 281473434757632 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
 2024-06-07 04:10:09,760 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-07 05:02:25,092 [klippy_apis.py:cancel_print()] - Requesting job cancel...
+2024-06-07 05:02:34,285 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Must home axis first: 142.075 19.997 9.876 [89735.957]
+2024-06-07 05:12:38,246 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
+2024-06-07 05:25:43,795 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: No trigger on probe after full movement
+2024-06-07 05:37:28,063 [websockets.py:on_close()] - Websocket Closed: ID: 281473434757632 Close Code: None, Close Reason: None, Pong Time Elapsed: 8.41
+2024-06-07 05:37:42,704 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.181
+2024-06-07 05:37:43,016 [application.py:log_request()] - 101 GET /websocket?token=4CQDWAM3RH4F5W242OPSNEZSH5GZJSE6 (192.168.0.181) [_TRUSTED_USER_] 5.92ms
+2024-06-07 05:37:43,017 [websockets.py:open()] - Websocket Opened: ID: 281473434571152, Proxied: True, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15, Host Name: ender5plusplus.local
+2024-06-07 05:37:43,029 [websockets.py:_handle_identify()] - Websocket 281473434571152 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-07 05:37:43,040 [file_manager.py:get_file_list()] - Updating File List <config>...
+2024-06-07 05:38:23,819 [klippy_apis.py:start_print()] - Requesting Job Start, filename = MOD9V2_G17_Feed_Ramp_Final_8h43m_0.20mm_240C_ASA_.gcode
+2024-06-07 05:38:23,935 [job_state.py:_status_update()] - Job Started: MOD9V2_G17_Feed_Ramp_Final_8h43m_0.20mm_240C_ASA_.gcode
+2024-06-07 05:38:59,845 [klippy_apis.py:start_print()] - Requesting Job Start, filename = MOD9V2_G17_Feed_Ramp_Final_8h43m_0.20mm_240C_ASA_.gcode
+2024-06-07 05:39:00,054 [job_state.py:_status_update()] - Job Started: MOD9V2_G17_Feed_Ramp_Final_8h43m_0.20mm_240C_ASA_.gcode
+2024-06-07 05:39:37,588 [klippy_apis.py:start_print()] - Requesting Job Start, filename = MOD9V2_G17_Feed_Ramp_Final_8h43m_0.20mm_240C_ASA_.gcode
+2024-06-07 05:39:37,660 [job_state.py:_status_update()] - Job Started: MOD9V2_G17_Feed_Ramp_Final_8h43m_0.20mm_240C_ASA_.gcode
