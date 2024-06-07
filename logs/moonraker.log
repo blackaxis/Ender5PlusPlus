@@ -250,3 +250,8 @@ Content-Type: multipart/form-data; boundary=------------------------DWRjFVSgUb1g
 2024-06-07 06:42:38,269 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.0.181
 2024-06-07 07:04:50,515 [websockets.py:on_close()] - Websocket Closed: ID: 281473434573984 Close Code: None, Close Reason: None, Pong Time Elapsed: 0.65
 2024-06-07 07:12:07,271 [websockets.py:on_close()] - Websocket Closed: ID: 281473434571152 Close Code: None, Close Reason: None, Pong Time Elapsed: 4.24
+2024-06-07 10:03:45,157 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.0.100
+2024-06-07 10:03:45,325 [application.py:log_request()] - 101 GET /websocket?token=TSQRHS6QJP5HTY7MMGHUG2F3VNNQPFEM (192.168.0.100) [_TRUSTED_USER_] 4.55ms
+2024-06-07 10:03:45,326 [websockets.py:open()] - Websocket Opened: ID: 281473434571488, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36, Host Name: ender5plusplus.local
+2024-06-07 10:03:45,350 [websockets.py:_handle_identify()] - Websocket 281473434571488 Client Identified - Name: fluidd, Version: 1.30.0-f3e4ac3, Type: web
+2024-06-07 10:03:45,351 [file_manager.py:get_file_list()] - Updating File List <config>...
